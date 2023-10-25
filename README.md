@@ -8,6 +8,12 @@ Na pasta do projeto, rode o comando:
 ```sh
 composer install
 ```
+
+Crie o Arquivo .env
+```sh
+cp .env.example .env
+```
+
 Na pasta do projeto, rode o comando:
 ```sh
 ./vendor/bin/sail up -d
@@ -15,13 +21,11 @@ Na pasta do projeto, rode o comando:
 
 Na pasta do projeto, rode o comando:
 ```sh
+npm install
+```
+Na pasta do projeto, rode o comando:
+```sh
 npm run dev
 ```
-
-Crie o Arquivo .env
-```sh
-cp .env.example .env
-```
-
 ### Segundo
 Veja se está funcionando no <a href="localhost">localhost</a>
