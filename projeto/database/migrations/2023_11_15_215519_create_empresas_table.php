@@ -15,6 +15,12 @@ class CreateEmpresasTable extends Migration
     {
         Schema::create('empresas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->foreign('user_id')
+            ->references('id')->on('users');
+
+            $table->string('cnpj');
+            $table->text('descricao');
             $table->timestamps();
         });
     }

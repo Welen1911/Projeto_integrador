@@ -51,4 +51,8 @@ class User extends Authenticatable
     public function candidato() {
         return $this->hasOne(Candidato::class);
     }
+
+    public function empresa() {
+        return $this->hasOne(Empresa::class);
+    }
 }
