@@ -25,6 +25,11 @@
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
+            <div>
+                <x-label for="name" :value="__('telefone')" />
+
+                <x-input id="name" class="block mt-1 w-full" type="text" name="telefone" :value="old('telefone')" required />
+            </div>
 
             <!-- Password -->
             <div class="mt-4">
@@ -43,6 +48,12 @@
                 <x-input id="password_confirmation" class="block mt-1 w-full"
                                 type="password"
                                 name="password_confirmation" required />
+            </div>
+
+            <div>
+                <x-label for="name" :value="__('tipo_conta')" />
+
+                <x-input id="name" class="block mt-1 w-full" type="text" name="tipo_conta" :value="old('tipo_conta')" required />
             </div>
 
             <div class="flex items-center justify-end mt-4">
