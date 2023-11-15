@@ -47,4 +47,8 @@ class User extends Authenticatable
     public function endereco() {
         return $this->hasOne(Endereco::class);
     }
+
+    public function candidato() {
+        return $this->hasOne(Candidato::class);
+    }
 }
