@@ -20,7 +20,6 @@ class CreateCandidatosTable extends Migration
             ->references('id')->on('users');
 
             $table->integer('idade');
-            $table->integer('area_id');
             $table->string('curriculo')->nullable();
             $table->string('experiencia')->nullable();
             $table->string('formacao')->nullable();
