@@ -9,6 +9,10 @@ class Area extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nome'
+    ];
+
     public function users() {
         return $this->hasMany(Candidato::class);
     }
