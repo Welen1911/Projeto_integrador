@@ -15,6 +15,22 @@ class CreateVagasTable extends Migration
     {
         Schema::create('vagas', function (Blueprint $table) {
             $table->id();
+            
+            $table->foreignId('empresa_id');
+            $table->foreign('empresa_id')
+            ->references('id')->on('empresas');
+            // ->cascadeOnUpdate()->cascadeOnDelete();
+            
+            $table->string('titulo');
+            $table->text('descricao');
+
+            $table->foreignId('area_id');
+            $table->foreign('area_id')
+            ->references('id')->on('areas');
+            // ->cascadeOnDelete()->cascadeOnUpdate();
+
+            $table->string('tipo_trabalho');
+            $table->string('tipo_vinculo');
             $table->timestamps();
         });
     }

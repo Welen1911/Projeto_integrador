@@ -16,6 +16,11 @@
                         <li>Área: {{ auth()->user()->candidato->area->nome }}</li>
                         <li>Endereço: {{ auth()->user()->endereco->cidade }}</li>
                     </ol> --}}
+
+                   {{-- @foreach (auth()->user()->empresa->vagas as $vaga)
+                       <p>{{$vaga->titulo}}</p>
+                       <p>Area: {{$vaga->area->nome}}</p>
+                   @endforeach --}}
                 </div>
             </div>
         </div>
