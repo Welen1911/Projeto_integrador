@@ -9,6 +9,15 @@ class Endereco extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'estado',
+        'cidade',
+        'bairro',
+        'cep',
+        'rua',
+        'numero',
+    ];
+
     public function user() {
         return $this->belongsTo(User::class);
     }
