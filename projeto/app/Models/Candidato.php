@@ -16,4 +16,8 @@ class Candidato extends Model
     public function area() {
         return $this->belongsTo(Area::class);
     }
+
+    public function candidaturas() {
+        return $this->hasMany(Candidatura::class);
+    }
 }

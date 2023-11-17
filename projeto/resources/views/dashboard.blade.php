@@ -21,6 +21,16 @@
                        <p>{{$vaga->titulo}}</p>
                        <p>Area: {{$vaga->area->nome}}</p>
                    @endforeach --}}
+
+                   {{-- @foreach (auth()->user()->candidato->candidaturas as $candidatura)
+                        <p>{{ $candidatura->vaga }}</p>
+                   @endforeach --}}
+
+                   {{-- @foreach (auth()->user()->empresa->vagas as $vaga)
+                     @foreach ($vaga->candidaturas as $candidatura)
+                         <p>{{ $candidatura->candidato->area }}</p>
+                     @endforeach
+                   @endforeach --}}
                 </div>
             </div>
         </div>
