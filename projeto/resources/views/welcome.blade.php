@@ -19,6 +19,10 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+        <script src="https://unpkg.com/axios/dist/axios.min.js">
+           
+        </script>
+        {{-- <script src="js/axios.js"></script> --}}
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
@@ -129,4 +133,14 @@
             </div>
         </div>
     </body>
+    <script>
+        //  import axios from 'axios';
+            axios.get('http://localhost/api/').then(
+                function (response) {
+                    console.log(response.data);
+                } 
+            ).catch(function (error) {
+                console.log(error);
+            })
+    </script>
 </html>
