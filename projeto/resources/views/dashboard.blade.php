@@ -32,7 +32,8 @@
                      @endforeach
                    @endforeach --}}
 
-                   <p>{{ auth()->user()->telefone->celular }}</p>
+                   {{-- <p>{{ auth()->user()->endereco->cidade }}</p>
+                   <p>{{ auth()->user()->telefone->celular }}</p> --}}
                 </div>
             </div>
         </div>
