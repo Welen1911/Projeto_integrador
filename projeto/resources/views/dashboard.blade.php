@@ -31,6 +31,8 @@
                          <p>{{ $candidatura->candidato->area }}</p>
                      @endforeach
                    @endforeach --}}
+
+                   <p>{{ auth()->user()->telefone->celular }}</p>
                 </div>
             </div>
         </div>
