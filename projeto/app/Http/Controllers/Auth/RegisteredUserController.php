@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Laravel\Socialite\Facades\Socialite;
 
 class RegisteredUserController extends Controller
 {
@@ -52,5 +53,30 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
+    }
+
+    public function storeProvider() {
+        $providerUser = Socialite::driver('google')->user();
+
+        $user = User::where('provider_id', $providerUser->getId())->first();
+
+        if ($user) {
+            $user->update([
+                'provider_token' => $providerUser->token,
+                'provider_refresh_token' => $providerUser->refreshToken,
+            ]);
+        } else {
+            $user = User::create([
+                'name' => $providerUser->getName(),
+                'email' => $providerUser->getEmail(),
+                'provider_id' => $providerUser->getId(),
+                'provider_token' => $providerUser->token,
+                'provider_refresh_token' => $providerUser->refreshToken,
+            ]);
+        }
+
+        Auth::login($user);
+ 
+        return redirect('/dashboard');
     }
 }
