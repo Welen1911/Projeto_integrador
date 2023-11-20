@@ -17,23 +17,34 @@
                         <li>Endereço: {{ auth()->user()->endereco->cidade }}</li>
                     </ol> --}}
 
-                   {{-- @foreach (auth()->user()->empresa->vagas as $vaga)
+                    {{-- @foreach (auth()->user()->empresa->vagas as $vaga)
                        <p>{{$vaga->titulo}}</p>
                        <p>Area: {{$vaga->area->nome}}</p>
                    @endforeach --}}
 
-                   {{-- @foreach (auth()->user()->candidato->candidaturas as $candidatura)
+                    {{-- @foreach (auth()->user()->candidato->candidaturas as $candidatura)
                         <p>{{ $candidatura->vaga }}</p>
                    @endforeach --}}
 
-                   {{-- @foreach (auth()->user()->empresa->vagas as $vaga)
+                    {{-- @foreach (auth()->user()->empresa->vagas as $vaga)
                      @foreach ($vaga->candidaturas as $candidatura)
                          <p>{{ $candidatura->candidato->area }}</p>
                      @endforeach
                    @endforeach --}}
 
-                   {{-- <p>{{ auth()->user()->endereco->cidade }}</p>
+                    {{-- <p>{{ auth()->user()->endereco->cidade }}</p>
                    <p>{{ auth()->user()->telefone->celular }}</p> --}}
+                    {{-- @if (auth()->user()->tipo_conta == 'empresa')
+                        <h1>Vagas da sua empresa:</h1>
+                        @foreach (auth()->user()->empresa->vagas as $vaga)
+                            <p>{{ $vaga->titulo }}</p>
+                        @endforeach
+                    @else
+                        <h1>Vagas da qual você se candidatou:</h1>
+                        @foreach (auth()->user()->candidato->candidaturas as $candidatura)
+                            <p>{{ $candidatura->vaga->titulo }} - {{ $candidatura->vaga->empresa->user->name }}</p>
+                        @endforeach
+                    @endif --}}
                 </div>
             </div>
         </div>
