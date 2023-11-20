@@ -64,6 +64,9 @@
                 <x-button class="ml-4">
                     {{ __('Register') }}
                 </x-button>
+                <a href="{{ route('social.login') }}" class="ml-4">
+                    {{ __('Register with Google') }}
+                </a>
             </div>
         </form>
     </x-auth-card>
