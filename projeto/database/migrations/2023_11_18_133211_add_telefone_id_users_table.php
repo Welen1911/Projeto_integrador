@@ -13,12 +13,12 @@ class AddTelefoneIdUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->foreignId('telefone_id')->nullable();
-            $table->foreign('telefone_id')
-            ->references('id')->on('telefones')
-            ->cascadeOnDelete()->cascadeOnUpdate();
-        });
+        // Schema::table('users', function (Blueprint $table) {
+        //     $table->foreignId('telefone_id')->nullable();
+        //     $table->foreign('telefone_id')
+        //     ->references('id')->on('telefones')
+        //     ->cascadeOnDelete()->cascadeOnUpdate();
+        // });
     }
 
     /**
@@ -28,8 +28,8 @@ class AddTelefoneIdUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('telefone_id');
-        });
+        // Schema::table('users', function (Blueprint $table) {
+        //     $table->dropColumn('telefone_id');
+        // });
     }
 }

@@ -58,7 +58,7 @@ class User extends Authenticatable
         return $this->hasOne(Empresa::class);
     }
 
-    public function telefone() {
-        return $this->belongsTo(Telefone::class);
+    public function telefones() {
+        return $this->hasMany(Telefone::class);
     }
 }

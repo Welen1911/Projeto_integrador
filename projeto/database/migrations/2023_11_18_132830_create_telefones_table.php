@@ -16,9 +16,11 @@ class CreateTelefonesTable extends Migration
         Schema::create('telefones', function (Blueprint $table) {
             $table->id();
             $table->string('celular');
-            $table->string('celular_2')->nullable();
-            $table->string('celular_3')->nullable();
             $table->string('fixo')->nullable();
+            $table->foreignId('user_id')->nullable();
+            $table->foreign('user_id')
+            ->references('id')->on('users')
+            ->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

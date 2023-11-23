@@ -45,6 +45,7 @@
                             <p>{{ $candidatura->vaga->titulo }} - {{ $candidatura->vaga->empresa->user->name }}</p>
                         @endforeach
                     @endif --}}
+                @dd(auth()->user()->telefones)
                 </div>
             </div>
         </div>
