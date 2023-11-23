@@ -20,4 +20,12 @@ class Candidato extends Model
     public function candidaturas() {
         return $this->hasMany(Candidatura::class);
     }
+
+    public function experiencias() {
+        return $this->hasMany(Experienca::class);
+    }
+
+    public function formacaos() {
+        return $this->hasMany(Formacao::class);
+    }
 }

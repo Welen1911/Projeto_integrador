@@ -21,8 +21,6 @@ class CreateCandidatosTable extends Migration
 
             $table->integer('idade');
             $table->string('curriculo')->nullable();
-            $table->string('experiencia')->nullable();
-            $table->string('formacao')->nullable();
             $table->timestamps();
         });
     }
