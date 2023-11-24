@@ -34,10 +34,10 @@
 	</nav>
 
 	<!-- Banner Inicial -->
-    <div class="inset-x-0 mt-20 w-full z-0 px-40 py-1 h-96 bg-gray-50 sm:px-16 sm:h-4/5 lg:px-40">
+    <div class="inset-x-0 mt-20 w-full lg:h-4/5 z-0 px-8 py-1 h-auto bg-gray-200 sm:px-16 sm:h-4/5 lg:px-40">
 		<!-- Informação do lado Esquedo do Banner_-->
-        <div class="flex flex-col justify-between p-3 mt-4 lg:flex-row lg:content-center">
-			<div class="grid  content-center bg-blue-800">
+        <div class="flex inset-x-0 flex-col justify-between p-3 mt-4  xl:flex-row lg:content-center">
+			<div class="grid  content-center ">
 				<!-- Titulo e subtitulo -->
 				<h2 class="text-4xl font-extrabold text-indigo-800">
 					Explore o site de vagas de emprego mais completo do Rio Grande do Norte!
@@ -54,7 +54,7 @@
 								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
 							</svg>
 						</div>
-						<input type="search" name="barPesquisarVagas" id="default-search" class="block w-80 p-4 ps-10 text-sm rounded-lg text-gray-900 dark:placeholder-gray-400 border border-blue-500" placeholder="Procure as vagas" required>
+						<input type="search" name="barPesquisarVagas" id="default-search" class=" w-80 sm:w-full lg:w-full p-4 ps-10 text-sm rounded-lg text-gray-900 dark:placeholder-gray-400 border border-blue-500" placeholder="Procure as vagas" required>
 					</div>
 					<div class="relative ">
 						<div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -62,16 +62,16 @@
 								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
 							</svg>
 						</div>
-						<input type="search" name="barPesquisarLocal" id="default-search" class="block w-80 p-4 ps-10 text-sm rounded-lg text-gray-900 dark:placeholder-gray-400 border border-blue-500" placeholder="Local da vaga" required>
+						<input type="search" name="barPesquisarLocal" id="default-search" class=" w-80 sm:w-full lg:w-full p-4 ps-10 text-sm rounded-lg text-gray-900 dark:placeholder-gray-400 border border-blue-500" placeholder="Local da vaga" required>
 					</div>
-					<button type="submit" class="block p-2.5  text-sm font-medium text-white bg-indigo-800 rounded-lg border border-indigo-800 hover:bg-indigo-900 focus:ring-4 focus:outline-none focus:ring-indigo-300 dark:bg-indigo-700 dark:hover:bg-indigo-800 dark:focus:ring-indigo-900">
+					<button type="submit" class="block p-2 text-sm font-medium text-white bg-indigo-800 rounded-lg border border-indigo-800 hover:bg-indigo-900 focus:ring-4 focus:outline-none focus:ring-indigo-300 ">
 						Buscar vagas
 					</button>
 				</form>
 			</div>
 			
 		
-			<div class="ml-32 grid  content-center bg-blue-800">
+			<div class=" sm:ml-auto lg:ml-auto ">
 		
 				<img class="" src="{{ asset('imagens/ImgBanner.png') }}" alt="ImgBanner">
 
