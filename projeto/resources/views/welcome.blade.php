@@ -34,7 +34,7 @@
 	</nav>
 
 	<!-- Banner Inicial -->
-    <div class="inset-x-0 mt-20 w-full lg:h-4/5 z-0 px-8 py-1 h-auto bg-gray-200 sm:px-16 sm:h-4/5 lg:px-40">
+    <div class="inset-x-0 mt-20 w-full lg:h-4/5 z-0 px-8 py-1 h-auto bg-gray-100 sm:px-16 sm:h-4/5 lg:px-40">
 		<!-- Informação do lado Esquedo do Banner_-->
         <div class="flex inset-x-0 flex-col justify-between p-3 mt-4  xl:flex-row lg:content-center">
 			<div class="grid  content-center ">
@@ -79,7 +79,64 @@
 		
 		</div>
     </div>
-     
+
+	<!-- Segunda parte da pagina -->
+	<div class="inset-x-0 w-full lg:h-4/5 z-0 px-8 py-1 h-auto sm:px-16 sm:h-4/5 lg:px-40 ">
+		<div class="flex inset-x-0 flex-col justify-between mt-10  xl:flex-row lg:content-center">
+			<div class="grid  content-center ">
+				<!-- Titulo e subtitulo -->
+				<h2 class="text-3xl font-extrabold text-indigo-800">
+					Suas pesquisas recentes
+				</h2>
+			</div>		
+		</div>
+
+		<div class="flex inset-x-0 flex-col w-full justify-between mt-3 ">
+			<div class="sm:flex sm:space-x-4">
+				<a href="http://www.youtube.com" class="inline-block align-bottom hover:bg-gray-400 hover:ease-in bg-gray-200 rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
+					<div class="p-5">
+						<div class="sm:flex sm:items-start">
+							<div class="text-center sm:mt-0 sm:ml-2 sm:text-left">
+								<h3 class="text-sm leading-6 font-medium text-indigo-800">22 Novas Vagas</h3>
+								<p class="text-3xl font-bold text-black">Nova Cruz, RN</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="http://www.youtube.com" class="inline-block align-bottom hover:bg-gray-400 hover:ease-in bg-gray-200 rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8">
+					<div class="p-5">
+						<div class="sm:flex sm:items-start">
+							<div class="text-center sm:mt-0 sm:ml-2 sm:text-left">
+								<h3 class="text-sm leading-6 font-medium text-indigo-800">22 Novas Vagas</h3>
+								<p class="text-3xl font-bold text-black">Nova Cruz, RN</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="http://www.youtube.com" class="inline-block align-bottom hover:bg-gray-400 hover:ease-in bg-gray-200 rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8">
+					<div class="p-5">
+						<div class="sm:flex sm:items-start">
+							<div class="text-center sm:mt-0 sm:ml-2 sm:text-left">
+								<h3 class="text-sm leading-6 font-medium text-indigo-800">22 Novas Vagas</h3>
+								<p class="text-3xl font-bold text-black">Nova Cruz, RN</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="http://www.youtube.com" class="inline-block align-bottom hover:bg-gray-400 hover:ease-in bg-gray-200 rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8">
+					<div class="p-5">
+						<div class="sm:flex sm:items-start">
+							<div class="text-center sm:mt-0 sm:ml-2 sm:text-left">
+								<h3 class="text-sm leading-6 font-medium text-indigo-800">22 Novas Vagas</h3>
+								<p class="text-3xl font-bold text-black">Nova Cruz, RN</p>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	
 </header> 
 </body>
 </html>
