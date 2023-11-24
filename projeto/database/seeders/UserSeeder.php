@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Area;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
-class AreaSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +14,6 @@ class AreaSeeder extends Seeder
      */
     public function run()
     {
-       Area::factory(10)->create();
+        User::factory(10)->create();
     }
 }
