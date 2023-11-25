@@ -50,7 +50,7 @@
 				<form class="mt-4 flex flex-col flex-nowrap gap-5 xl:flex-row">   
 					<div class="relative f">
 						<div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-							<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+							<svg class="w-4 h-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
 								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
 							</svg>
 						</div>
@@ -58,8 +58,9 @@
 					</div>
 					<div class="relative ">
 						<div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-							<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-								<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-400">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+								<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
 							</svg>
 						</div>
 						<input type="search" name="barPesquisarLocal" id="default-search" class=" w-80 sm:w-full lg:w-full p-4 ps-10 text-sm rounded-lg text-gray-900 dark:placeholder-gray-400 border border-blue-500" placeholder="Local da vaga" required>
@@ -146,8 +147,8 @@
 		</div>
 
 		<div class="flex inset-x-0 flex-col justify-between  mt-2 p-3 xl:flex-row lg:content-center">
-			<div class="sm:ml-auto lg:ml-auto  grid content-center ">
-				<img class="" src="{{ asset('imagens/ImgBanner.png') }}" alt="ImgBanner">
+			<div class="sm:ml-auto lg:ml-auto  grid content-center">
+				<img class="" src="{{ asset('imagens/ImgPg6.png') }}" alt="ImgBanner">
 			</div>
 			
 			<!-- component -->
@@ -224,7 +225,8 @@
 					</div>
 
 					
-
+					
+					  
 					<p class="mt-10 text-base text-center text-black md:mt-20 p-6 py-3 border w-72 border-black rounded-full mx-auto">
 						Veja mais empresas!
 					</p>
