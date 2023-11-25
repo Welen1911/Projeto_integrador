@@ -37,7 +37,7 @@
     <div class="inset-x-0 mt-20 w-full lg:h-4/5 z-0 px-8 py-1 h-auto bg-gray-100 sm:px-16 sm:h-4/5 lg:px-40">
 		<!-- Informação do lado Esquedo do Banner_-->
         <div class="flex inset-x-0 flex-col justify-between p-3 mt-4  xl:flex-row lg:content-center">
-			<div class="grid  content-center ">
+			<div class="grid  content-center">
 				<!-- Titulo e subtitulo -->
 				<h2 class="text-4xl font-extrabold text-indigo-800">
 					Explore o site de vagas de emprego mais completo do Rio Grande do Norte!
@@ -82,7 +82,7 @@
 
 	<!-- Segunda parte da pagina -->
 	<div class="inset-x-0 w-full lg:h-4/5 z-0 px-8 py-1 h-auto sm:px-16 sm:h-4/5 lg:px-40 ">
-		<div class="flex inset-x-0 flex-col justify-between mt-10  xl:flex-row lg:content-center">
+		<div class="flex inset-x-0 p-3 flex-col justify-between mt-5  xl:flex-row lg:content-center">
 			<div class="grid  content-center ">
 				<!-- Titulo e subtitulo -->
 				<h2 class="text-3xl font-extrabold text-indigo-800">
@@ -91,7 +91,7 @@
 			</div>		
 		</div>
 
-		<div class="flex inset-x-0 flex-col w-full justify-between mt-3 ">
+		<div class="flex inset-x-0 flex-col w-full justify-between  p-3 mt-1 ">
 			<div class="sm:flex sm:space-x-4">
 				<a href="http://www.youtube.com" class="inline-block align-bottom hover:bg-gray-400 hover:ease-in bg-gray-200 rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
 					<div class="p-5">
@@ -135,6 +135,104 @@
 				</a>
 			</div>
 		</div>
+
+		<div class="flex inset-x-0 flex-col justify-between mt-2 p-3 xl:flex-row lg:content-center">
+			<div class="grid  content-center ">
+				<!-- Titulo e subtitulo -->
+				<h2 class="text-3xl font-extrabold text-indigo-800 ">
+					Empresas lideres no Brasil estão contratando agora				
+				</h2>
+			</div>		
+		</div>
+
+		<div class="flex inset-x-0 flex-col justify-between  mt-2 p-3 xl:flex-row lg:content-center">
+			<div class="sm:ml-auto lg:ml-auto  grid content-center ">
+				<img class="" src="{{ asset('imagens/ImgBanner.png') }}" alt="ImgBanner">
+			</div>
+			
+			<!-- component -->
+			
+
+				<div class=" mx-auto sm:px-6 lg:px-8 text-center ">
+
+
+					<div class=" grid items-center max-w-4xl grid-cols-2 gap-4 mx-auto mt-12 md:mt-20 md:grid-cols-4  ">
+						
+						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoAmericanas.png') }}" alt="">
+						</div>
+
+						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoApple.png') }}" alt="">
+						</div>
+
+						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoAssai.png') }}" alt="">
+						</div>
+
+						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoAzul.png') }}" alt="">
+						</div>
+
+						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoBgrKing.png') }}" alt="">
+						</div>
+
+						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoCacauShow.png') }}" alt="">
+						</div>
+
+						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoCarrefour.png') }}" alt="">
+						</div>
+
+						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoCea.png') }}" alt="">
+						</div>
+
+						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoGol.png') }}" alt="">
+						</div>
+
+						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto " src="{{ asset('imagens/logoIfood.png') }}" alt="">
+						</div>
+
+						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoNike.png') }}" alt="">
+						</div>
+
+						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoUber.png') }}" alt="">
+						</div>
+
+						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoRenner.png') }}" alt="">
+						</div>
+
+						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto " src="{{ asset('imagens/logoMicrosoft.png') }}" alt="">
+						</div>
+
+						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoMagalu.png') }}" alt="">
+						</div>
+
+						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoNetshoes.png') }}" alt="">
+						</div>
+					</div>
+
+					
+
+					<p class="mt-10 text-base text-center text-black md:mt-20 p-6 py-3 border w-72 border-black rounded-full mx-auto">
+						Veja mais empresas!
+					</p>
+				</div>
+			</section>
+			
+		</div>
+
 	</div>
 	
 </header> 
