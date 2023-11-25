@@ -94,7 +94,7 @@
 
 		<div class="flex inset-x-0 flex-col w-full justify-between  p-3 mt-1 ">
 			<div class="sm:flex sm:space-x-4">
-				<a href="http://www.youtube.com" class="inline-block align-bottom hover:bg-gray-400 hover:ease-in bg-gray-200 rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
+				<a href="http://www.youtube.com" class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-gray-200 rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
 					<div class="p-5">
 						<div class="sm:flex sm:items-start">
 							<div class="text-center sm:mt-0 sm:ml-2 sm:text-left">
@@ -104,7 +104,7 @@
 						</div>
 					</div>
 				</a>
-				<a href="http://www.youtube.com" class="inline-block align-bottom hover:bg-gray-400 hover:ease-in bg-gray-200 rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8">
+				<a href="http://www.youtube.com" class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-gray-200 rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8">
 					<div class="p-5">
 						<div class="sm:flex sm:items-start">
 							<div class="text-center sm:mt-0 sm:ml-2 sm:text-left">
@@ -114,7 +114,7 @@
 						</div>
 					</div>
 				</a>
-				<a href="http://www.youtube.com" class="inline-block align-bottom hover:bg-gray-400 hover:ease-in bg-gray-200 rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8">
+				<a href="http://www.youtube.com" class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-gray-200 rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8">
 					<div class="p-5">
 						<div class="sm:flex sm:items-start">
 							<div class="text-center sm:mt-0 sm:ml-2 sm:text-left">
@@ -124,7 +124,7 @@
 						</div>
 					</div>
 				</a>
-				<a href="http://www.youtube.com" class="inline-block align-bottom hover:bg-gray-400 hover:ease-in bg-gray-200 rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8">
+				<a href="http://www.youtube.com" class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-gray-200 rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8">
 					<div class="p-5">
 						<div class="sm:flex sm:items-start">
 							<div class="text-center sm:mt-0 sm:ml-2 sm:text-left">
@@ -158,78 +158,108 @@
 
 
 					<div class=" grid items-center max-w-4xl grid-cols-2 gap-4 mx-auto mt-12 md:mt-20 md:grid-cols-4  ">
-						
-						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoAmericanas.png') }}" alt="">
-						</div>
+						<a href="http://www.youtube.com" class=" ">
+							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoAmericanas.png') }}" alt="">
+							</div>
+						</a>
 
-						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoApple.png') }}" alt="">
-						</div>
+						<a href="http://www.youtube.com" class=" ">
+							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoApple.png') }}" alt="">
+							</div>
+						</a>
 
-						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoAssai.png') }}" alt="">
-						</div>
+						<a href="http://www.youtube.com" class=" ">
+							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoAssai.png') }}" alt="">
+							</div>
+						</a>
 
-						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoAzul.png') }}" alt="">
-						</div>
+						<a href="http://www.youtube.com" class=" ">
+							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoAzul.png') }}" alt="">
+							</div>
+						</a>
 
-						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoBgrKing.png') }}" alt="">
-						</div>
+						<a href="http://www.youtube.com" class=" ">
+							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoBgrKing.png') }}" alt="">
+							</div>
+						</a>
 
-						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoCacauShow.png') }}" alt="">
-						</div>
+						<a href="http://www.youtube.com" class=" ">
+							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoCacauShow.png') }}" alt="">
+							</div>
+						</a>
 
-						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoCarrefour.png') }}" alt="">
-						</div>
+						<a href="http://www.youtube.com" class=" ">
+							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoCarrefour.png') }}" alt="">
+							</div>
+						</a>
 
-						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoCea.png') }}" alt="">
-						</div>
+						<a href="http://www.youtube.com" class=" ">
+							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoCea.png') }}" alt="">
+							</div>
+						</a>
 
-						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoGol.png') }}" alt="">
-						</div>
+						<a href="http://www.youtube.com" class=" ">
+							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoGol.png') }}" alt="">
+							</div>
+						</a>
 
-						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-							<img class="object-contain w-16 h-16 mx-auto " src="{{ asset('imagens/logoIfood.png') }}" alt="">
-						</div>
+						<a href="http://www.youtube.com" class=" ">
+							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+								<img class="object-contain w-16 h-16 mx-auto " src="{{ asset('imagens/logoIfood.png') }}" alt="">
+							</div>
+						</a>
 
-						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoNike.png') }}" alt="">
-						</div>
+						<a href="http://www.youtube.com" class=" ">
+							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoNike.png') }}" alt="">
+							</div>
+						</a>
 
-						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoUber.png') }}" alt="">
-						</div>
+						<a href="http://www.youtube.com" class=" ">
+							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoUber.png') }}" alt="">
+							</div>
+						</a>
 
-						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoRenner.png') }}" alt="">
-						</div>
+						<a href="http://www.youtube.com" class=" ">
+							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoRenner.png') }}" alt="">
+							</div>
+						</a>
 
-						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-							<img class="object-contain w-16 h-16 mx-auto " src="{{ asset('imagens/logoMicrosoft.png') }}" alt="">
-						</div>
+						<a href="http://www.youtube.com" class=" ">
+							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+								<img class="object-contain w-16 h-16 mx-auto " src="{{ asset('imagens/logoMicrosoft.png') }}" alt="">
+							</div>
+						</a>
 
-						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoMagalu.png') }}" alt="">
-						</div>
+						<a href="http://www.youtube.com" class=" ">
+							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoMagalu.png') }}" alt="">
+							</div>
+						</a>
 
-						<div class="bg-white h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoNetshoes.png') }}" alt="">
-						</div>
+						<a href="http://www.youtube.com" class=" ">
+							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoNetshoes.png') }}" alt="">
+							</div>
+						</a>
 					</div>
-
 					
-					
-					  
-					<p class="mt-10 text-base text-center text-black md:mt-20 p-6 py-3 border w-72 border-black rounded-full mx-auto">
-						Veja mais empresas!
-					</p>
+					<a href="http://www.youtube.com" class=" ">
+						<p class="mt-10 text-base text-center text-black hover:bg-gray-50 transition-all hover:scale-105 hover:ease-in md:mt-20 p-6 py-3 border w-72 border-black rounded-full mx-auto">
+							Veja mais empresas!
+						</p>
+					</a>
 				</div>
 			</section>
 			
