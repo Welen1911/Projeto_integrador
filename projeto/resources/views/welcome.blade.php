@@ -91,7 +91,7 @@
 				</h2>
 			</div>		
 		</div>
-
+		<!--Card de Pesquisa Recentes-->
 		<div class="flex inset-x-0 flex-col w-full justify-between  p-3 mt-1 ">
 			<div class="sm:flex sm:space-x-4">
 				<a href="http://www.youtube.com" class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-gray-200 rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
@@ -151,122 +151,191 @@
 				<img class="" src="{{ asset('imagens/ImgPg6.png') }}" alt="ImgBanner">
 			</div>
 			
-			<!-- component -->
-			
-
-				<div class=" mx-auto sm:px-6 lg:px-8 text-center ">
-
-
-					<div class=" grid items-center max-w-4xl grid-cols-2 gap-4 mx-auto mt-12 md:mt-20 md:grid-cols-4  ">
-						<a href="http://www.youtube.com" class=" ">
-							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoAmericanas.png') }}" alt="">
-							</div>
-						</a>
-
-						<a href="http://www.youtube.com" class=" ">
-							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoApple.png') }}" alt="">
-							</div>
-						</a>
-
-						<a href="http://www.youtube.com" class=" ">
-							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoAssai.png') }}" alt="">
-							</div>
-						</a>
-
-						<a href="http://www.youtube.com" class=" ">
-							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoAzul.png') }}" alt="">
-							</div>
-						</a>
-
-						<a href="http://www.youtube.com" class=" ">
-							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoBgrKing.png') }}" alt="">
-							</div>
-						</a>
-
-						<a href="http://www.youtube.com" class=" ">
-							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoCacauShow.png') }}" alt="">
-							</div>
-						</a>
-
-						<a href="http://www.youtube.com" class=" ">
-							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoCarrefour.png') }}" alt="">
-							</div>
-						</a>
-
-						<a href="http://www.youtube.com" class=" ">
-							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoCea.png') }}" alt="">
-							</div>
-						</a>
-
-						<a href="http://www.youtube.com" class=" ">
-							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoGol.png') }}" alt="">
-							</div>
-						</a>
-
-						<a href="http://www.youtube.com" class=" ">
-							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-								<img class="object-contain w-16 h-16 mx-auto " src="{{ asset('imagens/logoIfood.png') }}" alt="">
-							</div>
-						</a>
-
-						<a href="http://www.youtube.com" class=" ">
-							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoNike.png') }}" alt="">
-							</div>
-						</a>
-
-						<a href="http://www.youtube.com" class=" ">
-							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoUber.png') }}" alt="">
-							</div>
-						</a>
-
-						<a href="http://www.youtube.com" class=" ">
-							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoRenner.png') }}" alt="">
-							</div>
-						</a>
-
-						<a href="http://www.youtube.com" class=" ">
-							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-								<img class="object-contain w-16 h-16 mx-auto " src="{{ asset('imagens/logoMicrosoft.png') }}" alt="">
-							</div>
-						</a>
-
-						<a href="http://www.youtube.com" class=" ">
-							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoMagalu.png') }}" alt="">
-							</div>
-						</a>
-
-						<a href="http://www.youtube.com" class=" ">
-							<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
-								<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoNetshoes.png') }}" alt="">
-							</div>
-						</a>
-					</div>
-					
+			<div class=" mx-auto sm:px-6 lg:px-8 text-center">
+				<div class=" grid items-center max-w-4xl grid-cols-2 gap-4 mx-auto mt-12 md:mt-20 md:grid-cols-4">
 					<a href="http://www.youtube.com" class=" ">
-						<p class="mt-10 text-base text-center text-black hover:bg-gray-50 transition-all hover:scale-105 hover:ease-in md:mt-20 p-6 py-3 border w-72 border-black rounded-full mx-auto">
-							Veja mais empresas!
-						</p>
+						<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 sm:w-auto lg:w-auto mx-auto" src="{{ asset('imagens/logoAmericanas.png') }}" alt="">
+						</div>
+					</a>
+
+					<a href="http://www.youtube.com" class=" ">
+						<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoApple.png') }}" alt="">
+						</div>
+					</a>
+
+					<a href="http://www.youtube.com" class=" ">
+						<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoAssai.png') }}" alt="">
+						</div>
+					</a>
+
+					<a href="http://www.youtube.com" class=" ">
+						<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoAzul.png') }}" alt="">
+						</div>
+					</a>
+
+					<a href="http://www.youtube.com" class=" ">
+						<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoBgrKing.png') }}" alt="">
+						</div>
+					</a>
+
+					<a href="http://www.youtube.com" class=" ">
+						<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoCacauShow.png') }}" alt="">
+						</div>
+					</a>
+
+					<a href="http://www.youtube.com" class=" ">
+						<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoCarrefour.png') }}" alt="">
+						</div>
+					</a>
+
+					<a href="http://www.youtube.com" class=" ">
+						<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoCea.png') }}" alt="">
+						</div>
+					</a>
+
+					<a href="http://www.youtube.com" class=" ">
+						<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoGol.png') }}" alt="">
+						</div>
+					</a>
+
+					<a href="http://www.youtube.com" class=" ">
+						<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto " src="{{ asset('imagens/logoIfood.png') }}" alt="">
+						</div>
+					</a>
+
+					<a href="http://www.youtube.com" class=" ">
+						<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoNike.png') }}" alt="">
+						</div>
+					</a>
+
+					<a href="http://www.youtube.com" class=" ">
+						<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoUber.png') }}" alt="">
+						</div>
+					</a>
+
+					<a href="http://www.youtube.com" class=" ">
+						<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoRenner.png') }}" alt="">
+						</div>
+					</a>
+
+					<a href="http://www.youtube.com" class=" ">
+						<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto " src="{{ asset('imagens/logoMicrosoft.png') }}" alt="">
+						</div>
+					</a>
+
+					<a href="http://www.youtube.com" class=" ">
+						<div class="bg-white hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoMagalu.png') }}" alt="">
+						</div>
+					</a>
+
+					<a href="http://www.youtube.com" class=" ">
+						<div class="bg-white  hover:bg-gray-50 transition-all hover:scale-110 hover:ease-in h-20 px-10 rounded-lg border border-gray-300 flex shadow-lg items-center justify-center">
+							<img class="object-contain w-16 h-16 mx-auto" src="{{ asset('imagens/logoNetshoes.png') }}" alt="">
+						</div>
 					</a>
 				</div>
-			</section>
-			
+				
+				<a href="http://www.youtube.com" class=" ">
+					<p class="mt-10 text-base text-center text-black hover:bg-gray-50 transition-all hover:scale-105 hover:ease-in md:mt-20 p-6 py-3 border w-72 border-black rounded-full mx-auto">
+						Veja mais empresas!
+					</p>
+				</a>
+			</div>
 		</div>
-
 	</div>
 	
+	<!--Terceira Parte -->
+	<div class="inset-x-0 mt-10 w-full lg:h-4/5 z-0 px-8 py-1 h-auto bg-gray-100 sm:px-16 sm:h-4/5 lg:px-40">
+		<!-- Informação do lado Esquedo do Banner_-->
+        <div class="flex inset-x-0 flex-col justify-between p-3 mt-4  xl:flex-row lg:content-center">
+			<div class="grid  content-center">
+				<h2 class="text-3xl font-extrabold text-indigo-800">
+					Nossas últimas vagas
+				</h2>
+			</div>
+		</div>
+
+		<!--Card de Pesquisa Recentes-->
+		<div class="flex inset-x-0 flex-col w-full justify-between  p-3 mt-1 ">
+			<div class="sm:flex sm:space-x-4">
+				<a href="/" class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
+					<img class="rounded-t-lg" src="{{ asset('imagens/logoMagalu.png') }}" alt="" />
+					<div class="p-5">
+						
+						<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Titulo da vaga de emprego disponível</h5>
+						
+						<p class="mb-3 font-normal text-gray-700 y">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+						
+					</div>
+				</a>
+				
+				<a href="/" class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
+					<img class="rounded-t-lg" src="{{ asset('imagens/logoRenner.png') }}" alt="" />
+					<div class="p-5">
+						
+						<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Titulo da vaga de emprego disponível</h5>
+						
+						<p class="mb-3 font-normal text-gray-700 y">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+						
+					</div>
+				</a>
+
+				<a href="/" class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
+					<img class="rounded-t-lg" src="{{ asset('imagens/logoIfood.png') }}" alt="" />
+					<div class="p-5">
+						
+						<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Titulo da vaga de emprego disponível</h5>
+						
+						<p class="mb-3 font-normal text-gray-700 y">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+						
+					</div>
+				</a>
+
+				<a href="/" class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
+					<img class="rounded-t-lg" src="{{ asset('imagens/logoAzul.png') }}" alt="" />
+					<div class="p-5">
+						
+						<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Titulo da vaga de emprego disponível</h5>
+						
+						<p class="mb-3 font-normal text-gray-700 y">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+						
+					</div>
+				</a>
+
+				<a href="/" class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
+					<img class="rounded-t-lg" src="{{ asset('imagens/logoCacauShow.png') }}" alt="" />
+					<div class="p-5">
+						
+						<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Titulo da vaga de emprego disponível</h5>
+						
+						<p class="mb-3 font-normal text-gray-700 y">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+						
+					</div>
+				</a>
+			</div>
+
+			<a href="http://www.youtube.com" class=" ">
+				<p class="mt-10 text-base text-center text-black hover:bg-gray-50 transition-all hover:scale-105 hover:ease-in md:mt-20 p-6 py-3 border w-72 border-black rounded-full mx-auto">
+					Veja todas as vagas!
+				</p>
+			</a>
+		</div>
+    </div>
 </header> 
 </body>
 </html>
