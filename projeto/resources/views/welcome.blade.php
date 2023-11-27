@@ -273,7 +273,7 @@
 		<!--Card de Pesquisa Recentes-->
 		<div class="flex inset-x-0 flex-col w-full justify-between  p-3 mt-1 ">
 			<div class="sm:flex sm:space-x-4">
-				<a href="/" class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
+				<a href="/" class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow-lg transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
 					<img class="rounded-t-lg" src="{{ asset('imagens/logoMagalu.png') }}" alt="" />
 					<div class="p-5">
 						
@@ -284,7 +284,7 @@
 					</div>
 				</a>
 				
-				<a href="/" class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
+				<a href="/" class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow-lg transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
 					<img class="rounded-t-lg" src="{{ asset('imagens/logoRenner.png') }}" alt="" />
 					<div class="p-5">
 						
@@ -295,7 +295,7 @@
 					</div>
 				</a>
 
-				<a href="/" class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
+				<a href="/" class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow-lg transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
 					<img class="rounded-t-lg" src="{{ asset('imagens/logoIfood.png') }}" alt="" />
 					<div class="p-5">
 						
@@ -306,7 +306,7 @@
 					</div>
 				</a>
 
-				<a href="/" class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
+				<a href="/" class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow-lg transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
 					<img class="rounded-t-lg" src="{{ asset('imagens/logoAzul.png') }}" alt="" />
 					<div class="p-5">
 						
@@ -317,7 +317,7 @@
 					</div>
 				</a>
 
-				<a href="/" class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
+				<a href="/" class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow-lg transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
 					<img class="rounded-t-lg" src="{{ asset('imagens/logoCacauShow.png') }}" alt="" />
 					<div class="p-5">
 						
