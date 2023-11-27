@@ -13,9 +13,9 @@ class AreaFactory extends Factory
      */
     public function definition()
     {
-        // $lista = ['Tecnologia', 'Administração', 'Logistica', 'Direito'];
+        $lista = ['Tecnologia', 'Administração', 'Logistica', 'Direito'];
         return [
-            'nome' => $this->faker->company,
+            'nome' => $lista[rand(0,3)],
         ];
     }
 }
