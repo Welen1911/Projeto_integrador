@@ -18,7 +18,7 @@ class CreateFormacaosTable extends Migration
             $table->string('instituto');
             $table->string('tipo');
             $table->string('curso');
-            $table->boolean('situacao');
+            $table->string('cursando');
             
             $table->foreignId('candidato_id');
             $table->foreign('candidato_id')

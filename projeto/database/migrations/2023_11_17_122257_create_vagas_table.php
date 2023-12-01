@@ -19,7 +19,6 @@ class CreateVagasTable extends Migration
             $table->foreignId('empresa_id');
             $table->foreign('empresa_id')
             ->references('id')->on('empresas');
-            // ->cascadeOnUpdate()->cascadeOnDelete();
             
             $table->string('titulo');
             $table->text('descricao');
@@ -27,7 +26,6 @@ class CreateVagasTable extends Migration
             $table->foreignId('area_id');
             $table->foreign('area_id')
             ->references('id')->on('areas');
-            // ->cascadeOnDelete()->cascadeOnUpdate();
 
             $table->string('tipo_trabalho');
             $table->string('tipo_vinculo');
