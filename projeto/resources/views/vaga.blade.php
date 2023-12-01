@@ -45,18 +45,85 @@
     </div>
 </div>
 
-    <!--
-    <div class="inset-x-0 w-full lg:h-4/5 z-0 px-8 py-1 h-auto sm:px-16 sm:h-4/5 lg:px-40">
-        <div class="flex inset-x-0 flex-col justify-between p-3 mt-4 xl:flex-row lg:content-center">
-            <div class="grid content-center">
-                <h1 class="text-4xl text-indigo-800">Titulo da Vaga</h1>
+
+<div class="inset-x-0 w-full lg:h-4/5 z-0 px-8 py-1 h-auto sm:px-16 sm:h-4/5 lg:px-40">
+    <div class="flex inset-x-0 flex-col justify-between p-3 mt-4 xl:flex-row lg:content-center">
+        <div class="grid content-center">
+            <h1 class="text-4xl text-indigo-800">Americanas</h1>
+        </div>
+    </div>
+    
+    <div class="flex inset-x-0 justify-between p-3 mt-4 xl:flex-row lg:content-center w-full">
+        <div class=" flex border flex-row rounded-md w-full border-gray-400">
+            <div class="rounded-l-md w-full">
+                <img class="w-full  rounded-l-sm" src="{{ asset('imagens/logoAmericanas.png') }}" alt="">
+            </div>
+            <div class="flex flex-wrap  flex-grow mt-10  text-center md:pl-20  md:text-left">
+                <div class="w-full px-4 lg:w-1/4 md:w-1/2">
+                    <h2 class="mb-3 text-sm font-medium tracking-widest text-gray-900 uppercase title-font">Institucional</h2>
+                    <nav class="mb-10 list-none">
+                        <li class="mt-3">
+                            <a class="text-gray-500 cursor-pointer hover:text-gray-900">Sobre nós</a>
+                        </li>
+                        <li class="mt-3">
+                            <a class="text-gray-500 cursor-pointer hover:text-gray-900">Política de Privacidade</a>
+                        </li>
+                        <li class="mt-3">
+                            <a class="text-gray-500 cursor-pointer hover:text-gray-900">Central de Ajuda</a>
+                        </li>
+                        <li class="mt-3">
+                            <a class="text-gray-500 cursor-pointer hover:text-gray-900">Parceiros</a>
+                        </li>
+                        <li class="mt-3">
+                            <a class="text-gray-500 cursor-pointer hover:text-gray-900">Trabalhe Conosco</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="w-full px-4 lg:w-1/4 md:w-1/2">
+                    <h2 class="mb-3 text-sm font-medium tracking-widest text-gray-900 uppercase title-font">Candidatos</h2>
+                    <nav class="mb-10 list-none">
+                        <li class="mt-3">
+                            <a class="text-gray-500 cursor-pointer hover:text-gray-900">Ajuda</a>
+                        </li>
+                        <li class="mt-3">
+                            <a class="text-gray-500 cursor-pointer hover:text-gray-900">Blog</a>
+                        </li>
+                        <li class="mt-3">
+                            <a class="text-gray-500 cursor-pointer hover:text-gray-900">Aviso Legal</a>
+                        </li>
+                        <li class="mt-3">
+                            <a class="text-gray-500 cursor-pointer hover:text-gray-900">Guia de Cargos</a>
+                        </li>
+                        <li class="mt-3">
+                            <a class="text-gray-500 cursor-pointer hover:text-gray-900">Busca de Emprego Segura</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="w-full px-4 lg:w-1/4 md:w-1/2">
+                    <h2 class="mb-3 text-sm font-medium tracking-widest text-gray-900 uppercase title-font">Empresa
+                    </h2>
+                    <nav class="mb-10 list-none">
+                        <li class="mt-3">
+                            <a class="text-gray-500 cursor-pointer hover:text-gray-900">Ajuda</a>
+                        </li>
+                        <li class="mt-3">
+                            <a class="text-gray-500 cursor-pointer hover:text-gray-900">Blog</a>
+                        </li>
+                        <li class="mt-3">
+                            <a class="text-gray-500 cursor-pointer hover:text-gray-900">Anunciar Vagas</a>
+                        </li>
+                        <li class="mt-3">
+                            <a class="text-gray-500 cursor-pointer hover:text-gray-900">Buscar Candidatos</a>
+                        </li>
+                        <li class="mt-3">
+                            <a class="text-gray-500 cursor-pointer hover:text-gray-900">Produtos Para Empresa</a>
+                        </li>
+                    </nav>
+                </div>
             </div>
         </div>
-        
-        <div class="flex inset-x-0 flex-col justify-between p-3 mt-4 xl:flex-row lg:content-center w-full border rounded-md">
-        </div>
-        
-    </div>-->
+    </div>
+</div>
 
 
     <div class="inset-x-0 w-full lg:h-4/5 z-0 px-8 py-1 h-auto sm:px-16 sm:h-4/5 lg:px-40">
