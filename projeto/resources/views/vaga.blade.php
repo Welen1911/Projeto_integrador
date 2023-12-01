@@ -43,9 +43,22 @@
             </div>    
         </div>
     </div>
-    
 </div>
 
- 
+    <!--
+    <div class="inset-x-0 w-full lg:h-4/5 z-0 px-8 py-1 h-auto sm:px-16 sm:h-4/5 lg:px-40">
+        <div class="flex inset-x-0 flex-col justify-between p-3 mt-4 xl:flex-row lg:content-center">
+            <div class="grid content-center">
+                <h1 class="text-4xl text-indigo-800">Titulo da Vaga</h1>
+            </div>
+        </div>
+        
+        <div class="flex inset-x-0 flex-col justify-between p-3 mt-4 xl:flex-row lg:content-center w-full border rounded-md">
+        </div>
+        
+    </div>-->
+
+    
+
 </body>
 </html>
