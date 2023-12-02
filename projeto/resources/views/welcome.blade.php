@@ -12,7 +12,8 @@
 <body>
 
     <header>
-        <!-- Navigation Bar -->
+
+		<!-- Navigation Bar -->
         @include('components.app.header')
 
         <!-- Banner Inicial -->

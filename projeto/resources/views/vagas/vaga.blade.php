@@ -1,22 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pagtina @yield('titulo')</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body>
+@extends('_layout.principal')
 
 
+@section('header')
     <!-- Navigation Bar -->
     @include('components.app.header')
+@endsection
 
-
-
+@section('content')
     <div class="inset-x-0 mt-20 w-full lg:h-4/5 z-0 px-8 py-1 h-auto bg-gray-100 sm:px-16 sm:h-4/5 lg:px-40">
         <div class="flex inset-x-0 flex-col justify-center p-3 pt-20 pb-20 xl:flex-row lg:content-center w-full">
             <div class="grid place-items-center w-full">
@@ -144,7 +134,8 @@
             Candidatar-se!
         </p>
     </a>
-    @include('components.app.footer')
-</body>
+@endsection
 
-</html>
+@section('footer')
+    @include('components.app.footer')
+@endsection
