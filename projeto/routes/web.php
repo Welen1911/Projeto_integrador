@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/', function () {
-    return view('listVagas');
+    return view('welcome');
 });
 
 Route::get('/auth/redirect', function () {
@@ -20,8 +20,12 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/teste', function () {
-    return view('vaga');
+Route::get('/vagas/1', function () {
+    return view('vagas.vaga');
+});
+
+Route::get('/vagas', function () {
+    return view('vagas.listVagas');
 });
 
 Route::get('/cadastro', function () {
