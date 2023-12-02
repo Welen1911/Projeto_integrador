@@ -27,7 +27,3 @@ Route::get('/vagas/1', function () {
 Route::get('/vagas', function () {
     return view('vagas.listVagas');
 });
-
-Route::get('/cadastro', function () {
-    return view('cadastro');
-});
