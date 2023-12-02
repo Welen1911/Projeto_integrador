@@ -20,4 +20,8 @@ class Vaga extends Model
     public function candidaturas() {
         return $this->hasMany(Candidatura::class);
     }
+
+    public function vinculo() {
+        return $this->belongsTo(Vinculo::class);
+    }
 }

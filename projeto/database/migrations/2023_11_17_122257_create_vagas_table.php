@@ -27,8 +27,6 @@ class CreateVagasTable extends Migration
             $table->foreign('area_id')
             ->references('id')->on('areas');
 
-            $table->string('tipo_trabalho');
-            $table->string('tipo_vinculo');
             $table->timestamps();
         });
     }
