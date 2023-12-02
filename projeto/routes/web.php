@@ -34,3 +34,7 @@ require __DIR__.'/auth.php';
 Route::get('/teste', function () {
     return view('vaga');
 });
+
+Route::get('/cadastro', function () {
+    return view('cadastro');
+});
