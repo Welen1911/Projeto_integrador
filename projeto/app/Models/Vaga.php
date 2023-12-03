@@ -28,4 +28,8 @@ class Vaga extends Model
     public function requisitos() {
         return $this->hasMany(Requisito::class);
     }
+
+    public function atributos() {
+        return $this->hasMany(Atribuito::class);
+    }
 }

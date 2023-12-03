@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Atribuito;
 use App\Models\Requisito;
 use App\Models\Vaga;
 use Illuminate\Http\Request;
@@ -84,12 +85,17 @@ class VagaController extends Controller
         //
     }
 
-    public function requisitos(Request $request) {
-        $requisito = Requisito::create([
-            'titulo' => $request->titulo,
-            'vagas_id' => 2
-        ]);
+    // public function requisitos(Request $request) {
+    //     $requisito = Atribuito::create([
+    //         'titulo' => $request->titulo,
+    //         'vaga_id' => 2
+    //     ]);
 
-        return response()->json($requisito, 201);
-    }
+    //     return response()->json($requisito, 201);
+    // }
+
+    // public function teste() {
+    //     $vaga = Vaga::find(2);
+    //     return response([$vaga, $vaga->atributos, $vaga->candidaturas], 200);
+    // }
 }

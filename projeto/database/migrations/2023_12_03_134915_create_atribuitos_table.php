@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRequisitosTable extends Migration
+class CreateAtribuitosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateRequisitosTable extends Migration
      */
     public function up()
     {
-        Schema::create('requisitos', function (Blueprint $table) {
+        Schema::create('atribuitos', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
 
             $table->foreignId('vaga_id');
-            $table->foreign('vaga_id')->references('id')
+            $table->foreign('vaga_id')
             ->on('vagas')
+            ->references('id')
             ->cascadeOnUpdate()
             ->cascadeOnDelete();
             
@@ -34,6 +35,6 @@ class CreateRequisitosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('requisitos');
+        Schema::dropIfExists('atribuitos');
     }
 }
