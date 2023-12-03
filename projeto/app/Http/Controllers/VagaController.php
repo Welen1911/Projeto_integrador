@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Requisito;
 use App\Models\Vaga;
 use Illuminate\Http\Request;
 
@@ -81,5 +82,14 @@ class VagaController extends Controller
     public function destroy(Vaga $vaga)
     {
         //
+    }
+
+    public function requisitos(Request $request) {
+        $requisito = Requisito::create([
+            'titulo' => $request->titulo,
+            'vagas_id' => 2
+        ]);
+
+        return response()->json($requisito, 201);
     }
 }

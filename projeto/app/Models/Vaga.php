@@ -24,4 +24,8 @@ class Vaga extends Model
     public function vinculo() {
         return $this->belongsTo(Vinculo::class);
     }
+
+    public function requisitos() {
+        return $this->hasMany(Requisito::class);
+    }
 }
