@@ -20,48 +20,24 @@
         </div>
         <div class="w-full mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-2xl lg:mt-0 lg:w-5/12">
           <form class="flex flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl
-              relative z-10" action="{{ route('register') }}" method="post">
+              relative z-10" action="{{ route('tipo_conta.update') }}" method="post">
               @csrf
-            <p class="w-full text-4xl font-extrabold text-center leading-snug ">Cadastre-se no site</p>
+            <p class="w-full text-4xl font-extrabold text-center leading-snug ">Tipo da conta</p>
             <div class="w-full mt-6 mr-0 mb-0 ml-0 relative space-y-8">
               <div class="relative">
-                <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
-                    absolute">Nome</p>
-                <input placeholder="John" type="text" class="border placeholder-gray-400 focus:outline-none
+                <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">Tipo</p>
+                <select placeholder="123@ex.com" type="text" class="border placeholder-gray-400 focus:outline-none
                     focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
-                    border-gray-300 rounded-md" name="name"/>
-              </div>
-              <div class="relative">
-                <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">Email</p>
-                <input placeholder="123@ex.com" type="text" class="border placeholder-gray-400 focus:outline-none
-                    focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
-                    border-gray-300 rounded-md" name="email"/>
-              </div>
-              <div class="relative">
-                <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
-                    absolute">Senha</p>
-                <input placeholder="Password" type="password" class="border placeholder-gray-400 focus:outline-none
-                    focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
-                    border-gray-300 rounded-md" name="password"/>
-              </div>
-              <div class="relative">
-                <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
-                    absolute">Confirme a Senha</p>
-                <input placeholder="Password" type="password" class="border placeholder-gray-400 focus:outline-none
-                    focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
-                    border-gray-300 rounded-md" name="password_confirmation"/>
+                    border-gray-300 rounded-md" name="tipo_conta" value="{{ old('tipo_conta') }}"> 
+                    <option value="candidato">Candidato</option>
+                    <option value="empresa">Empresa</option>
+                </select>
               </div>
               <div class="relative">
                 <button class="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-800
-                    rounded-lg transition duration-200 hover:bg-indigo-600 ease">Cadastre-se</button>
+                    rounded-lg transition duration-200 hover:bg-indigo-600 ease">Entrar</button>
               </div>
-              <div class="relative">
-                <a class="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-800
-                    rounded-lg transition duration-200 hover:bg-indigo-600 ease" href="{{ route('social.login') }}">Register with Google</a>
-              </div>
-              <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
+              
 
             </div>
           </form>

@@ -39,14 +39,12 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'tipo_conta' => ['required', 'string'],
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'tipo_conta' => $request->tipo_conta
         ]);
 
         event(new Registered($user));
@@ -73,12 +71,20 @@ class RegisteredUserController extends Controller
                 'provider_id' => $providerUser->getId(),
                 'provider_token' => $providerUser->token,
                 'provider_refresh_token' => $providerUser->refreshToken,
-                'tipo_conta' => 'candidato',
             ]);
         }
 
         Auth::login($user);
  
         return redirect('/dashboard');
+    }
+
+    public function setTipoConta(Request $request) {
+        $user = User::find(auth()->user()->id);
+        $user->update([
+            'tipo_conta' => $request->tipo_conta
+        ]);
+
+        return redirect()->route('dashboard');
     }
 }

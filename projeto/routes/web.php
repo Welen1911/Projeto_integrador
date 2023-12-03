@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\RegisteredUserController;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -16,7 +17,7 @@ Route::get('/auth/callback', [RegisteredUserController::class, 'storeProvider'])
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth', 'tipo_conta'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 
@@ -28,3 +29,10 @@ Route::get('/vagas', function () {
     return view('vagas.listVagas');
 });
 
+Route::get('/tipo_conta', function () {
+    return view('tipo_conta');
+})->name('tipo_conta');
+
+
+Route::post('/tipo_conta', [RegisteredUserController::class, 'setTipoConta'])
+->name('tipo_conta.update');
