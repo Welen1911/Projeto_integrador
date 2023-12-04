@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\Auth\RegisteredUserController;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -21,18 +20,6 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/vagas/1', function () {
-    return view('vagas.vaga');
-});
+Route::prefix('conta')->group(base_path('routes/conta.php'));
 
-Route::get('/vagas', function () {
-    return view('vagas.listVagas');
-});
-
-Route::get('/tipo_conta', function () {
-    return view('tipo_conta');
-})->name('tipo_conta');
-
-
-Route::post('/tipo_conta', [RegisteredUserController::class, 'setTipoConta'])
-->name('tipo_conta.update');
+Route::prefix('/vagas')->group(base_path('routes/vaga.php'));
