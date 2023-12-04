@@ -16,7 +16,9 @@ class VagaController extends Controller
      */
     public function index()
     {
-        //
+        $vagas = Vaga::all();
+
+        return view('vagas.listVagas', compact('vagas'));
     }
 
     /**
@@ -84,18 +86,4 @@ class VagaController extends Controller
     {
         //
     }
-
-    // public function requisitos(Request $request) {
-    //     $requisito = Atribuito::create([
-    //         'titulo' => $request->titulo,
-    //         'vaga_id' => 2
-    //     ]);
-
-    //     return response()->json($requisito, 201);
-    // }
-
-    // public function teste() {
-    //     $vaga = Vaga::find(2);
-    //     return response([$vaga, $vaga->atributos, $vaga->candidaturas], 200);
-    // }
 }
