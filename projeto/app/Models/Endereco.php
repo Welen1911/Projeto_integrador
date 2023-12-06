@@ -21,4 +21,8 @@ class Endereco extends Model
     public function users() {
         return $this->hasMany(User::class);
     }
+
+    public function cidade() {
+        return $this->belongsTo(Cidade::class);
+    }
 }
