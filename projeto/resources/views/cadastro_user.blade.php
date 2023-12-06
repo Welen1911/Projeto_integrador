@@ -20,7 +20,7 @@
         </div>
         <div class="w-full mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-2xl lg:mt-0 lg:w-5/12">
           <form class="flex flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl
-              relative z-10" action="{{ route('tipo_conta.update') }}" method="post">
+              relative z-10" action="" method="">
               @csrf
             <p class="w-full text-4xl font-extrabold text-center leading-snug ">Tipo da conta</p>
             <div class="w-full mt-6 mr-0 mb-0 ml-0 relative space-y-8">
@@ -32,6 +32,57 @@
                     <option value="candidato">Candidato</option>
                     <option value="empresa">Empresa</option>
                 </select>
+              </div>
+              <div class="relative">
+                <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">Celular</p>
+                <input placeholder="(11) 4002-8922" type="text" class="border placeholder-gray-400 focus:outline-none
+                    focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                    border-gray-300 rounded-md" name="celular" value="{{ old('celular') }}"/> 
+              </div>
+              <div class="relative">
+                <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">CEP</p>
+                <input placeholder="00000-000" type="text" class="border placeholder-gray-400 focus:outline-none
+                    focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                    border-gray-300 rounded-md" name="cep" value="{{ old('cep') }}"/> 
+              </div>
+              <div class="relative">
+                <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">Estado</p>
+                <select placeholder="" type="text" class="border placeholder-gray-400 focus:outline-none
+                    focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                    border-gray-300 rounded-md" name="estado" value="{{ old('estado') }}"> 
+                    <option value="">RN</option>
+                    <option value="">PR</option>
+                  </select>
+              </div>
+              <div class="relative">
+                <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">Cidade</p>
+                <input placeholder="Nova Cruz" type="text" class="border placeholder-gray-400 focus:outline-none
+                    focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                    border-gray-300 rounded-md" name="cidade" value="{{ old('cidade') }}"/> 
+              </div>
+              <div class="relative">
+                <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">Bairro</p>
+                <input placeholder="Centro" type="text" class="border placeholder-gray-400 focus:outline-none
+                    focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                    border-gray-300 rounded-md" name="bairro" value="{{ old('bairro') }}"/> 
+              </div>
+              <div class="relative">
+                <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">Rua</p>
+                <input placeholder="Principal" type="text" class="border placeholder-gray-400 focus:outline-none
+                    focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                    border-gray-300 rounded-md" name="rua" value="{{ old('rua') }}"/> 
+              </div>
+              <div class="relative">
+                <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">Número</p>
+                <input placeholder="Principal" type="number" class="border placeholder-gray-400 focus:outline-none
+                    focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                    border-gray-300 rounded-md" name="numero" value="{{ old('numero') }}"/> 
+              </div>
+              <div class="relative">
+                <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">Complemento</p>
+                <input placeholder="Perto do sinal" type="text" class="border placeholder-gray-400 focus:outline-none
+                    focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                    border-gray-300 rounded-md" name="complemento" value="{{ old('complemento') }}"/> 
               </div>
               <div class="relative">
                 <button class="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-800
