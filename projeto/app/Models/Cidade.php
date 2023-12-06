@@ -12,4 +12,8 @@ class Cidade extends Model
     public function enderecos() {
         return $this->hasMany(Endereco::class);
     }
+
+    public function estado() {
+        return $this->belongsTo(Estado::class);
+    }
 }
