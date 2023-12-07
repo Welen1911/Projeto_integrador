@@ -1,4 +1,6 @@
-//com
+
+var contFormacao = 0
+
 
 $(function(){
     $('#cep').mask('00000-000');
@@ -43,24 +45,21 @@ $(document).ready(function(){
             $("#candidato").show();
             $("#candidatoCampo").show();
             $("#cpfCampo").show();
-            $("#empresa").hide();
-            $("#empresaCampo").hide();
             $("#cnpjCampo").hide();
+            $("#sub").hide();
 
           } else if (selectedOption === "2") {
-            $("#empresa").show();
-            $("#empresaCampo").show();
             $("#cnpjCampo").show();
+            $("#sub").show();
             $("#candidato").hide();
             $("#candidatoCampo").hide();
             $("#cpfCampo").hide();
           } else if (selectedOption === "0") {
-            $("#empresa").hide();
-            $("#empresaCampo").hide();
             $("#cnpjCampo").hide();
             $("#candidato").hide();
             $("#candidatoCampo").hide();
             $("#cpfCampo").hide();
+            $("#sub").hide();
           }
         },
         error: function(xhr, status, error) {
@@ -91,3 +90,68 @@ $(document).ready(function() {
     $(this).parent().remove();
   });
 });
+
+$(document).ready(()=>{
+  $('#teste').on('click', (event)=>{
+    $('#formacao').append(`
+        
+        <div class="-mx-3 md:flex mb-6">
+          <div class="md:w-full px-3">
+            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 " for="grid-password">
+              Instituição
+            </label>
+            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-password" type="text" placeholder="Rua longe pra caralho">
+            <p class="text-grey-dark text-xs italic">Make it as long and as crazy as you'd like</p>
+          </div>
+        </div>
+
+        <div class="-mx-3 md:flex mb-2">
+
+          <div class="md:w-1/2 px-3">
+            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-zip">
+              Nome do Curso
+            </label>
+            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4" id="" type="text" placeholder="Analise e Desenvolvimento de Sistemas">
+          </div>
+
+          <div class="md:w-1/2 px-3">
+            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-state">
+              Tipo de Fomação
+            </label>
+            <div class="flex flex-row-reverse items-center">
+              <select class="block appearance-none w-full bg-gray-300 border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="dropdown">
+                <option >Bacharelado</option>
+                <option >Tecnologo</option>
+                <option >Licenciatura</option>
+              </select>
+              <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
+                <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:w-1/2 px-3">
+            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-state">
+              Atualmente
+            </label>
+            <div class="flex flex-row-reverse items-center">
+              <select class="block appearance-none w-full bg-gray-300 border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="dropdown">
+                <option >Completo</option>
+                <option >Incompleto</option>
+                <option >Cursando</option>
+              </select>
+              <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
+                <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+
+        <h2 class="mb-4 text-lg">Formação ${contFormacao + 1}</h2>
+  
+    `)
+
+    contFormacao++
+  })
+})
