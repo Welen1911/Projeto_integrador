@@ -1,6 +1,6 @@
 <!-- form do candidato -->
 <div class=" shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2 bg-gray-100 hidden" id="candidato">
-    <h2 class="text-xl">Mais Informações do Candidato</h1>
+    <h2 class="text-xl mb-6">Mais Informações do Candidato</h2>
           
         <div class="-mx-3 md:flex mb-6">
             <div class="md:w-full h-40 px-3 break-all">
@@ -24,17 +24,28 @@
             </div>
         </div>
 
-        <div class="rounded border-2 flex py-5 px-5 flex-col-reverse" id="formacao">
+        <h2 class="text-xl mb-6">Formações</h1>
+        <div class="rounded border-2 flex py-5 px-5 flex-col-reverse mb-6" id="formacao">
             {{--Formação do Candidato--}}
             <div class="-mx-3 md:flex">
                 <div class="md:w-full px-3" id="">
-                    <p class="hover:cursor-pointer text-indigo-800 text-sm"  id="teste">Adiciona formação +</p>
+                    <p class="hover:cursor-pointer text-indigo-800 text-sm"  id="btnFormacao">Adiciona formação +</p>
                 </div>
             </div>
-        </div>   
+        </div>  
         
+        <h2 class="text-xl mb-6">Experiencias Proficionais</h1>
+          <div class="rounded border-2 flex py-5 px-5 flex-col-reverse mb-6" id="experiencia">
+              {{--Formação do Candidato--}}
+              <div class="-mx-3 md:flex">
+                  <div class="md:w-full px-3" id="">
+                      <p class="hover:cursor-pointer text-indigo-800 text-sm"  id="btnExperiencia">Adiciona experiencias +</p>
+                  </div>
+              </div>
+          </div>  
         
-        <div class="-mx-3 md:flex mt-6 mb-6">
+       
+        <div class="-mx-3 md:flex mb-6">
             <div class="md:w-full px-3" id="">
                 <input class="w-40 inline-block pt-4 pr-5 pb-4 pl-5 text-xl  font-medium text-center text-white bg-indigo-800
                 rounded-lg transition duration-200 hover:bg-indigo-600 ease" id="sub" type="submit" value="Enviar">
