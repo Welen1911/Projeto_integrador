@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('cadastro_user');
 });
 
 Route::get('/auth/redirect', function () {
@@ -23,3 +23,7 @@ require __DIR__.'/auth.php';
 Route::prefix('conta')->group(base_path('routes/conta.php'));
 
 Route::prefix('/vagas')->group(base_path('routes/vaga.php'));
+
+Route::get('teste', function () {
+    return view('cadastro_user');
+});
