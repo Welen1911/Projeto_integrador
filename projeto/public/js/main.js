@@ -48,7 +48,7 @@ $(document).ready(function () {
           $("#nomeCampo").show();
           $("#cpfCampo").show();
           $("#cnpjCampo").hide();
-          $("#sub").hide();
+          $("#sub").show();
 
         } else if (selectedOption === "2") {
           $("#nomeCampo").show();

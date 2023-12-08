@@ -172,8 +172,8 @@
         </div>
         </form>
 
-        <!-- form do candidato -->
-        @include('components.app.formCandidato')
+        {{-- <!-- form do candidato -->
+        @include('components.app.formCandidato') --}}
 
 
     </div>
