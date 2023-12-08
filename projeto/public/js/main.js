@@ -35,11 +35,11 @@ $(function () {
 $(document).ready(function(){
     $("#dropdown").change(function(){
       let selectedOption = $(this).val();
-
+      let _token = $("#token").val();
       $.ajax({
         url: '/conta/tipo_conta', // Substitua 'seu_arquivo.php' pelo arquivo que processará a requisição
-        method: 'get', // Pode ser POST ou GET, dependendo da sua implementação
-        data: { option: selectedOption },
+        method: 'POST', // Pode ser POST ou GET, dependendo da sua implementação
+        data: { option: selectedOption, _token },
         success: function(response) {
           $(this).prop("disabled", true);
           console.log(response);

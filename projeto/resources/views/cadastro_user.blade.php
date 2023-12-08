@@ -27,7 +27,7 @@
           Tipo de Conta
         </label>
         <div class="flex flex-row-reverse items-center">
-          <input type="text" value="{{ auth()->user()->id }}" id="user_id" hidden>
+          <input type="text" value="{{ csrf_token() }}" id="token" hidden>
           <select class="block appearance-none w-full bg-gray-300 border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="dropdown" name="tipo_conta">
             <option value="0">Selecione o tipo de conta</option>
             <option value="1">Candidato</option>
