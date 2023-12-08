@@ -35,10 +35,10 @@ $(function () {
 $(document).ready(function(){
     $("#dropdown").change(function(){
       let selectedOption = $(this).val();
-      let userId = $('#user_id').val();
+
       $.ajax({
-        url: '/api/tipo_conta/' + userId, // Substitua 'seu_arquivo.php' pelo arquivo que processará a requisição
-        method: 'put', // Pode ser POST ou GET, dependendo da sua implementação
+        url: '/conta/tipo_conta', // Substitua 'seu_arquivo.php' pelo arquivo que processará a requisição
+        method: 'get', // Pode ser POST ou GET, dependendo da sua implementação
         data: { option: selectedOption },
         success: function(response) {
           $(this).prop("disabled", true);

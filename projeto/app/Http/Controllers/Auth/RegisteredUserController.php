@@ -82,7 +82,7 @@ class RegisteredUserController extends Controller
         return redirect(RouteServiceProvider::HOME);
     }
 
-    public function setTipoConta(Request $request, string $id)
+    public function setTipoConta(Request $request)
     {
         if ($request->option == 1) {
             $tipo = "candidato";
@@ -91,7 +91,7 @@ class RegisteredUserController extends Controller
         } else {
             return response()->json(["Erro" => "Selecione um tipo de conta"],500);
         }
-        $user = User::find($id);
+        $user = User::find(auth()->user()->id);
         $user->update([
             'tipo_conta' => $tipo
         ]);

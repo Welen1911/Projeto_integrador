@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/tipo', function () {
     return view('cadastro_user');
-})->name('cadastro_user');
+})->name('cadastro_user')->middleware('auth');;
 
-Route::post('/tipo', [RegisteredUserController::class, 'setTipoConta'])
-->name('tipo_conta.update');
+Route::get('/tipo_conta', [RegisteredUserController::class, 'setTipoConta'])->middleware('auth');;

@@ -20,6 +20,7 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::prefix('conta')->group(base_path('routes/conta.php'));
+Route::prefix('/conta')->group(base_path('routes/conta.php'));
 
 Route::prefix('/vagas')->group(base_path('routes/vaga.php'));
+
