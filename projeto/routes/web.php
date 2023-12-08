@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\RegisteredUserController;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -15,7 +16,12 @@ Route::get('/auth/redirect', function () {
 Route::get('/auth/callback', [RegisteredUserController::class, 'storeProvider']);
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    if(Gate::allows('isEmpresa')) {
+        return view('empresa_dash');
+    } else if (Gate::allows('isCandidato')) {
+        return view('candidato_dash');
+    }
+
 })->middleware(['auth', 'tipo_conta'])->name('dashboard');
 
 require __DIR__.'/auth.php';
