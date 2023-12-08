@@ -81,7 +81,8 @@
                         <p class="text-red text-xs italic">Please fill out this field.</p>
                     </div>
                 </div>
-                <form action="" method="">
+                <form action="{{ route('infor.store') }}" method="post">
+                    @csrf
 
                     <div class="-mx-3 md:flex mb-6">
                         <div class="md:w-full px-3">
@@ -115,7 +116,7 @@
                             </label>
                             <input
                                 class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4"
-                                id="grid-city" type="text" name="cidade" placeholder="Logo ali" name="bairro">
+                                id="grid-city" type="text" placeholder="Logo ali" name="bairro">
                         </div>
 
                         <div class="md:w-1/2 px-3 mb-6 md:mb-0">
@@ -125,7 +126,7 @@
                             </label>
                             <input
                                 class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4"
-                                id="grid-city" type="text" name="estado" placeholder="Perto de onde eu tava" name="complemento">
+                                id="grid-city" type="text" placeholder="Perto de onde eu tava" name="complemento">
                         </div>
 
                     </div>
@@ -148,7 +149,7 @@
                             </label>
                             <input
                                 class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4"
-                                id="grid-city" type="text" name="cidade" placeholder="" name="cidade">
+                                id="grid-city" type="text" name="cidade" placeholder="">
                         </div>
 
                         <div class="md:w-1/2 px-3 mb-6 md:mb-0">
@@ -158,7 +159,7 @@
                             </label>
                             <input
                                 class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4"
-                                id="grid-city" type="text" name="estado" placeholder="" name="cidade">
+                                id="grid-city" type="text" name="estado" placeholder="">
                         </div>
 
                     </div>
@@ -182,7 +183,7 @@
                             </label>
                             <input
                                 class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4"
-                                id="fixo" type="text" name="cidade" placeholder="9999-9999" name="fixo">
+                                id="fixo" type="text" name="fixo" placeholder="9999-9999">
                         </div>
 
                     </div>
