@@ -75,6 +75,8 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $("#mudarNome").on('focusout', function () {
+    console.log("Entrou!");
+
     let name = $(this).val();
     let _token = $('#tokenName').val();
 
