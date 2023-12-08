@@ -154,14 +154,4 @@ class UserController extends Controller
 
         return redirect('/dashboard');
     }
-
-    public function mudarNome(Request $request) {
-        $user = User::find(auth()->user()->id);
-
-        $user->update([
-            'name' => $request->name,
-        ]);
-
-        return response()->json(['Sucesso' => $user], 200);
-    }
 }

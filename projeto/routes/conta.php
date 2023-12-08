@@ -11,6 +11,3 @@ Route::post('/tipo_conta', [UserController::class, 'setTipoConta'])
 Route::post('/infor', [UserController::class, 'informationStore'])
     ->name('infor.store')
     ->middleware('auth');
-
-Route::post('/mudarNome', [UserController::class, 'mudarNome'])
-->name('user.mudarNome');

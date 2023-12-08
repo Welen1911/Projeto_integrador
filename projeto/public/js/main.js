@@ -72,28 +72,6 @@ $(document).ready(function () {
   })
 })
 
-
-$(document).ready(function () {
-  $("#mudarNome").on('focusout', function () {
-    console.log("Entrou!");
-
-    let name = $(this).val();
-    let _token = $('#tokenName').val();
-
-    $.ajax({
-      url: '/conta/mudarNome',
-      method: 'POST',
-      data: { name, _token },
-      success: function (response) {
-        console.log(response);
-      },
-      error: function (xhr, status, error) {
-        console.error(error);
-      }
-    });
-  })
-})
-
 // $(document).ready(function(){
 //   $('#mudarNome').on('focusout', function() {
 //     let name = $(this).val();
