@@ -48,17 +48,17 @@
                         </div>
                     </div>
 
-                    <div class="md:w-1/2 px-3 mb-6 md:mb-0 hidden" id="candidatoCampo">
+                    <div class="md:w-1/2 px-3 mb-6 md:mb-0 hidden" id="nomeCampo">
+                        <input type="text" value="{{ csrf_token() }}" id="tokenName" hidden>
                         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
                             for="grid-first-name">
                             Nome Completo
                         </label>
                         <input
                             class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3"
-                            id="grid-first-name" type="text" placeholder="Gabigol de Arascaeta Henrique">
+                            id="grid-first-name" type="text" placeholder="Gabigol de Arascaeta Henrique" value="{{ $user->name ?? old('name') }}" id="mudarNome"/>
                         <p class="text-red text-xs italic">Digite o seu nome completo.</p>
                     </div>
-
                     <div class="md:w-1/2 px-3 mb-6 md:mb-0 hidden" id="cnpjCampo">
                         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
                             for="grid-first-name">
@@ -67,17 +67,6 @@
                         <input
                             class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3"
                             id="cnpj" type="text" placeholder="12.345.678/0001-10">
-                        <p class="text-red text-xs italic">Please fill out this field.</p>
-                    </div>
-
-                    <div class="md:w-1/2 px-3 mb-6 md:mb-0 hidden" id="cpfCampo">
-                        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
-                            for="grid-first-name">
-                            CPF
-                        </label>
-                        <input
-                            class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3"
-                            id="cnpj" type="text" placeholder="123.456.789-10">
                         <p class="text-red text-xs italic">Please fill out this field.</p>
                     </div>
                 </div>

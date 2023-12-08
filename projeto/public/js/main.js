@@ -3,12 +3,12 @@ var contFormacao = 0
 var contExperiancia = 0
 
 
-$(function(){
-    $('#cep').mask('00000-000');
-    $('#cnpj').mask('00.000.000/0000-00');
-    $('#cpf').mask('000.000.000-00');
-    $('#celular').mask('(00) 00000-0000');
-    $('#fixo').mask('0000-0000');
+$(function () {
+  $('#cep').mask('00000-000');
+  $('#cnpj').mask('00.000.000/0000-00');
+  $('#cpf').mask('000.000.000-00');
+  $('#celular').mask('(00) 00000-0000');
+  $('#fixo').mask('0000-0000');
 
 })
 
@@ -16,63 +16,103 @@ $(function(){
 //Completar Cidade e Estado pelo CEP
 
 $(function () {
-    // code
-    $('#cep').on('keyup', function (a) {
-        if ($(this).val().length == 9) {
-            $.ajax("http://viacep.com.br/ws/" + $(this).val().replace("-", "")
-            + "/json/", {
+  // code
+  $('#cep').on('keyup', function (a) {
+    if ($(this).val().length == 9) {
+      $.ajax("http://viacep.com.br/ws/" + $(this).val().replace("-", "")
+        + "/json/", {
         success: function (res) {
-            $("[name=cidade]").val(res.localidade);
-            $("[name=estado]").val(res.uf);
+          $("[name=cidade]").val(res.localidade);
+          $("[name=estado]").val(res.uf);
         }
-    });
+      });
     }
-    });
-    });
+  });
+});
 
 //Muda o Form Conforme o tipo de usuário
 
-$(document).ready(function(){
-    $("#dropdown").change(function(){
-      let selectedOption = $(this).val();
-      let _token = $("#token").val();
-      $.ajax({
-        url: '/conta/tipo_conta', // Substitua 'seu_arquivo.php' pelo arquivo que processará a requisição
-        method: 'POST', // Pode ser POST ou GET, dependendo da sua implementação
-        data: { option: selectedOption, _token },
-        success: function(response) {
-          $(this).prop("disabled", true);
-          console.log(response);
-          if (selectedOption === "1") {
-            $("#candidato").show();
-            $("#candidatoCampo").show();
-            $("#cpfCampo").show();
-            $("#cnpjCampo").hide();
-            $("#sub").hide();
+$(document).ready(function () {
+  $("#dropdown").change(function () {
+    let selectedOption = $(this).val();
+    let _token = $("#token").val();
+    $.ajax({
+      url: '/conta/tipo_conta', // Substitua 'seu_arquivo.php' pelo arquivo que processará a requisição
+      method: 'POST', // Pode ser POST ou GET, dependendo da sua implementação
+      data: { option: selectedOption, _token },
+      success: function (response) {
+        $(this).prop("disabled", true);
+        console.log(response);
+        if (selectedOption === "1") {
+          $("#candidato").show();
+          $("#nomeCampo").show();
+          $("#cpfCampo").show();
+          $("#cnpjCampo").hide();
+          $("#sub").hide();
 
-          } else if (selectedOption === "2") {
-            $("#cnpjCampo").show();
-            $("#sub").show();
-            $("#candidato").hide();
-            $("#candidatoCampo").hide();
-            $("#cpfCampo").hide();
-          } else if (selectedOption === "0") {
-            $("#cnpjCampo").hide();
-            $("#candidato").hide();
-            $("#candidatoCampo").hide();
-            $("#cpfCampo").hide();
-            $("#sub").hide();
-          }
-        },
-        error: function(xhr, status, error) {
-          console.error(error);
+        } else if (selectedOption === "2") {
+          $("#nomeCampo").show();
+          $("#cnpjCampo").show();
+          $("#sub").show();
+          $("#candidato").hide();
+          $("#candidatoCampo").hide();
+          $("#cpfCampo").hide();
+        } else if (selectedOption === "0") {
+          $("#cnpjCampo").hide();
+          $("#candidato").hide();
+          $("#candidatoCampo").hide();
+          $("#cpfCampo").hide();
+          $("#sub").hide();
         }
+      },
+      error: function (xhr, status, error) {
+        console.error(error);
+      }
     });
   })
 })
 
-$(document).ready(function() {
-  $('#tagInput').on('keydown', function(event) {
+
+$(document).ready(function () {
+  $("#mudarNome").on('focusout', function () {
+    let name = $(this).val();
+    let _token = $('#tokenName').val();
+
+    $.ajax({
+      url: '/conta/mudarNome',
+      method: 'POST',
+      data: { name, _token },
+      success: function (response) {
+        console.log(response);
+      },
+      error: function (xhr, status, error) {
+        console.error(error);
+      }
+    });
+  })
+})
+
+// $(document).ready(function(){
+//   $('#mudarNome').on('focusout', function() {
+//     let name = $(this).val();
+//     let _token = $('#tokenName').val();
+
+//     $.ajax({
+//       url: '/conta/mudarNome',
+//       method: 'POST',
+//       data: {name, _token},
+//       success: function () {
+//         console.log(response);
+//       },
+//       error: function(xhr, status, error) {
+//         console.error(error);
+//       }
+//     })
+//   })
+// })
+
+$(document).ready(function () {
+  $('#tagInput').on('keydown', function (event) {
     if (event.key === 'Enter' || event.keyCode === 13) {
       event.preventDefault();
 
@@ -88,14 +128,14 @@ $(document).ready(function() {
   });
 
   // Remover a tag quando o botão "x" é clicado
-  $('#tagInputWrapper').on('click', 'button', function() {
+  $('#tagInputWrapper').on('click', 'button', function () {
     $(this).parent().remove();
   });
 });
 
 //Adiciona Formm de Formação
-$(document).ready(()=>{
-  $('#btnFormacao').on('click', (event)=>{
+$(document).ready(() => {
+  $('#btnFormacao').on('click', (event) => {
     $('#formacao').append(`
         
         <div class="-mx-3 md:flex mb-6">
@@ -160,8 +200,8 @@ $(document).ready(()=>{
 })
 
 // Adiciona Form de Experiencias
-$(document).ready(()=>{
-  $('#btnExperiencia').on('click', (event)=>{
+$(document).ready(() => {
+  $('#btnExperiencia').on('click', (event) => {
     $('#experiencia').append(`
         
         <div class="-mx-3 md:flex mb-6">

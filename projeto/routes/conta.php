@@ -1,14 +1,16 @@
 <?php
 
-use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/tipo', function () {
-    return view('cadastro_user');
-})->name('cadastro_user')->middleware('auth');
+Route::get('/tipo', [UserController::class, 'tipoConta'])->name('cadastro_user')->middleware('auth');
 
-Route::post('/tipo_conta', [RegisteredUserController::class, 'setTipoConta'])->middleware('auth');
+Route::post('/tipo_conta', [UserController::class, 'setTipoConta'])
+    ->middleware('auth');
 
-Route::post('/infor', [RegisteredUserController::class, 'informationStore'])
-->name('infor.store')
-->middleware('auth');
+Route::post('/infor', [UserController::class, 'informationStore'])
+    ->name('infor.store')
+    ->middleware('auth');
+
+Route::post('/mudarNome', [UserController::class, 'mudarNome'])
+->name('user.mudarNome');
