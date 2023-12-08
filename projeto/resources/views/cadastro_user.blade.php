@@ -17,7 +17,7 @@
   
   @include('components.app.header')
 
-<form class="inset-x-0 mt-20 z-10 w-full px-8 sm:px-16 lg:px-40 py-1 " id="myForm">
+<div class="inset-x-0 mt-20 z-10 w-full px-8 sm:px-16 lg:px-40 py-1 " id="myForm">
   <!-- component -->
   <div class=" shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2 bg-gray-100 ">
     <h2 class="text-xl">Informações do Usuário</h1>
@@ -27,7 +27,8 @@
           Tipo de Conta
         </label>
         <div class="flex flex-row-reverse items-center">
-          <select class="block appearance-none w-full bg-gray-300 border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="dropdown">
+          <input type="text" value="{{ auth()->user()->id }}" id="user_id" hidden>
+          <select class="block appearance-none w-full bg-gray-300 border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="dropdown" name="tipo_conta">
             <option value="0">Selecione o tipo de conta</option>
             <option value="1">Candidato</option>
             <option value="2">Empresa</option>
@@ -150,7 +151,7 @@
   @include('components.app.formCandidato')
 
   
-</form>
+</div>
 
 </body>
 </html>

@@ -54,7 +54,8 @@ class RegisteredUserController extends Controller
         return redirect(RouteServiceProvider::HOME);
     }
 
-    public function storeProvider() {
+    public function storeProvider()
+    {
         $providerUser = Socialite::driver('google')->user();
 
         $user = User::where('provider_id', $providerUser->getId())->first();
@@ -74,17 +75,27 @@ class RegisteredUserController extends Controller
             ]);
         }
 
+        event(new Registered($user));
+
         Auth::login($user);
- 
-        return redirect('/dashboard');
+
+        return redirect(RouteServiceProvider::HOME);
     }
 
-    public function setTipoConta(Request $request) {
-        $user = User::find(auth()->user()->id);
+    public function setTipoConta(Request $request, string $id)
+    {
+        if ($request->option == 1) {
+            $tipo = "candidato";
+        } else if ($request->option == 2) {
+            $tipo = "empresa";
+        } else {
+            return response()->json(["Erro" => "Selecione um tipo de conta"],500);
+        }
+        $user = User::find($id);
         $user->update([
-            'tipo_conta' => $request->tipo_conta
+            'tipo_conta' => $tipo
         ]);
 
-        return redirect()->route('dashboard');
+        return response()->json(["Sucesso" => $user], 200);
     }
 }

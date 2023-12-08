@@ -34,14 +34,15 @@ $(function () {
 
 $(document).ready(function(){
     $("#dropdown").change(function(){
-      var selectedOption = $(this).val();
-      
+      let selectedOption = $(this).val();
+      let userId = $('#user_id').val();
       $.ajax({
-        url: '/', // Substitua 'seu_arquivo.php' pelo arquivo que processará a requisição
-        method: 'GET', // Pode ser POST ou GET, dependendo da sua implementação
+        url: '/api/tipo_conta/' + userId, // Substitua 'seu_arquivo.php' pelo arquivo que processará a requisição
+        method: 'put', // Pode ser POST ou GET, dependendo da sua implementação
         data: { option: selectedOption },
         success: function(response) {
-
+          $(this).prop("disabled", true);
+          console.log(response);
           if (selectedOption === "1") {
             $("#candidato").show();
             $("#candidatoCampo").show();
