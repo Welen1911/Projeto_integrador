@@ -16,17 +16,21 @@ Route::get('/auth/redirect', function () {
 Route::get('/auth/callback', [RegisteredUserController::class, 'storeProvider']);
 
 Route::get('/dashboard', function () {
-    if(Gate::allows('isEmpresa')) {
-        return view('empresa_dash');
+    if (Gate::allows('isEmpresa')) {
+        if (Gate::allows('empresa_create')) {
+            return view('empresa_dash');
+        }
+        return "Tu é uma empresa, mas ainda não foi criado :(";
     } else if (Gate::allows('isCandidato')) {
-        return view('candidato_dash');
+        if (Gate::allows('candidato_create')) {
+            return view('candidato_dash');
+        }
+        return "Tu é um candidato sem ser criado :(";
     }
-
 })->middleware(['auth', 'tipo_conta'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 Route::prefix('/conta')->group(base_path('routes/conta.php'));
 
 Route::prefix('/vagas')->group(base_path('routes/vaga.php'));
-
