@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Area;
 use App\Models\Atribuito;
 use App\Models\Requisito;
 use App\Models\Vaga;
+use App\Models\Vinculo;
 use Illuminate\Http\Request;
 
 class VagaController extends Controller
@@ -28,7 +30,8 @@ class VagaController extends Controller
      */
     public function create()
     {
-        //
+        $areas = Area::all();
+        return view('vagas.cadastro', compact('areas'));
     }
 
     /**
@@ -39,7 +42,24 @@ class VagaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $vinculo = Vinculo::where('nome', $request->vinculo)->first();
+
+        if (!$vinculo) {
+            $vinculo = Vinculo::create([
+                'nome' => $request->vinculo,
+            ]);
+        }
+
+        Vaga::create([
+            'empresa_id' => auth()->user()->empresa->id,
+            'titulo' => $request->titulo,
+            'descricao' => $request->descricao,
+            'area_id' => $request->area,
+            'titulo' => $request->titulo,
+            'vinculo_id' => $vinculo->id,
+        ]);
+
+        return redirect('dashboard');
     }
 
     /**

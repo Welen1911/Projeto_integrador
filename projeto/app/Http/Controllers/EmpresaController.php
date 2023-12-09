@@ -14,7 +14,9 @@ class EmpresaController extends Controller
      */
     public function index()
     {
-        //
+        $empresa = auth()->user()->empresa;
+
+        return view('empresa_dash', compact('empresa'));
     }
 
     /**

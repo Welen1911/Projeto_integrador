@@ -18,7 +18,7 @@ Route::get('/auth/callback', [RegisteredUserController::class, 'storeProvider'])
 Route::get('/dashboard', function () {
     if (Gate::allows('isEmpresa')) {
         if (Gate::allows('empresa_create')) {
-            return view('empresa_dash');
+            return redirect()->route('empresa.index');
         }
         return redirect()->route('empresa.create');
     } else if (Gate::allows('isCandidato')) {
@@ -33,9 +33,8 @@ require __DIR__ . '/auth.php';
 
 Route::prefix('/conta')->group(base_path('routes/conta.php'));
 
-Route::prefix('/vagas')->group(base_path('routes/vaga.php'));
-
 Route::prefix('/candidato')->group(base_path('routes/candidato.php'));
 
 Route::prefix('/empresa')->group(base_path('routes/empresa.php'));
 
+Route::prefix('/vagas')->group(base_path('routes/vaga.php'));

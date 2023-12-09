@@ -7,7 +7,7 @@
         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
           Titulo da Vaga 
         </label>
-        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Vagabundo Senior">
+        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Vagabundo Senior" name="titulo">
         <p class="text-red text-xs italic"></p>
       </div>
 
@@ -15,7 +15,11 @@
         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
           Tipo de Candidatura
         </label>
-        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="PJ">
+        <select class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-first-name" name="vinculo">
+          <option value="pj">PJ</option>
+          <option value="clt">CLT</option>
+          <option value="fr">Freelancer</option>
+        </select>
         <p class="text-red text-xs italic">Please fill out this field.</p>
       </div>
 
@@ -23,7 +27,11 @@
         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
           Modelo de Trabalho
         </label>
-        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Remoto">
+        <select class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-first-name" name="tipo">
+          <option value="r">Remoto</option>
+          <option value="p">Presencial</option>
+          <option value="h">Hibrido</option>
+        </select>
         <p class="text-red text-xs italic">Please fill out this field.</p>
       </div>
 
@@ -35,7 +43,11 @@
         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
           Área da Vaga
         </label>
-        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-password" type="text" placeholder="Profissional em fazer nada">
+        <select class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-password" name="area">
+          @foreach ($areas as $area)
+              <option value="{{ $area->id }}">{{ $area->nome }}</option>
+          @endforeach
+        </select>
         <p class="text-grey-dark text-xs italic">Make it as long and as crazy as you'd like</p>
       </div>
     </div>
@@ -45,7 +57,7 @@
         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
           Descrição
         </label>
-        <textarea id="message" rows="4" class="block p-2.5 w-full text-sm bg-grey-lighter border-gray-500  rounded border " placeholder="Taca qualquer coisa ai"></textarea>
+        <textarea id="message" rows="4" class="block p-2.5 w-full text-sm bg-grey-lighter border-gray-500  rounded border " placeholder="Taca qualquer coisa ai" name="descricao"></textarea>
         <p class="text-grey-dark text-xs italic">Make it as long and as crazy as you'd like</p>
       </div>
     </div>
@@ -53,14 +65,27 @@
     <div class="-mx-3 md:flex mb-6">
       <div class="md:w-full px-3" id="">
         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 " for="grid-password">
-          Habilidades e Ferramentas
+          O que o empregado fará na vaga
         </label>
         <div id="tagInputWrapper" class="flex flex-wrap bg-grey-lighter text-grey-darke">
-          <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="tagInput" type="text" placeholder="Habilidades pra encher linguiça">
+          <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="tagInput" type="text" placeholder="Tudo e um cafezin">
         </div>
         <p class="text-grey-dark text-xs italic">Make it as long and as crazy as you'd like</p>
       </div>
     </div>
+
+    <div class="-mx-3 md:flex mb-6">
+      <div class="md:w-full px-3" id="">
+        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 " for="grid-password">
+          Requisitos
+        </label>
+        <div id="tagInputWrapper" class="flex flex-wrap bg-grey-lighter text-grey-darke">
+          <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="tagInput" type="text" placeholder="Ter recebido o Nobel">
+        </div>
+        <p class="text-grey-dark text-xs italic">Make it as long and as crazy as you'd like</p>
+      </div>
+    </div>
+
 
     <input class="w-40 inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-800
     rounded-lg transition duration-200 hover:bg-indigo-600 ease" type="submit" value="Enviar">

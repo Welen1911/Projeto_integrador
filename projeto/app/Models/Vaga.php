@@ -9,6 +9,14 @@ class Vaga extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'empresa_id',
+        'titulo',
+        'descricao',
+        'area_id',
+        'vinculo_id',
+    ];
+
     public function empresa() {
         return $this->belongsTo(Empresa::class);
     }

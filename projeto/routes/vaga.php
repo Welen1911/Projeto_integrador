@@ -7,4 +7,4 @@ Route::get('/1', function () {
     return view('vagas.vaga');
 });
 
-Route::get('', [VagaController::class, 'index']);
+Route::resource('/vaga', VagaController::class);
