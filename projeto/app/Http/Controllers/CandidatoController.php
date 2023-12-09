@@ -44,7 +44,7 @@ class CandidatoController extends Controller
         ]);
 
         $cont = $request->cursando != null ?
-            count($request->trabalhando) : 0;
+            count($request->cursando) : 0;
 
 
         for ($i = 0; $i < $cont; $i++) {

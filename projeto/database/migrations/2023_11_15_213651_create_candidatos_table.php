@@ -15,7 +15,7 @@ class CreateCandidatosTable extends Migration
     {
         Schema::create('candidatos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->unique();
+            $table->foreignId('user_id');
             $table->foreign('user_id')
             ->references('id')->on('users');
 

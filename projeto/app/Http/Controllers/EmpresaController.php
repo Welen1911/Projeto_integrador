@@ -35,7 +35,13 @@ class EmpresaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $empresa = Empresa::create([
+            'user_id' => auth()->user()->id,
+            'cnpj' => $request->cnpj,
+            'descricao' => $request->descricao,
+        ]);
+
+        return redirect('dashboard');
     }
 
     /**
