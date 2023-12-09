@@ -20,7 +20,7 @@ Route::get('/dashboard', function () {
         if (Gate::allows('empresa_create')) {
             return view('empresa_dash');
         }
-        return "Tu é uma empresa, mas ainda não foi criado :(";
+        return redirect()->route('empresa.create');
     } else if (Gate::allows('isCandidato')) {
         if (Gate::allows('candidato_create')) {
             return view('candidato_dash');
@@ -36,3 +36,6 @@ Route::prefix('/conta')->group(base_path('routes/conta.php'));
 Route::prefix('/vagas')->group(base_path('routes/vaga.php'));
 
 Route::prefix('/candidato')->group(base_path('routes/candidato.php'));
+
+Route::prefix('/empresa')->group(base_path('routes/empresa.php'));
+
