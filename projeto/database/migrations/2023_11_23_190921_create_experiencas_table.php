@@ -17,7 +17,7 @@ class CreateExperiencasTable extends Migration
             $table->id();
             $table->string('empresa')->nullable();
             $table->text('descricao');
-
+            $table->string('trabalhando');
             $table->foreignId('candidato_id');
             $table->foreign('candidato_id')
             ->references('id')->on('candidatos')

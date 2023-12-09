@@ -24,7 +24,7 @@ class CandidatoController extends Controller
      */
     public function create()
     {
-        //
+        return view('candidato.cadastro');
     }
 
     /**
@@ -35,7 +35,7 @@ class CandidatoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**

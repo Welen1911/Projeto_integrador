@@ -19,7 +19,7 @@ class CreateCandidatosTable extends Migration
             $table->foreign('user_id')
             ->references('id')->on('users');
 
-            $table->integer('idade');
+            $table->text('sobre');
             $table->string('curriculo')->nullable();
             $table->timestamps();
         });

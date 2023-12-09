@@ -25,7 +25,7 @@ Route::get('/dashboard', function () {
         if (Gate::allows('candidato_create')) {
             return view('candidato_dash');
         }
-        return "Tu é um candidato sem ser criado :(";
+        return redirect()->route('candidato.create');
     }
 })->middleware(['auth', 'tipo_conta'])->name('dashboard');
 
@@ -34,3 +34,5 @@ require __DIR__ . '/auth.php';
 Route::prefix('/conta')->group(base_path('routes/conta.php'));
 
 Route::prefix('/vagas')->group(base_path('routes/vaga.php'));
+
+Route::prefix('/candidato')->group(base_path('routes/candidato.php'));
