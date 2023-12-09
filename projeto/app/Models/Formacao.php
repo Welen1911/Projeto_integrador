@@ -9,6 +9,14 @@ class Formacao extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'instituto',
+        'tipo',
+        'curso',
+        'cursando',
+        'candidato_id',
+    ];
+
     public function candidato() {
         return $this->belongsTo(Candidato::class);
     }

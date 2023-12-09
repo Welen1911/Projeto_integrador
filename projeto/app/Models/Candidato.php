@@ -9,6 +9,13 @@ class Candidato extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'user_id',
+        'sobre',
+        'curriculo',
+        'area_id',
+    ];
+
     public function user() {
         return $this->belongsTo(User::class);
     }
