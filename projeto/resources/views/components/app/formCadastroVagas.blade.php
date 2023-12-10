@@ -62,30 +62,26 @@
       </div>
     </div>
 
-    <div class="-mx-3 md:flex mb-6">
-      <div class="md:w-full px-3" id="">
-        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 " for="grid-password">
-          O que o empregado fará na vaga
-        </label>
-        <div id="tagInputWrapper" class="flex flex-wrap bg-grey-lighter text-grey-darke">
-          <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="tagInput" type="text" placeholder="Tudo e um cafezin">
-        </div>
-        <p class="text-grey-dark text-xs italic">Make it as long and as crazy as you'd like</p>
+    <h2 class="text-xl mb-6">Atributos do empregado na empresa</h1>
+      <div class="rounded border-2 flex py-5 px-5 flex-col-reverse mb-6" id="atributo">
+          {{-- Formação do Candidato --}}
+          <div class="-mx-3 md:flex">
+              <div class="md:w-full px-3" id="">
+                  <p class="hover:cursor-pointer text-indigo-800 text-sm" id="btnatributos">Adiciona atributo +</p>
+              </div>
+          </div>
       </div>
-    </div>
 
-    <div class="-mx-3 md:flex mb-6">
-      <div class="md:w-full px-3" id="">
-        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 " for="grid-password">
-          Requisitos
-        </label>
-        <div id="tagInputWrapper" class="flex flex-wrap bg-grey-lighter text-grey-darke">
-          <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="tagInput" type="text" placeholder="Ter recebido o Nobel">
-        </div>
-        <p class="text-grey-dark text-xs italic">Make it as long and as crazy as you'd like</p>
-      </div>
-    </div>
-
+      <h2 class="text-xl mb-6">Requisitos</h1>
+          <div class="rounded border-2 flex py-5 px-5 flex-col-reverse mb-6" id="requisito">
+              {{-- Formação do Candidato --}}
+              <div class="-mx-3 md:flex">
+                  <div class="md:w-full px-3" id="">
+                      <p class="hover:cursor-pointer text-indigo-800 text-sm" id="btnRequisitos">Adiciona
+                          experiencias +</p>
+                  </div>
+              </div>
+          </div>
 
     <input class="w-40 inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-800
     rounded-lg transition duration-200 hover:bg-indigo-600 ease" type="submit" value="Enviar">

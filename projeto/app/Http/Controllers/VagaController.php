@@ -50,7 +50,7 @@ class VagaController extends Controller
             ]);
         }
 
-        Vaga::create([
+        $vaga = Vaga::create([
             'empresa_id' => auth()->user()->empresa->id,
             'titulo' => $request->titulo,
             'descricao' => $request->descricao,
@@ -58,6 +58,24 @@ class VagaController extends Controller
             'titulo' => $request->titulo,
             'vinculo_id' => $vinculo->id,
         ]);
+
+        $qtdAtributo = $request->atributo != null ?
+            count($request->atributo) : 0;
+
+        for ($i = 0; $i < $qtdAtributo; $i++) {
+            $vaga->atributos()->create([
+                'titulo' => $request->atributo[$i],
+            ]);
+        }
+
+        $qtdRequisitos = $request->requisito != null ?
+            count($request->requisito) : 0;
+
+        for ($i = 0; $i < $qtdRequisitos; $i++) {
+            $vaga->requisitos()->create([
+                'titulo' => $request->requisito[$i],
+            ]);
+        }
 
         return redirect('dashboard');
     }
