@@ -216,6 +216,6 @@ $(document).ready(() => {
   
     `)
 
-    contFormacao++
+    contExperiancia++
   })
 })
