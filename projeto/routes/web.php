@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
+    return view('candidato_dash');
 });
 
 Route::get('/auth/redirect', function () {
