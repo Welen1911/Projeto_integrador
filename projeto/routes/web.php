@@ -7,7 +7,7 @@ use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/', function () {
     //return view('welcome');
-    return view('candidato_dash');
+    return view('empresa_dash');
 });
 
 Route::get('/auth/redirect', function () {
