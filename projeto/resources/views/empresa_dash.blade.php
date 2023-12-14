@@ -126,7 +126,14 @@
             <button class="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-gray-500 hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30 hidden items-center gap-1 px-4 xl:flex" type="button">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-5 w-5 text-blue-gray-500">
                 <path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" clip-rule="evenodd"></path>
-              </svg>Sign In </button>
+              </svg>
+              @guest
+              Sign In 
+              @endguest
+              @auth
+                  {{ auth()->user()->name }}
+              @endauth
+            </button>
             <button class="relative middle none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-500 hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30 grid xl:hidden" type="button">
               <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-5 w-5 text-blue-gray-500">
@@ -222,16 +229,16 @@
         </div>
       </div>
       
-      <div class="mb-4 grid grid-cols-1 gap-6 xl:grid-cols-3">
+      <div class="mb-4 grid grid-cols-1 gap-6 xl:grid-cols-2">
         <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md overflow-hidden xl:col-span-2">
           <div class="relative bg-clip-border rounded-xl overflow-hidden bg-transparent text-gray-700 shadow-none m-0 flex items-center justify-between p-6">
             <div>
-              <h6 class="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-blue-gray-900 mb-1">Entrevistas</h6>
+              <h6 class="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-blue-gray-900 mb-1">Vagas da sua Empresa</h6>
               <p class="antialiased font-sans text-sm leading-normal flex items-center gap-1 font-normal text-blue-gray-600">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" aria-hidden="true" class="h-4 w-4 text-blue-500">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
                 </svg>
-                <strong>30 realizadas</strong> esse mês
+                <strong>Informações</strong> das vagas
               </p>
             </div>
             <button aria-expanded="false" aria-haspopup="menu" id=":r5:" class="relative middle none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-8 max-w-[32px] h-8 max-h-[32px] rounded-lg text-xs text-blue-gray-500 hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30" type="button">
@@ -253,7 +260,10 @@
                     <p class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">Área</p>
                   </th>
                   <th class="border-b border-blue-gray-50 py-3 px-6 text-left">
-                    <p class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">completion</p>
+                    <p class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">Candidaturas</p>
+                  </th>
+                  <th class="border-b border-blue-gray-50 py-3 px-6 text-left">
+                    <p class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">Ações</p>
                   </th>
                 </tr>
               </thead>
@@ -270,11 +280,14 @@
                   </td>
                   <td class="py-3 px-5 border-b border-blue-gray-50">
                     <div class="w-10/12">
-                      <p class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600">60%</p>
+                      <p class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600">0</p>
                       <div class="flex flex-start bg-blue-gray-50 overflow-hidden w-full rounded-sm font-sans text-xs font-medium h-1">
                         <div class="flex justify-center items-center h-full bg-gradient-to-tr from-blue-600 to-blue-400 text-white" style="width: 60%;"></div>
                       </div>
                     </div>
+                  </td>
+                  <td class="py-3 px-5 border-b border-blue-gray-50">
+                    <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">Show</p>
                   </td>
                 </tr>
                 <tr>
