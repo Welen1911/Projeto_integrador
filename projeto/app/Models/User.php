@@ -24,7 +24,8 @@ class User extends Authenticatable
         'provider_id',
         'provider_token',
         'provider_refresh_token',
-        'tipo_conta'
+        'tipo_conta',
+        'endereco_id',
     ];
 
     /**

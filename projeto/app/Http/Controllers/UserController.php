@@ -139,12 +139,16 @@ class UserController extends Controller
 
         }
 
-        $user->endereco()->create([
+        $endereco = $user->endereco()->create([
             'bairro' => $request->bairro,
             'rua' => $request->rua,
             'numero' => $request->numero,
             'complemento' => $request->complemento,
             'cidade_id' => $cidade->id,
+        ]);
+
+        $user->update([
+            'endereco_id' => $endereco->id,
         ]);
 
         $user->telefones()->create([
