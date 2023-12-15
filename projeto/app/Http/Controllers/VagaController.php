@@ -122,6 +122,8 @@ class VagaController extends Controller
      */
     public function destroy(Vaga $vaga)
     {
-        //
+        $vaga->delete();
+
+        return redirect()->route('dashboard');
     }
 }

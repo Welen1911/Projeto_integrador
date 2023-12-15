@@ -10,30 +10,72 @@
     <div class="inset-x-0 mt-20 w-full lg:h-4/5 z-0 px-8 py-1 h-auto bg-gray-100 sm:px-16 sm:h-4/5 lg:px-40">
         <div class="flex inset-x-0 flex-col justify-center p-3 pt-20 pb-20 xl:flex-row lg:content-center w-full">
             <div class="grid place-items-center w-full">
-                <p class="text-2x1 text-white-800 align">Tipo de vaga</p>
-                <h1 class="text-5xl mt-4 text-white-800">Titulo da Vada</h1>
-
-                <div class="mt-4 justify-center flex w-full flex-col flex-wrap gap-3 xl:flex-row">
-                    <a href="/"
-                        class="text-white hover:bg-white hover:text-indigo-800 focus:outline-none focus:ring-4 focus:ring-indigo-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 bg-indigo-600 focus:ring-white-800">C#</a>
-                    <a href="/"
-                        class="text-white hover:bg-white hover:text-indigo-800 focus:outline-none focus:ring-4 focus:ring-indigo-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 bg-indigo-600 focus:ring-white-800">Laravel</a>
-                    <a href="/"
-                        class="text-white hover:bg-white hover:text-indigo-800 focus:outline-none focus:ring-4 focus:ring-indigo-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 bg-indigo-600 focus:ring-white-800">TailwindCSS</a>
-                    <a href="/"
-                        class="text-white hover:bg-white hover:text-indigo-800 focus:outline-none focus:ring-4 focus:ring-indigo-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 bg-indigo-600 focus:ring-white-800">Angular</a>
-                    <a href="/"
-                        class="text-white hover:bg-white hover:text-indigo-800 focus:outline-none focus:ring-4 focus:ring-indigo-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 bg-indigo-600 focus:ring-white-800">PHP</a>
-                </div>
+                <p class="text-2x1 text-white-800 align">{{ $vaga->vinculo->nome }}</p>
+                <h1 class="text-5xl mt-4 text-white-800">{{ $vaga->titulo }}</h1>
             </div>
         </div>
     </div>
 
 
+    
+
+
+    <div class="inset-x-0 w-full lg:h-4/5 z-0 px-8 py-1 h-auto sm:px-16 sm:h-4/5 lg:px-40">
+        <div class="flex inset-x-0 flex-col justify-between p-3 mt-4 xl:flex-row lg:content-center">
+            <div class="grid content-center">
+                <h1 class="text-4xl text-indigo-800 flex-auto">Sobre a vaga</h1>
+                <p class="mt-3 text-justify ml-7">
+                    {{ $vaga->descricao }}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    @if ($vaga->atributos && count($vaga->atributos) > 0)
+    <div class="inset-x-0 w-full lg:h-4/5 z-0 px-8 py-1 h-auto sm:px-16 sm:h-4/5 lg:px-40">
+        <div class="flex inset-x-0 flex-col justify-between p-3 mt-4 xl:flex-row lg:content-center">
+            <div class="grid content-center">
+                <h1 class="text-3xl text-indigo-800 flex-auto">Responsabilidades e atribuições:</h1>
+                <ul class="list-disc pl-4 mt-3 ml-7">
+                    @foreach ($vaga->atributos as $atributo)
+                    <li class="mb-2">
+                        {{ $atributo->titulo }}
+                    </li>
+                    @endforeach
+                    
+                    {{-- <li class="mb-2">Realizar manutenção de sistemas e aplicações utilizando metodologias ágeis;</li>
+                    <li class="mb-2">Manter registros atualizados na aplicação de chamados, tarefas e ações
+                        realizadas.</li> --}}
+                </ul>
+            </div>
+        </div>
+    </div>
+    @endif
+
+    @if ($vaga->requisitos && count($vaga->requisitos) > 0)
+    <div class="inset-x-0 w-full lg:h-4/5 z-0 px-8 py-1 h-auto sm:px-16 sm:h-4/5 lg:px-40">
+        <div class="flex inset-x-0 flex-col justify-between p-3 mt-4 xl:flex-row lg:content-center">
+            <div class="grid content-center">
+                <h1 class="text-3xl text-indigo-800 flex-auto">Requisitos</h1>
+                <ul class="list-disc pl-4 mt-3 ml-7">
+                    @foreach ($vaga->requisitos as $requisito)
+                    <li class="mb-2">
+                        {{ $requisito->titulo }}
+                    </li>
+                    @endforeach
+                    {{-- <li class="">Desejável conhecimento em desenvolvimento low code e/ou aplicação Mendix.</li> --}}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+        
+    @endif
+
     <div class="inset-x-0 w-full lg:h-4/5 z-0 py-1 h-auto sm:px-16 sm:h-4/5 lg:px-40">
         <div class="flex inset-x-0 flex-col justify-between p-3 mt-4 xl:flex-row lg:content-center">
             <div class="grid content-center">
-                <h1 class="text-4xl text-indigo-800">Americanas</h1>
+                <h1 class="text-4xl text-indigo-800">{{ $vaga->empresa->user->name }}</h1>
             </div>
         </div>
 
@@ -81,64 +123,6 @@
         </div>
     </div>
 
-
-    <div class="inset-x-0 w-full lg:h-4/5 z-0 px-8 py-1 h-auto sm:px-16 sm:h-4/5 lg:px-40">
-        <div class="flex inset-x-0 flex-col justify-between p-3 mt-4 xl:flex-row lg:content-center">
-            <div class="grid content-center">
-                <h1 class="text-4xl text-indigo-800 flex-auto">Sobre a vaga</h1>
-                <p class="mt-3 text-justify ml-7">Para atendermos nossos clientes de forma ágil, assertiva e humana e
-                    continuar contribuindo para o crescimento da cooperativa, desejamos candidatos que se identifiquem
-                    com nossos valores e queiram parte do desse propósito.
-                    Nossa visão é nos tornarmos referência nacional em gestão de saúde, com inovação, sustentabilidade e
-                    liderança de mercado.
-                    E para isso, precisamos de pessoas que nos apoiem, levando essa visão adiante em suas atividades.
-                    Já pensou em fazer arte de uma equipe centrada no cuidado, que busca ser a diferença na vida das
-                    pessoas?
-                    E melhor ainda, estar dentro do maior sistema de cooperativas de saúde do mundo?</p>
-            </div>
-        </div>
-    </div>
-
-    @if ($vaga->atributos && count($vaga->atributos) > 0)
-    <div class="inset-x-0 w-full lg:h-4/5 z-0 px-8 py-1 h-auto sm:px-16 sm:h-4/5 lg:px-40">
-        <div class="flex inset-x-0 flex-col justify-between p-3 mt-4 xl:flex-row lg:content-center">
-            <div class="grid content-center">
-                <h1 class="text-3xl text-indigo-800 flex-auto">Responsabilidades e atribuições:</h1>
-                <ul class="list-disc pl-4 mt-3 ml-7">
-                    @foreach ($vaga->atributos as $atributo)
-                    <li class="mb-2">
-                        {{ $atributo->titulo }}
-                    </li>
-                    @endforeach
-                    
-                    {{-- <li class="mb-2">Realizar manutenção de sistemas e aplicações utilizando metodologias ágeis;</li>
-                    <li class="mb-2">Manter registros atualizados na aplicação de chamados, tarefas e ações
-                        realizadas.</li> --}}
-                </ul>
-            </div>
-        </div>
-    </div>
-    @endif
-
-    @if ($vaga->requisitos && count($vaga->requisitos) > 0)
-    <div class="inset-x-0 w-full lg:h-4/5 z-0 px-8 py-1 h-auto sm:px-16 sm:h-4/5 lg:px-40">
-        <div class="flex inset-x-0 flex-col justify-between p-3 mt-4 xl:flex-row lg:content-center">
-            <div class="grid content-center">
-                <h1 class="text-3xl text-indigo-800 flex-auto">Requisitos</h1>
-                <ul class="list-disc pl-4 mt-3 ml-7">
-                    @foreach ($vaga->requisitos as $requisito)
-                    <li class="mb-2">
-                        {{ $requisito->titulo }}
-                    </li>
-                    @endforeach
-                    {{-- <li class="">Desejável conhecimento em desenvolvimento low code e/ou aplicação Mendix.</li> --}}
-                </ul>
-            </div>
-        </div>
-    </div>
-
-        
-    @endif
     @can('isEmpresa')
     <a href="#" class=" ">
         <p
@@ -146,10 +130,14 @@
             Editar
         </p>
     </a>   
-    <button
+    <form action="{{ route('vaga.destroy', $vaga->id) }}" method="post">
+        @csrf
+        @method('DELETE')
+        <button
     class=" text-base text-center text-black hover:bg-gray-50 transition-all hover:scale-105 hover:ease-in md:mt-20 p-6 py-3 border w-72 border-black rounded-full mx-auto">
     Deletar
 </button>
+    </form>
     @elsecan('isCandidato')
     <a href="http://www.youtube.com" class=" ">
         <p
