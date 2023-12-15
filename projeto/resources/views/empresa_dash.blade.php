@@ -72,7 +72,12 @@
                 <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"/>
                 </svg>
-                <span class="flex-1 ms-3 whitespace-nowrap">Sign In</span>
+                <span class="flex-1 ms-3 whitespace-nowrap">
+                  <form action="{{ route('logout') }}" method="post">
+                    @csrf
+                    <button>logout</button>
+                    </form>
+                </span>
              </a>
           </li>
           <li>
@@ -82,7 +87,9 @@
                    <path d="M6.737 11.061a2.961 2.961 0 0 1 .81-1.515l6.117-6.116A4.839 4.839 0 0 1 16 2.141V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H0v11a1.969 1.969 0 0 0 1.933 2h12.134A1.97 1.97 0 0 0 16 18v-3.093l-1.546 1.546c-.413.413-.94.695-1.513.81l-3.4.679a2.947 2.947 0 0 1-1.85-.227 2.96 2.96 0 0 1-1.635-3.257l.681-3.397Z"/>
                    <path d="M8.961 16a.93.93 0 0 0 .189-.019l3.4-.679a.961.961 0 0 0 .49-.263l6.118-6.117a2.884 2.884 0 0 0-4.079-4.078l-6.117 6.117a.96.96 0 0 0-.263.491l-.679 3.4A.961.961 0 0 0 8.961 16Zm7.477-9.8a.958.958 0 0 1 .68-.281.961.961 0 0 1 .682 1.644l-.315.315-1.36-1.36.313-.318Zm-5.911 5.911 4.236-4.236 1.359 1.359-4.236 4.237-1.7.339.341-1.699Z"/>
                 </svg>
-                <span class="flex-1 ms-3 whitespace-nowrap">Sign Up</span>
+                <span class="flex-1 ms-3 whitespace-nowrap">
+                  sign Up
+                </span>
              </a>
           </li>
        </ul>
@@ -160,7 +167,7 @@
       </div>
     </nav>
     <div class="mt-12">
-      <div class="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4">
+      <div class="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-2">
         <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
           <div class="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-blue-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-6 h-6 text-white">
@@ -171,11 +178,13 @@
           </div>
           <div class="p-4 text-right">
             <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Vagas Abertas</p>
-            <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">5</h4>
+            <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">{{ 
+              count($empresa->vagas)
+            }}</h4>
           </div>
           <div class="border-t border-blue-gray-50 p-4">
             <p class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
-              <strong class="text-green-500">+17%</strong>&nbsp;que a ultima semana
+              <a href="{{ route('vaga.create') }}"><strong class="text-green-500">Abrir vaga</strong></a>
             </p>
           </div>
         </div>
@@ -186,44 +195,12 @@
             </svg>
           </div>
           <div class="p-4 text-right">
-            <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Visitas ao Perfil</p>
-            <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">20</h4>
+            <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Configurações do </p>
+            <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">Perfil</h4>
           </div>
           <div class="border-t border-blue-gray-50 p-4">
             <p class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
-              <strong class="text-green-500">+3%</strong>&nbsp;que o ultimo mês
-            </p>
-          </div>
-        </div>
-        <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
-          <div class="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-green-600 to-green-400 text-white shadow-green-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-6 h-6 text-white">
-              <path d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z"></path>
-            </svg>
-          </div>
-          <div class="p-4 text-right">
-            <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Novas Candidaturas</p>
-            <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">5</h4>
-          </div>
-          <div class="border-t border-blue-gray-50 p-4">
-            <p class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
-              <strong class="text-red-500">-2%</strong>&nbsp;que ontem
-            </p>
-          </div>
-        </div>
-        <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
-          <div class="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-orange-600 to-orange-400 text-white shadow-orange-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-6 h-6 text-white">
-              <path d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75zM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 01-1.875-1.875V8.625zM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 013 19.875v-6.75z"></path>
-            </svg>
-          </div>
-          <div class="p-4 text-right">
-            <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">Sales</p>
-            <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">$103,430</h4>
-          </div>
-          <div class="border-t border-blue-gray-50 p-4">
-            <p class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
-              <strong class="text-green-500">+5%</strong>&nbsp;than yesterday
+              <a href="#"><strong class="text-green-500">Editar</strong></a>
             </p>
           </div>
         </div>
@@ -254,7 +231,7 @@
               <thead>
                 <tr>
                   <th class="border-b border-blue-gray-50 py-3 px-6 text-left">
-                    <p class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">Vagas</p>
+                    <p class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">Titulo</p>
                   </th>
                   <th class="border-b border-blue-gray-50 py-3 px-6 text-left">
                     <p class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">Área</p>
@@ -268,101 +245,30 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <div class="flex items-center gap-4">
-                      <p class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold">Desenvolvedor Full-Stack</p>
-                    </div>
-                  </td>
-                  
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">Full-Stack</p>
-                  </td>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <div class="w-10/12">
-                      <p class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600">0</p>
-                      <div class="flex flex-start bg-blue-gray-50 overflow-hidden w-full rounded-sm font-sans text-xs font-medium h-1">
-                        <div class="flex justify-center items-center h-full bg-gradient-to-tr from-blue-600 to-blue-400 text-white" style="width: 60%;"></div>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">Show</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <div class="flex items-center gap-4">
-                      <p class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold">Analista de Sistemas</p>
-                    </div>
-                  </td>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">Tecnologia</p>
-                  </td>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <div class="w-10/12">
-                      <p class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600">10%</p>
-                      <div class="flex flex-start bg-blue-gray-50 overflow-hidden w-full rounded-sm font-sans text-xs font-medium h-1">
-                        <div class="flex justify-center items-center h-full bg-gradient-to-tr from-blue-600 to-blue-400 text-white" style="width: 10%;"></div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <div class="flex items-center gap-4">
-                      <p class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold">Estagiário Java</p>
-                    </div>
-                  </td>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">Back-End</p>
-                  </td>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <div class="w-10/12">
-                      <p class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600">100%</p>
-                      <div class="flex flex-start bg-blue-gray-50 overflow-hidden w-full rounded-sm font-sans text-xs font-medium h-1">
-                        <div class="flex justify-center items-center h-full bg-gradient-to-tr from-green-600 to-green-400 text-white" style="width: 100%;"></div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <div class="flex items-center gap-4">
-                      <p class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold">Desenvolvedor Laravel</p>
-                    </div>
-                  </td>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">Front-End</p>
-                  </td>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <div class="w-10/12">
-                      <p class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600">100%</p>
-                      <div class="flex flex-start bg-blue-gray-50 overflow-hidden w-full rounded-sm font-sans text-xs font-medium h-1">
-                        <div class="flex justify-center items-center h-full bg-gradient-to-tr from-green-600 to-green-400 text-white" style="width: 100%;"></div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <div class="flex items-center gap-4">
-                      <p class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold">Desenvolvedor <Back-End></Back-End></p>
-                    </div>
-                  </td>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">Back-End</p>
-                  </td>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <div class="w-10/12">
-                      <p class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600">25%</p>
-                      <div class="flex flex-start bg-blue-gray-50 overflow-hidden w-full rounded-sm font-sans text-xs font-medium h-1">
-                        <div class="flex justify-center items-center h-full bg-gradient-to-tr from-blue-600 to-blue-400 text-white" style="width: 25%;"></div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
+               @foreach ($empresa->vagas as $vaga)
+               <tr>
+                <td class="py-3 px-5 border-b border-blue-gray-50">
+                  <div class="flex items-center gap-4">
+                    <p class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold">{{ $vaga->titulo }}</p>
+                  </div>
+                </td>
                 
+                <td class="py-3 px-5 border-b border-blue-gray-50">
+                  <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">{{ $vaga->area->nome }}</p>
+                </td>
+                <td class="py-3 px-5 border-b border-blue-gray-50">
+                  <div class="w-10/12">
+                    <p class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600">{{ count($vaga->candidaturas) }}</p>
+                    <div class="flex flex-start bg-blue-gray-50 overflow-hidden w-full rounded-sm font-sans text-xs font-medium h-1">
+                      <div class="flex justify-center items-center h-full bg-gradient-to-tr from-blue-600 to-blue-400 text-white" style="width: 60%;"></div>
+                    </div>
+                  </div>
+                </td>
+                <td class="py-3 px-5 border-b border-blue-gray-50">
+                  <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">Show</p>
+                </td>
+              </tr>
+               @endforeach
               </tbody>
             </table>
           </div>

@@ -6,8 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/', function () {
-    //return view('welcome');
-    return view('empresa_dash');
+    return view('welcome');
 });
 
 Route::get('/auth/redirect', function () {
@@ -24,7 +23,7 @@ Route::get('/dashboard', function () {
         return redirect()->route('empresa.create');
     } else if (Gate::allows('isCandidato')) {
         if (Gate::allows('candidato_create')) {
-            return view('candidato_dash');
+            return redirect()->route('candidato.index');
         }
         return redirect()->route('candidato.create');
     }
