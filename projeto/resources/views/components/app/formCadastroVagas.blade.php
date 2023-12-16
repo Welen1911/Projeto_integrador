@@ -70,19 +70,44 @@
                   <p class="hover:cursor-pointer text-indigo-800 text-sm" id="btnatributos">Adiciona atributo +</p>
               </div>
           </div>
+          @if (isset($vaga->atributos) && count($vaga->atributos) > 0)
+              @foreach ($vaga->atributos as $atributo)
+          <div class="-mx-3 md:flex mb-6">
+            <div class="md:w-full px-3">
+              <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 " for="grid-password">
+                Atributo
+              </label>
+              <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-password" type="text" placeholder="Rua longe pra caralho" name="atributo[]" value="{{ $atributo->titulo }}">
+              <p class="text-grey-dark text-xs italic">Make it as long and as crazy as you'd like</p>
+            </div>
+          </div>
+          @endforeach
+          @endif
       </div>
 
       <h2 class="text-xl mb-6">Requisitos</h1>
           <div class="rounded border-2 flex py-5 px-5 flex-col-reverse mb-6" id="requisito">
-              {{-- Formação do Candidato --}}
+            {{-- Formação do Candidato --}}
               <div class="-mx-3 md:flex">
                   <div class="md:w-full px-3" id="">
                       <p class="hover:cursor-pointer text-indigo-800 text-sm" id="btnRequisitos">Adiciona
                           experiencias +</p>
                   </div>
               </div>
-          </div>
+              @if (isset($vaga->requisitos) && count($vaga->requisitos) > 0)
+              @foreach ($vaga->requisitos as $requisito)
+              <div class="-mx-3 md:flex mb-2">
+                <div class="md:w-full px-3">
+                  <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
+                    Requisito
+                  </label>
+                  <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-password" id="" type="text" placeholder="Analise e Desenvolvimento de Sistemas" name="requisito[]" value="{{ $requisito->titulo }}">
+                </div>
+                </div>
+              @endforeach
 
+                @endif
+          </div>
     <input class="w-40 inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-800
     rounded-lg transition duration-200 hover:bg-indigo-600 ease" type="submit" value="Enviar">
   </div>

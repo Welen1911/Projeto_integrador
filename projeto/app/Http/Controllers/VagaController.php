@@ -112,7 +112,7 @@ class VagaController extends Controller
      */
     public function update(Request $request, Vaga $vaga)
     {
-        
+        dd($request->all());
         $vinculo = Vinculo::where('nome', $request->vinculo)->first();
 
         if (!$vinculo) {
