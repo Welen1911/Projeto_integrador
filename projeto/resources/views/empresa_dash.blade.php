@@ -247,7 +247,7 @@
                <tr>
                 <td class="py-3 px-5 border-b border-blue-gray-50">
                   <div class="flex items-center gap-4">
-                    <p class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold">{{ $vaga->titulo }}</p>
+                    <a href="{{ route('vaga.show', $vaga->id) }}" class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold">{{ $vaga->titulo }}</a>
                   </div>
                 </td>
                 

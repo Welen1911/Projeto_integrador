@@ -8,6 +8,8 @@ use App\Models\Requisito;
 use App\Models\Vaga;
 use App\Models\Vinculo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
+use Ramsey\Uuid\Type\Integer;
 
 class VagaController extends Controller
 {
@@ -42,42 +44,47 @@ class VagaController extends Controller
      */
     public function store(Request $request)
     {
-        $vinculo = Vinculo::where('nome', $request->vinculo)->first();
+        if (Gate::allows('isEmpresa')) {
 
-        if (!$vinculo) {
-            $vinculo = Vinculo::create([
-                'nome' => $request->vinculo,
+            $vinculo = Vinculo::where('nome', $request->vinculo)->first();
+
+            if (!$vinculo) {
+                $vinculo = Vinculo::create([
+                    'nome' => $request->vinculo,
+                ]);
+            }
+
+            $vaga = Vaga::create([
+                'empresa_id' => auth()->user()->empresa->id,
+                'titulo' => $request->titulo,
+                'descricao' => $request->descricao,
+                'area_id' => $request->area,
+                'titulo' => $request->titulo,
+                'vinculo_id' => $vinculo->id,
             ]);
+
+            $qtdAtributo = $request->atributo != null ?
+                count($request->atributo) : 0;
+
+            for ($i = 0; $i < $qtdAtributo; $i++) {
+                $vaga->atributos()->create([
+                    'titulo' => $request->atributo[$i],
+                ]);
+            }
+
+            $qtdRequisitos = $request->requisito != null ?
+                count($request->requisito) : 0;
+
+            for ($i = 0; $i < $qtdRequisitos; $i++) {
+                $vaga->requisitos()->create([
+                    'titulo' => $request->requisito[$i],
+                ]);
+            }
+
+            return redirect('dashboard');
+        } else {
+            return back();
         }
-
-        $vaga = Vaga::create([
-            'empresa_id' => auth()->user()->empresa->id,
-            'titulo' => $request->titulo,
-            'descricao' => $request->descricao,
-            'area_id' => $request->area,
-            'titulo' => $request->titulo,
-            'vinculo_id' => $vinculo->id,
-        ]);
-
-        $qtdAtributo = $request->atributo != null ?
-            count($request->atributo) : 0;
-
-        for ($i = 0; $i < $qtdAtributo; $i++) {
-            $vaga->atributos()->create([
-                'titulo' => $request->atributo[$i],
-            ]);
-        }
-
-        $qtdRequisitos = $request->requisito != null ?
-            count($request->requisito) : 0;
-
-        for ($i = 0; $i < $qtdRequisitos; $i++) {
-            $vaga->requisitos()->create([
-                'titulo' => $request->requisito[$i],
-            ]);
-        }
-
-        return redirect('dashboard');
     }
 
     /**
@@ -112,7 +119,6 @@ class VagaController extends Controller
      */
     public function update(Request $request, Vaga $vaga)
     {
-        dd($request->all());
         $vinculo = Vinculo::where('nome', $request->vinculo)->first();
 
         if (!$vinculo) {
@@ -127,7 +133,46 @@ class VagaController extends Controller
             'area_id' => $request->area,
             'vinculo_id' => $vinculo->id,
         ]);
-        
+
+
+        foreach ($request->atributoExists as $key => $value) {
+
+            $atributo = Atribuito::find($key);
+            if ($atributo) {
+                $atributo->update([
+                    'titulo' => $value[0],
+                ]);
+            }
+        }
+
+        $qtdAtributo = $request->atributo != null ?
+            count($request->atributo) : 0;
+
+        for ($i = 0; $i < $qtdAtributo; $i++) {
+            $vaga->atributos()->create([
+                'titulo' => $request->atributo[$i],
+            ]);
+        }
+
+        foreach ($request->requisitoExists as $key => $value) {
+
+            $requisito = Requisito::find($key);
+            if ($requisito) {
+                $requisito->update([
+                    'titulo' => $value[0],
+                ]);
+            }
+        }
+
+        $qtdRequisitos = $request->requisito != null ?
+            count($request->requisito) : 0;
+
+        for ($i = 0; $i < $qtdRequisitos; $i++) {
+            $vaga->requisitos()->create([
+                'titulo' => $request->requisito[$i],
+            ]);
+        }
+
         return redirect()->route('dashboard');
     }
 

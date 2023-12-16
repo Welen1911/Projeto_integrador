@@ -77,7 +77,7 @@
               <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 " for="grid-password">
                 Atributo
               </label>
-              <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-password" type="text" placeholder="Rua longe pra caralho" name="atributo[]" value="{{ $atributo->titulo }}">
+              <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-password" type="text" placeholder="Rua longe pra caralho" name="atributoExists[{{ $atributo->id }}][]" value="{{ $atributo->titulo }}">
               <p class="text-grey-dark text-xs italic">Make it as long and as crazy as you'd like</p>
             </div>
           </div>
@@ -101,7 +101,7 @@
                   <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
                     Requisito
                   </label>
-                  <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-password" id="" type="text" placeholder="Analise e Desenvolvimento de Sistemas" name="requisito[]" value="{{ $requisito->titulo }}">
+                  <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-password" id="" type="text" placeholder="Analise e Desenvolvimento de Sistemas" name="requisitoExists[{{ $requisito->id }}][]" value="{{ $requisito->titulo }}">
                 </div>
                 </div>
               @endforeach

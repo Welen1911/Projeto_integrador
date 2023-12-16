@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
-    <script src="{{ asset('js/vaga.js') }}"></script>
+    <script src="{{ asset('js/editVaga.js') }}"></script>
     <!-- Estilo -->
     <link rel="stylesheet" href="{{ asset('css/interacao.css') }}">
 </head>
