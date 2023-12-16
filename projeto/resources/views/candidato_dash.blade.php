@@ -120,19 +120,28 @@
                 </tr>
               </thead>
               <tbody>
+                @if ($candidato->candidaturas && count($candidato->candidaturas) > 0)
+                    @foreach ($candidato->candidaturas as $candidatura)
+                        
                 <tr>
                   <td class="py-3 px-5 border-b border-blue-gray-50">
                     <div class="flex items-center gap-4">
-                      <p class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold">Desenvolvedor Full-Stack</p>
+                      <a  href="{{ route('vaga.show', $candidatura->vaga->id) }}" class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold">{{
+                        $candidatura->vaga->titulo
+                        }}</a>
                     </div>
                   </td>
                   
                   <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">Full-Stack</p>
+                    <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">
+                      {{ $candidatura->vaga->area->nome }}
+                    </p>
                   </td>
                   <td class="py-3 px-5 border-b border-blue-gray-50">
                     <div class="w-10/12">
-                      <p class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600">0</p>
+                      <p class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600">
+                        {{ $candidatura->vaga->empresa->user->name }}
+                      </p>
                       <div class="flex flex-start bg-blue-gray-50 overflow-hidden w-full rounded-sm font-sans text-xs font-medium h-1">
                         <div class="flex justify-center items-center h-full bg-gradient-to-tr from-blue-600 to-blue-400 text-white" style="width: 60%;"></div>
                       </div>
@@ -142,79 +151,11 @@
                     <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">Cancelar Candidatura</p>
                   </td>
                 </tr>
-                <tr>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <div class="flex items-center gap-4">
-                      <p class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold">Analista de Sistemas</p>
-                    </div>
-                  </td>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">Tecnologia</p>
-                  </td>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <div class="w-10/12">
-                      <p class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600">10%</p>
-                      <div class="flex flex-start bg-blue-gray-50 overflow-hidden w-full rounded-sm font-sans text-xs font-medium h-1">
-                        <div class="flex justify-center items-center h-full bg-gradient-to-tr from-blue-600 to-blue-400 text-white" style="width: 10%;"></div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <div class="flex items-center gap-4">
-                      <p class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold">Estagiário Java</p>
-                    </div>
-                  </td>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">Back-End</p>
-                  </td>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <div class="w-10/12">
-                      <p class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600">100%</p>
-                      <div class="flex flex-start bg-blue-gray-50 overflow-hidden w-full rounded-sm font-sans text-xs font-medium h-1">
-                        <div class="flex justify-center items-center h-full bg-gradient-to-tr from-green-600 to-green-400 text-white" style="width: 100%;"></div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <div class="flex items-center gap-4">
-                      <p class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold">Desenvolvedor Laravel</p>
-                    </div>
-                  </td>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">Front-End</p>
-                  </td>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <div class="w-10/12">
-                      <p class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600">100%</p>
-                      <div class="flex flex-start bg-blue-gray-50 overflow-hidden w-full rounded-sm font-sans text-xs font-medium h-1">
-                        <div class="flex justify-center items-center h-full bg-gradient-to-tr from-green-600 to-green-400 text-white" style="width: 100%;"></div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <div class="flex items-center gap-4">
-                      <p class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold">Desenvolvedor <Back-End></Back-End></p>
-                    </div>
-                  </td>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <p class="block antialiased font-sans text-xs font-medium text-blue-gray-600">Back-End</p>
-                  </td>
-                  <td class="py-3 px-5 border-b border-blue-gray-50">
-                    <div class="w-10/12">
-                      <p class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600">25%</p>
-                      <div class="flex flex-start bg-blue-gray-50 overflow-hidden w-full rounded-sm font-sans text-xs font-medium h-1">
-                        <div class="flex justify-center items-center h-full bg-gradient-to-tr from-blue-600 to-blue-400 text-white" style="width: 25%;"></div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
+                @endforeach
                 
+                @endif
+
+               
               </tbody>
             </table>
           </div>
