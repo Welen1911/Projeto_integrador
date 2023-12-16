@@ -124,7 +124,7 @@
     </div>
 
     @can('isEmpresa')
-    <a href="#" class=" ">
+    <a href="{{ route('vaga.edit', $vaga->id) }}" class=" ">
         <p
             class=" text-base text-center text-black hover:bg-gray-50 transition-all hover:scale-105 hover:ease-in md:mt-20 p-6 py-3 border w-72 border-black rounded-full mx-auto">
             Editar

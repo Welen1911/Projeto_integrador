@@ -99,7 +99,8 @@ class VagaController extends Controller
      */
     public function edit(Vaga $vaga)
     {
-        //
+        $areas = Area::all();
+        return view('vagas.edit', compact('vaga', 'areas'));
     }
 
     /**
@@ -111,7 +112,23 @@ class VagaController extends Controller
      */
     public function update(Request $request, Vaga $vaga)
     {
-        //
+        
+        $vinculo = Vinculo::where('nome', $request->vinculo)->first();
+
+        if (!$vinculo) {
+            $vinculo = Vinculo::create([
+                'nome' => $request->vinculo,
+            ]);
+        }
+
+        $vaga->update([
+            'titulo' => $request->titulo,
+            'descricao' => $request->descricao,
+            'area_id' => $request->area,
+            'vinculo_id' => $vinculo->id,
+        ]);
+        
+        return redirect()->route('dashboard');
     }
 
     /**
