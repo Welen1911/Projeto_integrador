@@ -9,6 +9,11 @@ class Candidatura extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'vaga_id',
+        'candidato_id',
+    ];
+
     public function vaga() {
         return $this->belongsTo(Vaga::class);
     }

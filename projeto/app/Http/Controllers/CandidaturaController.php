@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Candidatura;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class CandidaturaController extends Controller
 {
@@ -35,7 +36,18 @@ class CandidaturaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (Gate::allows('isCandidato')) {
+            Candidatura::create([
+                'vaga_id' => $request->vaga_id,
+                'candidato_id' => auth()->user()->candidato->id,
+            ]);
+
+            return redirect()->route('dashboard');
+
+        } else {
+            return back();
+        }
+        
     }
 
     /**

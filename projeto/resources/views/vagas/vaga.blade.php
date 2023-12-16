@@ -139,13 +139,15 @@
 </button>
     </form>
     @elsecan('isCandidato')
-    <a href="http://www.youtube.com" class=" ">
-        <p
+    <form action="{{ route('candidatura.store') }}" method="post">
+    @csrf
+        <input type="text" value="{{ $vaga->id }}" name="vaga_id" hidden>
+        <button
             class=" text-base text-center text-black hover:bg-gray-50 transition-all hover:scale-105 hover:ease-in md:mt-20 p-6 py-3 border w-72 border-black rounded-full mx-auto">
             Candidatar-se!
-        </p>
-    </a>
+        </button>
     
+    </form>
     @endcan
     
 @endsection
