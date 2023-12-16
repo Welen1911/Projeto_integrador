@@ -54,7 +54,8 @@ class RegisteredUserController extends Controller
         return redirect(RouteServiceProvider::HOME);
     }
 
-    public function storeProvider() {
+    public function storeProvider()
+    {
         $providerUser = Socialite::driver('google')->user();
 
         $user = User::where('provider_id', $providerUser->getId())->first();
@@ -74,17 +75,10 @@ class RegisteredUserController extends Controller
             ]);
         }
 
+        event(new Registered($user));
+
         Auth::login($user);
- 
-        return redirect('/dashboard');
-    }
 
-    public function setTipoConta(Request $request) {
-        $user = User::find(auth()->user()->id);
-        $user->update([
-            'tipo_conta' => $request->tipo_conta
-        ]);
-
-        return redirect()->route('dashboard');
+        return redirect(RouteServiceProvider::HOME);
     }
 }

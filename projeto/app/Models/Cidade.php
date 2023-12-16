@@ -9,6 +9,12 @@ class Cidade extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nome',
+        'cep',
+        'estado_id',
+    ];
+
     public function enderecos() {
         return $this->hasMany(Endereco::class);
     }

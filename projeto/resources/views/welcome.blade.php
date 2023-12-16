@@ -7,6 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pagtina @yield('titulo')</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="{{ asset('js/jquery-3.6.0.js') }}"></script>
+    <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+    <!-- Estilo -->
+    <link rel="stylesheet" href="{{ asset('css/interacao.css') }}">
 </head>
 
 <body>

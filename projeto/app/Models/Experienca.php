@@ -9,6 +9,13 @@ class Experienca extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'empresa',
+        'descricao',
+        'trabalhando',
+        'candidato_id',
+    ];
+
     public function candidato() {
         return $this->belongsTo(Candidato::class);
     }

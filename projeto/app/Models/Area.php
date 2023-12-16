@@ -16,4 +16,8 @@ class Area extends Model
     public function users() {
         return $this->hasMany(Candidato::class);
     }
+
+    public function vagas() {
+        return $this->hasMany(Vaga::class);
+    }
 }

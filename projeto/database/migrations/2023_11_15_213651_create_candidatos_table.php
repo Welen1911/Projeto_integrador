@@ -15,11 +15,11 @@ class CreateCandidatosTable extends Migration
     {
         Schema::create('candidatos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->unique();
             $table->foreign('user_id')
             ->references('id')->on('users');
 
-            $table->integer('idade');
+            $table->text('sobre');
             $table->string('curriculo')->nullable();
             $table->timestamps();
         });

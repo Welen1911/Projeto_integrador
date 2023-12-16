@@ -9,6 +9,10 @@ class Vinculo extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nome',
+    ];
+
     public function vagas() {
         return $this->hasMany(Vaga::class);
     }

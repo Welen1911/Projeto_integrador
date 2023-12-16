@@ -39,11 +39,11 @@
               </div>
               <div class="relative">
                 <button class="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-800
-                    rounded-lg transition duration-200 hover:bg-indigo-600 ease">Entrar</button>
+                    rounded-full transition duration-200 hover:bg-indigo-600 ease">Entrar</button>
               </div>
               <div class="relative">
                 <a class="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-800
-                    rounded-lg transition duration-200 hover:bg-indigo-600 ease" href="{{ route('social.login') }}">Register with Google</a>
+                    rounded-full transition duration-200 hover:bg-indigo-600 ease" href="{{ route('social.login') }}">Register with Google</a>
               </div>
               <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
                 {{ __('New here ?') }}

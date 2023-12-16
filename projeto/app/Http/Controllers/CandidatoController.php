@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Area;
 use App\Models\Candidato;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class CandidatoController extends Controller
      */
     public function index()
     {
-        //
+        $candidato = auth()->user()->candidato;
+        return view('candidato_dash', compact('candidato'));
     }
 
     /**
@@ -24,7 +26,8 @@ class CandidatoController extends Controller
      */
     public function create()
     {
-        //
+        $areas = Area::all();
+        return view('candidato.cadastro', compact('areas'));
     }
 
     /**
@@ -35,7 +38,37 @@ class CandidatoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $candidato = Candidato::create([
+            'user_id' => auth()->user()->id,
+            'sobre' => $request->sobre,
+            'area_id' => $request->area,
+        ]);
+
+        $cont = $request->cursando != null ?
+            count($request->cursando) : 0;
+
+
+        for ($i = 0; $i < $cont; $i++) {
+            $candidato->formacaos()->create([
+                'instituto' => $request->instituto[$i],
+                'tipo' => $request->tipo[$i],
+                'curso' => $request->curso[$i],
+                'cursando' => $request->cursando[$i],
+            ]);
+        }
+
+        $cont = $request->trabalhando != null ?
+            count($request->trabalhando) : 0;
+
+        for ($i = 0; $i < $cont; $i++) {
+            $candidato->experiencias()->create([
+                'empresa' => $request->empresa[$i],
+                'descricao' => $request->descricao[$i],
+                'trabalhando' => $request->trabalhando[$i],
+            ]);
+        }
+
+        return redirect('dashboard');
     }
 
     /**

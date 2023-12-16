@@ -9,6 +9,11 @@ class Telefone extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'celular',
+        'fixo',
+    ];
+
     public function user() {
         return $this->belongsTo(User::class);
     }

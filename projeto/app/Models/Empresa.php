@@ -9,6 +9,12 @@ class Empresa extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'user_id',
+        'cnpj',
+        'descricao',
+    ];
+
     public function user() {
         return $this->belongsTo(User::class);
     }

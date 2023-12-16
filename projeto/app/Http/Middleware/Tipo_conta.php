@@ -19,7 +19,7 @@ class Tipo_conta
         if (isset(auth()->user()->tipo_conta)) {
             return $next($request);
         } else {
-            return redirect()->route('tipo_conta');
+            return redirect()->route('cadastro_user');
         }
     }
 }

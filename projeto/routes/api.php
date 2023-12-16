@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\VagaController;
 use Illuminate\Http\Request;
@@ -14,5 +15,3 @@ Route::post('/', [VagaController::class, 'requisitos']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-

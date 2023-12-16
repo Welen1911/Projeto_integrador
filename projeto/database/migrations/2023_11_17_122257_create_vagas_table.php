@@ -26,7 +26,7 @@ class CreateVagasTable extends Migration
             $table->foreignId('area_id');
             $table->foreign('area_id')
             ->references('id')->on('areas');
-
+            
             $table->timestamps();
         });
     }
