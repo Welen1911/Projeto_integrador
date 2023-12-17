@@ -191,8 +191,12 @@ class VagaController extends Controller
      */
     public function destroy(Vaga $vaga)
     {
-        $vaga->delete();
+        if (Gate::allows('isEmpresa') && Gate::allows('empresa_create')) {
+            $vaga->delete();
 
-        return redirect()->route('dashboard');
+            return redirect()->route('dashboard');
+        } else {
+            return back();
+        }
     }
 }

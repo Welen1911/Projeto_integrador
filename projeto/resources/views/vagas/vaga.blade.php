@@ -139,6 +139,15 @@
 </button>
     </form>
     @elsecan('isCandidato')
+    {{-- @if (auth()->user()->candidato->candidatura()->where('vaga_id', ))
+        
+    @endif --}}
+    @can('candidato_candidatura', $vaga)
+    <button
+    class=" text-base text-center text-black hover:bg-gray-50 transition-all hover:scale-105 hover:ease-in md:mt-20 p-6 py-3 border w-72 border-black rounded-full mx-auto" disabled>
+    Você já se candidatou!
+</button>
+    @else
     <form action="{{ route('candidatura.store') }}" method="post">
     @csrf
         <input type="text" value="{{ $vaga->id }}" name="vaga_id" hidden>
@@ -146,9 +155,10 @@
             class=" text-base text-center text-black hover:bg-gray-50 transition-all hover:scale-105 hover:ease-in md:mt-20 p-6 py-3 border w-72 border-black rounded-full mx-auto">
             Candidatar-se!
         </button>
-    
     </form>
     @endcan
+    @endcan
+   
     
 @endsection
 

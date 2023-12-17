@@ -3,8 +3,10 @@
 namespace App\Providers;
 
 use App\Models\Candidato;
+use App\Models\Candidatura;
 use App\Models\Empresa;
 use App\Models\User;
+use App\Models\Vaga;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -42,6 +44,12 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('candidato_create', function (User $user) {
             return Candidato::where('user_id', $user->id)->first();
+        });
+
+        Gate::define('candidato_candidatura', function (User $user, Vaga $vaga) {
+            $candidato = Candidato::where('user_id', $user->id)->first();
+            
+            return $candidato->candidaturas()->where('vaga_id', $vaga->id)->first();
         });
     }
 }
