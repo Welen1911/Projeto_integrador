@@ -92,6 +92,12 @@ class CandidaturaController extends Controller
      */
     public function destroy(Candidatura $candidatura)
     {
-        //
+        if (Gate::allows('isCandidato') && Gate::allows('candidato_create')) {
+            $candidatura->delete();
+
+            return redirect()->route('dashboard');
+        } else {
+            return back();
+        }
     }
 }
