@@ -44,7 +44,7 @@ class VagaController extends Controller
      */
     public function store(Request $request)
     {
-        if (Gate::allows('isEmpresa')) {
+        if (Gate::allows('isEmpresa') && Gate::allows('empresa_create')) {
 
             $vinculo = Vinculo::where('nome', $request->vinculo)->first();
 
@@ -119,61 +119,68 @@ class VagaController extends Controller
      */
     public function update(Request $request, Vaga $vaga)
     {
-        $vinculo = Vinculo::where('nome', $request->vinculo)->first();
+        if (Gate::allows('isEmpresa') && Gate::allows('empresa_create')) {
+            $vinculo = Vinculo::where('nome', $request->vinculo)->first();
 
-        if (!$vinculo) {
-            $vinculo = Vinculo::create([
-                'nome' => $request->vinculo,
-            ]);
-        }
-
-        $vaga->update([
-            'titulo' => $request->titulo,
-            'descricao' => $request->descricao,
-            'area_id' => $request->area,
-            'vinculo_id' => $vinculo->id,
-        ]);
-
-
-        foreach ($request->atributoExists as $key => $value) {
-
-            $atributo = Atribuito::find($key);
-            if ($atributo) {
-                $atributo->update([
-                    'titulo' => $value[0],
+            if (!$vinculo) {
+                $vinculo = Vinculo::create([
+                    'nome' => $request->vinculo,
                 ]);
             }
-        }
 
-        $qtdAtributo = $request->atributo != null ?
-            count($request->atributo) : 0;
-
-        for ($i = 0; $i < $qtdAtributo; $i++) {
-            $vaga->atributos()->create([
-                'titulo' => $request->atributo[$i],
+            $vaga->update([
+                'titulo' => $request->titulo,
+                'descricao' => $request->descricao,
+                'area_id' => $request->area,
+                'vinculo_id' => $vinculo->id,
             ]);
-        }
 
-        foreach ($request->requisitoExists as $key => $value) {
+            if ($request->atributoExists) {
+                foreach ($request->atributoExists as $key => $value) {
 
-            $requisito = Requisito::find($key);
-            if ($requisito) {
-                $requisito->update([
-                    'titulo' => $value[0],
+                    $atributo = Atribuito::find($key);
+                    if ($atributo) {
+                        $atributo->update([
+                            'titulo' => $value[0],
+                        ]);
+                    }
+                }
+            }
+
+            $qtdAtributo = $request->atributo != null ?
+                count($request->atributo) : 0;
+
+            for ($i = 0; $i < $qtdAtributo; $i++) {
+                $vaga->atributos()->create([
+                    'titulo' => $request->atributo[$i],
                 ]);
             }
+
+            if ($request->requisitoExists) {
+                foreach ($request->requisitoExists as $key => $value) {
+
+                    $requisito = Requisito::find($key);
+                    if ($requisito) {
+                        $requisito->update([
+                            'titulo' => $value[0],
+                        ]);
+                    }
+                }
+            }
+
+            $qtdRequisitos = $request->requisito != null ?
+                count($request->requisito) : 0;
+
+            for ($i = 0; $i < $qtdRequisitos; $i++) {
+                $vaga->requisitos()->create([
+                    'titulo' => $request->requisito[$i],
+                ]);
+            }
+
+            return redirect()->route('dashboard');
+        } else {
+            return back();
         }
-
-        $qtdRequisitos = $request->requisito != null ?
-            count($request->requisito) : 0;
-
-        for ($i = 0; $i < $qtdRequisitos; $i++) {
-            $vaga->requisitos()->create([
-                'titulo' => $request->requisito[$i],
-            ]);
-        }
-
-        return redirect()->route('dashboard');
     }
 
     /**
