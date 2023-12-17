@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Empresa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class EmpresaController extends Controller
 {
@@ -65,7 +66,11 @@ class EmpresaController extends Controller
      */
     public function edit(Empresa $empresa)
     {
-        //
+        if (Gate::allows('isEmpresa') && Gate::allows('empresa_create')) {
+            return view('empresa.edit', compact('empresa'));
+        } else {
+            return back();
+        }
     }
 
     /**
@@ -77,7 +82,16 @@ class EmpresaController extends Controller
      */
     public function update(Request $request, Empresa $empresa)
     {
-        //
+        if (Gate::allows('isEmpresa') && Gate::allows('empresa_create')) {
+            $empresa->update([
+                'descricao' => $request->descricao,
+                'cnpj' => $request->cnpj,
+            ]);
+
+            return redirect()->route('dashboard');
+        } else {
+            return back();
+        }
     }
 
     /**

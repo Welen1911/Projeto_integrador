@@ -8,7 +8,7 @@
                Sobre a sua empresa
             </label>
             <textarea id="message" rows="4" class="block p-2.5 w-full text-sm bg-grey-lighter border-gray-500  rounded border "
-                placeholder="Taca qualquer coisa ai" name="descricao"></textarea>
+                placeholder="Taca qualquer coisa ai" name="descricao">{{ $empresa->descricao ?? old('descricao') }}</textarea>
             <p class="text-grey-dark text-xs italic">Make it as long and as crazy as you'd like</p>
         </div>
     </div>
@@ -20,7 +20,7 @@
             <div id="tagInputWrapper" class="flex flex-wrap bg-grey-lighter text-grey-darke">
                 <input
                     class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3"
-                    id="cnpj" type="text" name="cnpj">
+                    id="cnpj" type="text" name="cnpj" value="{{ $empresa->cnpj ?? old('cnpj') }}">
             </div>
             <p class="text-grey-dark text-xs italic">Make it as long and as crazy as you'd like</p>
         </div>

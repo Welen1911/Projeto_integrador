@@ -43,7 +43,7 @@
           </div>
           <div class="border-t border-blue-gray-50 p-4">
             <p class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
-              <a href="#"><strong class="text-green-500">Editar</strong></a>
+              <a href="{{ route('empresa.edit', $empresa->id) }}"><strong class="text-green-500">Editar</strong></a>
             </p>
           </div>
         </div>
