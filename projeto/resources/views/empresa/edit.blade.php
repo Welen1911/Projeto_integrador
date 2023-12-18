@@ -28,6 +28,18 @@
             @include('components.app.formEmpresa')
         </form>
 
+        <form action="{{ route('empresa.destroy', $empresa->id) }}" method="post">
+            @csrf
+            @method('DELETE')
+            <!-- form do candidato -->
+           <button>Deletar</button>
+        </form>
+
+    </div>
+    <div class="inset-x-0 mt-20 z-10 w-full px-8 sm:px-16 lg:px-40 py-1 " id="myForm">
+
+       
+
     </div>
 
 </body>

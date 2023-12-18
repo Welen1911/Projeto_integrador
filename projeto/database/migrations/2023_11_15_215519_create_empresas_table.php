@@ -17,7 +17,9 @@ class CreateEmpresasTable extends Migration
             $table->id();
             $table->foreignId('user_id')->unique();
             $table->foreign('user_id')
-            ->references('id')->on('users');
+            ->references('id')->on('users')
+            ->cascadeOnUpdate()
+            ->cascadeOnDelete();
 
             $table->string('cnpj');
             $table->text('descricao');
