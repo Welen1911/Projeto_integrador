@@ -102,6 +102,12 @@ class EmpresaController extends Controller
      */
     public function destroy(Empresa $empresa)
     {
-        //
+        if (Gate::allows('isEmpresa') && Gate::allows('empresa_create')) {
+            $empresa->delete();
+
+            return redirect()->route('dashboard');
+        } else {
+            return back();
+        }
     }
 }

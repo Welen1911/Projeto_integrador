@@ -58,9 +58,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(string $id)
     {
-        //
+        $user = User::find($id);
+        return view('edit_user', compact('user'));
     }
 
     /**
@@ -72,7 +73,44 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+
+        $estado = Estado::where('nome', $request->estado)->first();
+        
+        if (!$estado) {
+        
+            $estado = Estado::create([
+                'nome' => $request->estado,
+            ]);
+        }
+
+        $cidade = Cidade::where('cep', $request->cep)->first();
+
+
+        if (!$cidade) {
+            
+            $cidade = Cidade::create([
+                'nome' => $request->cidade,
+                'cep' => $request->cep,
+                'estado_id' => $estado->id,
+            ]);
+
+        }
+
+        $user->endereco()->update([
+            'bairro' => $request->bairro,
+            'rua' => $request->rua,
+            'numero' => $request->numero,
+            'complemento' => $request->complemento,
+            'cidade_id' => $cidade->id,
+        ]);
+
+        $user->telefones()->update([
+            'celular' => $request->celular,
+            'fixo' => $request->fixo,
+        ]);
+
+        return redirect('/dashboard');
     }
 
     /**
@@ -83,7 +121,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+
+        return redirect()->route('dashboard');
     }
 
     public function tipoConta()

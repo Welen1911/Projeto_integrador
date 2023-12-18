@@ -17,7 +17,9 @@ class CreateCandidatosTable extends Migration
             $table->id();
             $table->foreignId('user_id')->unique();
             $table->foreign('user_id')
-            ->references('id')->on('users');
+            ->references('id')->on('users')
+            ->cascadeOnUpdate()
+            ->cascadeOnDelete();
 
             $table->text('sobre');
             $table->string('curriculo')->nullable();
