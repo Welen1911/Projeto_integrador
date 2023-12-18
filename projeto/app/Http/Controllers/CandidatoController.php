@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Area;
 use App\Models\Candidato;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class CandidatoController extends Controller
 {
@@ -90,7 +91,12 @@ class CandidatoController extends Controller
      */
     public function edit(Candidato $candidato)
     {
-        //
+        if (Gate::allows('isCandidato') && Gate::allows('candidato_create')) {
+            $areas = Area::all();
+            return view('candidato.edit', compact('candidato', 'areas'));
+        } else {
+            return back();
+        }
     }
 
     /**
@@ -102,7 +108,11 @@ class CandidatoController extends Controller
      */
     public function update(Request $request, Candidato $candidato)
     {
-        //
+        if (Gate::allows('isCandidato') && Gate::allows('candidato_create')) {
+            dd($request->all());
+        } else {
+            return back();
+        }
     }
 
     /**
