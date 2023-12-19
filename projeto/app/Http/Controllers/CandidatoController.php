@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Area;
 use App\Models\Candidato;
+use App\Models\Experienca;
+use App\Models\Formacao;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
@@ -39,37 +41,41 @@ class CandidatoController extends Controller
      */
     public function store(Request $request)
     {
-        $candidato = Candidato::create([
-            'user_id' => auth()->user()->id,
-            'sobre' => $request->sobre,
-            'area_id' => $request->area,
-        ]);
-
-        $cont = $request->cursando != null ?
-            count($request->cursando) : 0;
-
-
-        for ($i = 0; $i < $cont; $i++) {
-            $candidato->formacaos()->create([
-                'instituto' => $request->instituto[$i],
-                'tipo' => $request->tipo[$i],
-                'curso' => $request->curso[$i],
-                'cursando' => $request->cursando[$i],
+        if (Gate::allows('isCandidato')) {
+            $candidato = Candidato::create([
+                'user_id' => auth()->user()->id,
+                'sobre' => $request->sobre,
+                'area_id' => $request->area,
             ]);
+
+            $cont = $request->cursando != null ?
+                count($request->cursando) : 0;
+
+
+            for ($i = 0; $i < $cont; $i++) {
+                $candidato->formacaos()->create([
+                    'instituto' => $request->instituto[$i],
+                    'tipo' => $request->tipo[$i],
+                    'curso' => $request->curso[$i],
+                    'cursando' => $request->cursando[$i],
+                ]);
+            }
+
+            $cont = $request->trabalhando != null ?
+                count($request->trabalhando) : 0;
+
+            for ($i = 0; $i < $cont; $i++) {
+                $candidato->experiencias()->create([
+                    'empresa' => $request->empresa[$i],
+                    'descricao' => $request->descricao[$i],
+                    'trabalhando' => $request->trabalhando[$i],
+                ]);
+            }
+
+            return redirect('dashboard');
+        } else {
+            return back();
         }
-
-        $cont = $request->trabalhando != null ?
-            count($request->trabalhando) : 0;
-
-        for ($i = 0; $i < $cont; $i++) {
-            $candidato->experiencias()->create([
-                'empresa' => $request->empresa[$i],
-                'descricao' => $request->descricao[$i],
-                'trabalhando' => $request->trabalhando[$i],
-            ]);
-        }
-
-        return redirect('dashboard');
     }
 
     /**
@@ -109,7 +115,69 @@ class CandidatoController extends Controller
     public function update(Request $request, Candidato $candidato)
     {
         if (Gate::allows('isCandidato') && Gate::allows('candidato_create')) {
-            dd($request->all());
+            // dd($request->all());
+
+            $candidato->update([
+                'sobre' => $request->sobre,
+                'area_id' => $request->area,
+            ]);
+
+            if ($request->formacaoExists) {
+                foreach ($request->formacaoExists as $key => $value) {
+
+                    $formacao = Formacao::find($key);
+                    if ($formacao) {
+                        $formacao->update([
+                            'instituto' => $value[0],
+                            'curso' => $value[1],
+                            'tipo' => $value[2],
+                            'cursando' => $value[3],
+                            'candidato_id' => auth()->user()->candidato->id,
+                        ]);
+                    }
+                }
+            }
+
+            $cont = $request->cursando != null ?
+                count($request->cursando) : 0;
+
+
+            for ($i = 0; $i < $cont; $i++) {
+                $candidato->formacaos()->create([
+                    'instituto' => $request->instituto[$i],
+                    'tipo' => $request->tipo[$i],
+                    'curso' => $request->curso[$i],
+                    'cursando' => $request->cursando[$i],
+                ]);
+            }
+
+            if ($request->experienciaExists) {
+                foreach ($request->experienciaExists as $key => $value) {
+
+                    $experiencia = Experienca::find($key);
+                    if ($experiencia) {
+                        $experiencia->update([
+                            'descricao' => $value[0],
+                            'empresa' => $value[1],
+                            'trabalhando' => $value[2],
+                            'candidato_id' => auth()->user()->candidato->id,
+                        ]);
+                    }
+                }
+            }
+
+            $cont = $request->trabalhando != null ?
+                count($request->trabalhando) : 0;
+
+            for ($i = 0; $i < $cont; $i++) {
+                $candidato->experiencias()->create([
+                    'empresa' => $request->empresa[$i],
+                    'descricao' => $request->descricao[$i],
+                    'trabalhando' => $request->trabalhando[$i],
+                ]);
+            }
+
+            return redirect()->route('dashboard');
         } else {
             return back();
         }

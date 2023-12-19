@@ -59,7 +59,7 @@
                   <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 " for="grid-password">
                     Instituição
                   </label>
-                  <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-password" type="text" placeholder="Rua longe pra caralho" name="instituto[]" value="{{
+                  <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-password" type="text" placeholder="Rua longe pra caralho" name="formacaoExists[{{ $formacao->id }}][]" value="{{
                     $formacao->instituto ?? ''
                   }}">
                   <p class="text-grey-dark text-xs italic">Make it as long and as crazy as you'd like</p>
@@ -72,7 +72,7 @@
                   <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-zip">
                     Nome do Curso
                   </label>
-                  <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4" id="" type="text" placeholder="Analise e Desenvolvimento de Sistemas" name="curso[]" value="{{
+                  <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4" id="" type="text" placeholder="Analise e Desenvolvimento de Sistemas" name="formacaoExists[{{ $formacao->id }}][]" value="{{
                     $formacao->curso
                   }}">
                 </div>
@@ -82,7 +82,7 @@
                     Tipo de Fomação
                   </label>
                   <div class="flex flex-row-reverse items-center">
-                    <select class="block appearance-none w-full bg-gray-300 border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="dropdown" name="tipo[]">
+                    <select class="block appearance-none w-full bg-gray-300 border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="dropdown" name="formacaoExists[{{ $formacao->id }}][]">
                       <option value="s">Superior</option>
                       <option value="t">Tecnico</option>
                     </select>
@@ -97,7 +97,7 @@
                     Atualmente
                   </label>
                   <div class="flex flex-row-reverse items-center">
-                    <select class="block appearance-none w-full bg-gray-300 border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="dropdown" name="cursando[]">
+                    <select class="block appearance-none w-full bg-gray-300 border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="dropdown" name="formacaoExists[{{ $formacao->id }}][]">
                       <option value="c">Completo</option>
                       <option value="n">Incompleto</option>
                       <option value="s">Cursando</option>
@@ -131,7 +131,7 @@
                   <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
                     Descrição
                   </label>
-                  <textarea id="message" rows="4" class="block p-2.5 w-full text-sm bg-grey-lighter border-gray-500  rounded border " placeholder="Taca qualquer coisa ai" name="descricao[]">{{ $experiencia->descricao ?? '' }}</textarea>
+                  <textarea id="message" rows="4" class="block p-2.5 w-full text-sm bg-grey-lighter border-gray-500  rounded border " placeholder="Taca qualquer coisa ai" name="experienciaExists[{{ $experiencia->id }}][]">{{ $experiencia->descricao ?? '' }}</textarea>
                   <p class="text-grey-dark text-xs italic">Make it as long and as crazy as you'd like</p>
                 </div>
               </div>
@@ -141,7 +141,7 @@
                   <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-zip">
                     Nome da Empresa
                   </label>
-                  <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4" id="" type="text" placeholder="Analise e Desenvolvimento de Sistemas" name="empresa[]" value="{{
+                  <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4" id="" type="text" placeholder="Analise e Desenvolvimento de Sistemas" name="experienciaExists[{{ $experiencia->id }}][]" value="{{
                     $experiencia->empresa ?? ''
                   }}">
                 </div>
@@ -150,7 +150,7 @@
                   <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-zip">
                     Trabalha aqui atualmente ?
                   </label>
-                  <select class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4" id="" name="trabalhando[]">
+                  <select class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4" id="" name="experienciaExists[{{ $experiencia->id }}][]">
                   <option value="n">Não</option>
                   <option value="s">Sim</option>
                   </select>
