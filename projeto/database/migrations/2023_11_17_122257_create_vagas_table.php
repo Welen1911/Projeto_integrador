@@ -25,7 +25,7 @@ class CreateVagasTable extends Migration
             $table->string('titulo');
             $table->text('descricao');
 
-            $table->foreignId('area_id');
+            $table->foreignId('area_id')->nullable();
             $table->foreign('area_id')
             ->references('id')->on('areas');
             
