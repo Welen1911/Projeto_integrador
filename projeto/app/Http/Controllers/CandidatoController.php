@@ -46,6 +46,12 @@ class CandidatoController extends Controller
                 'user_id' => auth()->user()->id,
                 'sobre' => $request->sobre,
                 'area_id' => $request->area,
+                'curriculo' => $request->curriculo ?
+                    $request->curriculo->storeAs(
+                        'curriculos',
+                        now() . ".{$request->curriculo->getClientOriginalExtension()}",
+                    )
+                    : null,
             ]);
 
             $cont = $request->cursando != null ?
