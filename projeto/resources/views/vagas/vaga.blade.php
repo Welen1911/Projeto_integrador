@@ -10,7 +10,7 @@
     <div class="inset-x-0 mt-20 w-full lg:h-4/5 z-0 px-8 py-1 h-auto bg-gray-100 sm:px-16 sm:h-4/5 lg:px-40">
         <div class="flex inset-x-0 flex-col justify-center p-3 pt-20 pb-20 xl:flex-row lg:content-center w-full">
             <div class="grid place-items-center w-full">
-                <p class="text-2x1 text-white-800 align">{{ $vaga->vinculo->nome }}</p>
+                <p class="text-2x1 text-white-800 align">{{ getVinculo($vaga->vinculo->nome) }}</p>
                 <h1 class="text-5xl mt-4 text-white-800">{{ $vaga->titulo }}</h1>
             </div>
         </div>
