@@ -29,7 +29,7 @@ class CandidatoController extends Controller
      */
     public function create()
     {
-        $areas = Area::all();
+        $areas = Area::orderBy('nome', 'asc')->get();
         return view('candidato.cadastro', compact('areas'));
     }
 
@@ -98,7 +98,7 @@ class CandidatoController extends Controller
     public function edit(Candidato $candidato)
     {
         if (Gate::allows('isCandidato') && Gate::allows('candidato_create')) {
-            $areas = Area::all();
+            $areas = Area::orderBy('nome', 'asc')->get();
             return view('candidato.edit', compact('candidato', 'areas'));
         } else {
             return back();

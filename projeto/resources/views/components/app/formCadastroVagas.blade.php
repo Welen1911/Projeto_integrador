@@ -16,9 +16,9 @@
           Tipo de Candidatura
         </label>
         <select class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-first-name" name="vinculo">
-          <option value="pj">PJ</option>
-          <option value="clt">CLT</option>
-          <option value="fr">Freelancer</option>
+          <option value="PJ">PJ</option>
+          <option value="CLT">CLT</option>
+          <option value="FR">Freelancer</option>
         </select>
         <p class="text-red text-xs italic">Please fill out this field.</p>
       </div>
