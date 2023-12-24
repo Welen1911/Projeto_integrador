@@ -3,7 +3,6 @@
 @section('title', 'dashboard')
     
 @section('content')
-    
 
 @include('components.app.aside')
  

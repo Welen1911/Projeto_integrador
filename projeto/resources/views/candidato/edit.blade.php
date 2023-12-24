@@ -27,6 +27,13 @@
             <!-- form do candidato -->
             @include('components.app.formCandidato')
         </form>
+        <form action="{{ route('candidato.destroy', $candidato->id) }}" method="post">
+            @csrf
+            @method('DELETE')
+            <!-- form do candidato -->
+           <button class="w-40 inline-block pt-4 pr-5 pb-4 pl-5 text-xl  font-medium text-center text-white bg-indigo-800
+           rounded-lg transition duration-200 hover:bg-indigo-600 ease">Deletar</button>
+        </form>
 
     </div>
 
