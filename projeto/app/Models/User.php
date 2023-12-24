@@ -26,6 +26,7 @@ class User extends Authenticatable
         'provider_refresh_token',
         'tipo_conta',
         'endereco_id',
+        'profile_photo_path',
     ];
 
     /**
