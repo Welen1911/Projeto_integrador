@@ -110,6 +110,12 @@ class UserController extends Controller
             'fixo' => $request->fixo,
         ]);
 
+        $user->update([
+            'profile_photo_path' => $request->perfil
+            ->storeAs('perfis', now() . ".{$request->perfil->getClientOriginalExtension()}",
+            ) ?? $user->profile_photo_path,
+        ]);
+
         return redirect('/dashboard');
     }
 

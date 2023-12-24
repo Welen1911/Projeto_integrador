@@ -24,7 +24,7 @@
         <div class=" shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2 bg-gray-100 ">
             <h2 class="text-xl">Informações do Usuário</h1>
                 
-                <form action="{{ route('user.update', $user->id) }}" method="post">
+                <form action="{{ route('user.update', $user->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="-mx-3 md:flex mb-6">
