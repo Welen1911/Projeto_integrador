@@ -46,6 +46,12 @@ class CandidatoController extends Controller
                 'user_id' => auth()->user()->id,
                 'sobre' => $request->sobre,
                 'area_id' => $request->area,
+                'curriculo' => $request->curriculo ?
+                    $request->curriculo->storeAs(
+                        'curriculos',
+                        now() . ".{$request->curriculo->getClientOriginalExtension()}",
+                    )
+                    : null,
             ]);
 
             $cont = $request->cursando != null ?
@@ -115,11 +121,23 @@ class CandidatoController extends Controller
     public function update(Request $request, Candidato $candidato)
     {
         if (Gate::allows('isCandidato') && Gate::allows('candidato_create')) {
-            // dd($request->all());
 
+            if ($request->curriculo) {
+                if ($candidato->curriculo) {
+                    unlink("storage/{$candidato->curriculo}");
+                }
+
+                $curriculo = $request->curriculo->storeAs(
+                    'curriculos',
+                    now() . ".{$request->curriculo->getClientOriginalExtension()}",
+                );
+            } else {
+                $curriculo = null;
+            }
             $candidato->update([
                 'sobre' => $request->sobre,
                 'area_id' => $request->area,
+                'curriculo' => $curriculo,
             ]);
 
             if ($request->formacaoExists) {
@@ -191,6 +209,16 @@ class CandidatoController extends Controller
      */
     public function destroy(Candidato $candidato)
     {
-        //
+        if (Gate::allows('isCandidato') && Gate::allows('candidato_create')) {
+            if ($candidato->curriculo) {
+                unlink("storage/{$candidato->curriculo}");
+            }
+
+            $candidato->delete();
+
+            return redirect()->route('dashboard');
+        } else {
+            return back();
+        }
     }
 }
