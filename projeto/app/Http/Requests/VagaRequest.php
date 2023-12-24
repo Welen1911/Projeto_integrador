@@ -13,7 +13,7 @@ class VagaRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,14 @@ class VagaRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'titulo' => ['required', 'string'],
+            'vinculo' => ['required', 'string', 'max:3'],
+            'area' => ['required', 'string'],
+            'descricao' => ['required', 'string'],
+            'atributo' => ['array'],
+            'requisito' => ['array'],
+            'atributoExists' => ['array'],
+            'requisitoExists' => ['array'],            
         ];
     }
 }

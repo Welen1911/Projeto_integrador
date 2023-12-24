@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CandidatoEditRequest;
+use App\Http\Requests\CandidatoRequest;
 use App\Models\Area;
 use App\Models\Candidato;
 use App\Models\Experienca;
@@ -39,7 +41,7 @@ class CandidatoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CandidatoRequest $request)
     {
         if (Gate::allows('isCandidato')) {
             $candidato = Candidato::create([
@@ -118,7 +120,7 @@ class CandidatoController extends Controller
      * @param  \App\Models\Candidato  $candidato
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Candidato $candidato)
+    public function update(CandidatoEditRequest $request, Candidato $candidato)
     {
         if (Gate::allows('isCandidato') && Gate::allows('candidato_create')) {
 
