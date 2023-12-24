@@ -72,6 +72,7 @@ class RegisteredUserController extends Controller
                 'provider_id' => $providerUser->getId(),
                 'provider_token' => $providerUser->token,
                 'provider_refresh_token' => $providerUser->refreshToken,
+                'profile_photo_path' => $providerUser->avatar,
             ]);
         }
 

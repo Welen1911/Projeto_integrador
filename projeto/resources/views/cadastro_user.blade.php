@@ -47,20 +47,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="md:w-1/2 px-3 mb-6 md:mb-0 hidden" id="cnpjCampo">
-                        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
-                            for="grid-first-name">
-                            CNPJ
-                        </label>
-                        <input
-                            class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3"
-                            id="cnpj" type="text" placeholder="12.345.678/0001-10">
-                        <p class="text-red text-xs italic">Please fill out this field.</p>
-                    </div>
                 </div>
-                <form action="{{ route('infor.store') }}" method="post">
+                <form action="{{ route('infor.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
-
+                    @if (!auth()->user()->profile_photo_path)
+                        <div class="-mx-3 md:flex mb-6">
+                            <div class="md:w-full px-3">
+                                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 "
+                                    for="grid-password">
+                                    Perfil
+                                </label>
+                                <input
+                                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3"
+                                    id="grid-password" type="file" placeholder="Rua longe pra caralho" name="perfil"/>
+                            </div>
+                        </div>
+                    @endif
                     @include('components.app.form_conta')
         </div>
         </form>

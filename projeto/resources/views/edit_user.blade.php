@@ -24,9 +24,20 @@
         <div class=" shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2 bg-gray-100 ">
             <h2 class="text-xl">Informações do Usuário</h1>
                 
-                <form action="{{ route('user.update', $user->id) }}" method="post">
+                <form action="{{ route('user.update', $user->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
+                    <div class="-mx-3 md:flex mb-6">
+                        <div class="md:w-full px-3">
+                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 "
+                                for="grid-password">
+                                Perfil
+                            </label>
+                            <input
+                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3"
+                                id="grid-password" type="file" placeholder="Rua longe pra caralho" name="perfil"/>
+                        </div>
+                    </div>
                    @include('components.app.form_conta')
                    <input
     class="w-40 inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-800

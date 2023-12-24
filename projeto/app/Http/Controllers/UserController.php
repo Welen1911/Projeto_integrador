@@ -6,6 +6,7 @@ use App\Models\Cidade;
 use App\Models\Estado;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
+use Exception;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -76,9 +77,9 @@ class UserController extends Controller
         $user = User::find($id);
 
         $estado = Estado::where('nome', $request->estado)->first();
-        
+
         if (!$estado) {
-        
+
             $estado = Estado::create([
                 'nome' => $request->estado,
             ]);
@@ -88,13 +89,12 @@ class UserController extends Controller
 
 
         if (!$cidade) {
-            
+
             $cidade = Cidade::create([
                 'nome' => $request->cidade,
                 'cep' => $request->cep,
                 'estado_id' => $estado->id,
             ]);
-
         }
 
         $user->endereco()->update([
@@ -110,6 +110,22 @@ class UserController extends Controller
             'fixo' => $request->fixo,
         ]);
 
+        if ($request->perfil) {
+            try {
+                if ($user->profile_photo_path) {
+                    unlink("storage/{$user->profile_photo_path}");
+                }
+            } catch (Exception $e) {
+            }
+
+            $user->update([
+                'profile_photo_path' => $request->perfil
+                    ->storeAs(
+                        'perfis',
+                        now() . ".{$request->perfil->getClientOriginalExtension()}",
+                    ),
+            ]);
+        }
         return redirect('/dashboard');
     }
 
@@ -122,6 +138,14 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
+
+        try {
+            if ($user->profile_photo_path) {
+                unlink("storage/{$user->profile_photo_path}");
+            }
+        } catch (Exception $e) {
+        }
+
         $user->delete();
 
         return redirect()->route('dashboard');
@@ -158,10 +182,10 @@ class UserController extends Controller
 
 
         $estado = Estado::where('nome', $request->estado)->first();
-        
+
 
         if (!$estado) {
-        
+
             $estado = Estado::create([
                 'nome' => $request->estado,
             ]);
@@ -171,13 +195,12 @@ class UserController extends Controller
 
 
         if (!$cidade) {
-            
+
             $cidade = Cidade::create([
                 'nome' => $request->cidade,
                 'cep' => $request->cep,
                 'estado_id' => $estado->id,
             ]);
-
         }
 
         $endereco = $user->endereco()->create([
