@@ -220,6 +220,6 @@ class UserController extends Controller
             'fixo' => $request->fixo,
         ]);
 
-        return redirect('/dashboard');
+        return redirect('/dashboard')->with('message', 'Cadastro feito!');
     }
 }

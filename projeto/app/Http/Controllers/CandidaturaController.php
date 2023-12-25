@@ -43,7 +43,7 @@ class CandidaturaController extends Controller
                 'candidato_id' => auth()->user()->candidato->id,
             ]);
 
-            return redirect()->route('dashboard');
+            return redirect()->route('dashboard')->with('message', 'Candidaturar realizada!');
 
         } else {
             return back();
@@ -96,7 +96,7 @@ class CandidaturaController extends Controller
         if (Gate::allows('isCandidato') && Gate::allows('candidato_create')) {
             $candidatura->delete();
 
-            return redirect()->route('dashboard');
+            return redirect()->route('dashboard')->with('message', 'Candidatura cancelada!');
         } else {
             return back();
         }

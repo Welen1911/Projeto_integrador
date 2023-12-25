@@ -18,12 +18,12 @@ Route::get('/auth/callback', [RegisteredUserController::class, 'storeProvider'])
 Route::get('/dashboard', function () {
     if (Gate::allows('isEmpresa')) {
         if (Gate::allows('empresa_create')) {
-            return redirect()->route('empresa.index');
+            return redirect()->route('empresa.index')->with('message', session('message'));
         }
         return redirect()->route('empresa.create');
     } else if (Gate::allows('isCandidato')) {
         if (Gate::allows('candidato_create')) {
-            return redirect()->route('candidato.index');
+            return redirect()->route('candidato.index')->with('message', session('message'));
         }
         return redirect()->route('candidato.create');
     }

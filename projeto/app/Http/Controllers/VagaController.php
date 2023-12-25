@@ -82,7 +82,7 @@ class VagaController extends Controller
                 ]);
             }
 
-            return redirect('dashboard');
+            return redirect('dashboard')->with('message', 'Vaga criada!');
         } else {
             return back();
         }
@@ -178,7 +178,7 @@ class VagaController extends Controller
                 ]);
             }
 
-            return redirect()->route('dashboard');
+            return redirect()->route('dashboard')->with('message', 'Vaga atualizada!');
         } else {
             return back();
         }
@@ -195,7 +195,7 @@ class VagaController extends Controller
         if (Gate::allows('isEmpresa') && Gate::allows('empresa_create')) {
             $vaga->delete();
 
-            return redirect()->route('dashboard');
+            return redirect()->route('dashboard')->with('message', 'Vaga excluída!');
         } else {
             return back();
         }
