@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CandidaturaRequest;
 use App\Models\Candidatura;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -34,7 +35,7 @@ class CandidaturaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CandidaturaRequest $request)
     {
         if (Gate::allows('isCandidato')) {
             Candidatura::create([
