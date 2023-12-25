@@ -22,20 +22,6 @@
         </select>
         <p class="text-red text-xs italic">Please fill out this field.</p>
       </div>
-
-      <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
-          Modelo de Trabalho
-        </label>
-        <select class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-first-name" name="tipo">
-          <option value="r">Remoto</option>
-          <option value="p">Presencial</option>
-          <option value="h">Hibrido</option>
-        </select>
-        <p class="text-red text-xs italic">Please fill out this field.</p>
-      </div>
-
-      
     </div>
     
     <div class="-mx-3 md:flex mb-6">

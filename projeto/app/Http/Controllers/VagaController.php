@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\VagaRequest;
 use App\Models\Area;
 use App\Models\Atribuito;
 use App\Models\Requisito;
@@ -42,7 +43,7 @@ class VagaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(VagaRequest $request)
     {
         if (Gate::allows('isEmpresa') && Gate::allows('empresa_create')) {
 
@@ -117,7 +118,7 @@ class VagaController extends Controller
      * @param  \App\Models\Vaga  $vaga
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Vaga $vaga)
+    public function update(VagaRequest $request, Vaga $vaga)
     {
         if (Gate::allows('isEmpresa') && Gate::allows('empresa_create')) {
             $vinculo = Vinculo::where('nome', $request->vinculo)->first();

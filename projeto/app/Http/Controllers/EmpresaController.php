@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EmpresaRequest;
 use App\Models\Empresa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -36,7 +37,7 @@ class EmpresaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EmpresaRequest $request)
     {
         $empresa = Empresa::create([
             'user_id' => auth()->user()->id,
@@ -80,7 +81,7 @@ class EmpresaController extends Controller
      * @param  \App\Models\Empresa  $empresa
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Empresa $empresa)
+    public function update(EmpresaRequest $request, Empresa $empresa)
     {
         if (Gate::allows('isEmpresa') && Gate::allows('empresa_create')) {
             $empresa->update([

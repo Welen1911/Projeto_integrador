@@ -18,7 +18,9 @@
 <body>
 
     @include('components.app.header')
-
+    {{-- @if ($errors->any())
+    @dd($errors->all())
+    @endif --}}
     <div class="inset-x-0 mt-20 z-10 w-full px-8 sm:px-16 lg:px-40 py-1 " id="myForm">
 
         <form action="{{ route('candidato.update', $candidato->id) }}" method="post" enctype="multipart/form-data">
