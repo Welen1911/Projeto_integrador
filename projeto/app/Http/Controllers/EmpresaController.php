@@ -45,7 +45,7 @@ class EmpresaController extends Controller
             'descricao' => $request->descricao,
         ]);
 
-        return redirect('dashboard');
+        return redirect('dashboard')->with('message', 'Cadastro feito!');
     }
 
     /**
@@ -89,7 +89,7 @@ class EmpresaController extends Controller
                 'cnpj' => $request->cnpj,
             ]);
 
-            return redirect()->route('dashboard');
+            return redirect()->route('dashboard')->with('message', 'Perfil atualizado!');
         } else {
             return back();
         }

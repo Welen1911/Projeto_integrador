@@ -80,7 +80,7 @@ class CandidatoController extends Controller
                 ]);
             }
 
-            return redirect('dashboard');
+            return redirect('dashboard')->with('message', 'Cadastro feito!');
         } else {
             return back();
         }
@@ -197,7 +197,7 @@ class CandidatoController extends Controller
                 ]);
             }
 
-            return redirect()->route('dashboard');
+            return redirect()->route('dashboard')->with('message', 'Perfil atualizado!');
         } else {
             return back();
         }

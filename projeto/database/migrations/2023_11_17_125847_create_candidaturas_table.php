@@ -18,11 +18,16 @@ class CreateCandidaturasTable extends Migration
 
             $table->foreignId('vaga_id');
             $table->foreign('vaga_id')
-            ->references('id')->on('vagas');
+            ->references('id')->on('vagas')
+            ->cascadeOnUpdate()
+            ->cascadeOnDelete();
 
             $table->foreignId('candidato_id');
             $table->foreign('candidato_id')
-            ->references('id')->on('candidatos');
+            ->references('id')->on('candidatos')
+            ->cascadeOnUpdate()
+            ->cascadeOnDelete();
+
 
             $table->timestamps();
         });
