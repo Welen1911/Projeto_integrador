@@ -1,4 +1,5 @@
 
+
 var contFormacao = 0
 var contExperiancia = 0
 
@@ -29,6 +30,32 @@ $(function () {
     }
   });
 });
+
+$(document).ready(function() {
+  $('#cadastrar').click(function() {
+      var todosPreenchidos = true;
+
+      // Percorre os campos de entrada do formulário
+      $('#formCadastro input').each(function() {
+          if ($(this).val().trim() === '') {
+              todosPreenchidos = false;
+              console.log(todosPreenchidos)
+              $(this).removeClass("border-gray-300").addClass("border-red-500"); // Destaque o campo vazio
+          } else {
+              $(this).removeClass("border-red-500").addClass("border-gray-300"); // Remova o destaque quando preenchido
+          }
+      });
+
+      // Verifica se todos os campos estão preenchidos
+      if (todosPreenchidos) {
+        $("#alert-2").hide();
+          // Aqui você pode submeter o formulário ou realizar outra ação
+      } else {
+        $("#alert-2").show();
+      }
+  });
+});
+
 
 //Muda o Form Conforme o tipo de usuário
 
@@ -91,27 +118,7 @@ $(document).ready(function () {
 //   })
 // })
 
-$(document).ready(function () {
-  $('#tagInput').on('keydown', function (event) {
-    if (event.key === 'Enter' || event.keyCode === 13) {
-      event.preventDefault();
 
-      const tagValue = $(this).val().trim();
-      if (tagValue !== '') {
-        // Adicionar a tag dentro do campo de input
-        $('#tagInputWrapper').append(`<span class="bg-gray-200 px-2 py-1 rounded-md mr-2 mb-2">${tagValue}<button type="button" class="ml-2 text-gray-700 font-bold">x</button></span>`);
-
-        // Limpar o input
-        $(this).val('');
-      }
-    }
-  });
-
-  // Remover a tag quando o botão "x" é clicado
-  $('#tagInputWrapper').on('click', 'button', function () {
-    $(this).parent().remove();
-  });
-});
 
 //Adiciona Formm de Formação
 $(document).ready(() => {
@@ -170,7 +177,7 @@ $(document).ready(() => {
         
         </div>
 
-        <h2 class="mb-4 text-lg">Formação ${contFormacao + 1}</h2>
+       
   
     `)
 
@@ -212,7 +219,7 @@ $(document).ready(() => {
           </div>
         </div>
 
-        <h2 class="mb-4 text-lg">Experiencia ${contExperiancia + 1}</h2>
+        
   
     `)
 

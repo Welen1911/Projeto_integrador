@@ -28,10 +28,7 @@
 
     <div class="-mx-3 md:flex mb-6">
         <div class="md:w-full px-3" id="">
-            <input
-                class="w-40 inline-block pt-4 pr-5 pb-4 pl-5 text-xl  font-medium text-center text-white bg-indigo-800
-        rounded-lg transition duration-200 hover:bg-indigo-600 ease"
-                id="sub" type="submit" value="Enviar">
+            <input class="w-40 inline-block pt-4 pr-5 pb-4 pl-5 text-xl  font-medium text-center text-white bg-indigo-800 rounded-lg transition duration-200 hover:bg-indigo-600 ease" id="sub" type="submit" value="Enviar">
         </div>
     </div>
 </div>

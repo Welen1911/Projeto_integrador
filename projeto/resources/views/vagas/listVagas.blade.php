@@ -109,167 +109,25 @@
         </div>
 
         <!--Card de Pesquisa Recentes-->
-        <div class="flex inset-x-0 flex-col w w-full justify-between  p-3 mt-1 ">
-            <div class="sm:flex sm:space-x-4">
+        <div class="flex inset-x-0 flex-col w-full justify-between  mt-1 " id="listVagas">
+            
+            <div class="grid gap-5 items-center justify-items-center grid-cols-4">
                 @foreach ($vagas as $vaga)
-                <a href="{{ route('vaga.show', $vaga->id) }}"
-                class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow-lg transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
-                <img class="rounded-t-lg" src="{{ asset('imagens/logoMagalu.png') }}" alt="" />
-                <div class="p-5">
+                    <a href="{{ route('vaga.show', $vaga->id) }}"
+                    class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow-lg transform transition-all mb-4 w-full">
+                    <img class="rounded-t-lg" src="{{ asset('imagens/logoMagalu.png') }}" alt="" />
+                    <div class="p-5">
 
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $vaga->titulo }}</h5>
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $vaga->titulo }}</h5>
 
-                    <p class="mb-3 font-normal text-gray-700 y">{{ $vaga->descricao }}</p>
+                        <p class="mb-3 font-normal text-gray-700 y">{{ $vaga->descricao }}</p>
 
-                </div>
-            </a>
+                    </div>
+                    </a>
                 @endforeach
-
             </div>
-
-            <div class="sm:flex sm:space-x-4">
-                <a href="/"
-                    class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow-lg transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
-                    <img class="rounded-t-lg" src="{{ asset('imagens/logoMagalu.png') }}" alt="" />
-                    <div class="p-5">
-
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Titulo da vaga de emprego
-                            disponível</h5>
-
-                        <p class="mb-3 font-normal text-gray-700 y">Here are the biggest enterprise technology acquisitions
-                            of 2021 so far, in reverse chronological order.</p>
-
-                    </div>
-                </a>
-
-                <a href="/"
-                    class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow-lg transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
-                    <img class="rounded-t-lg" src="{{ asset('imagens/logoRenner.png') }}" alt="" />
-                    <div class="p-5">
-
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Titulo da vaga de emprego
-                            disponível</h5>
-
-                        <p class="mb-3 font-normal text-gray-700 y">Here are the biggest enterprise technology acquisitions
-                            of 2021 so far, in reverse chronological order.</p>
-
-                    </div>
-                </a>
-
-                <a href="/"
-                    class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow-lg transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
-                    <img class="rounded-t-lg" src="{{ asset('imagens/logoIfood.png') }}" alt="" />
-                    <div class="p-5">
-
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Titulo da vaga de emprego
-                            disponível</h5>
-
-                        <p class="mb-3 font-normal text-gray-700 y">Here are the biggest enterprise technology acquisitions
-                            of 2021 so far, in reverse chronological order.</p>
-
-                    </div>
-                </a>
-
-                <a href="/"
-                    class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow-lg transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
-                    <img class="rounded-t-lg" src="{{ asset('imagens/logoAzul.png') }}" alt="" />
-                    <div class="p-5">
-
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Titulo da vaga de emprego
-                            disponível</h5>
-
-                        <p class="mb-3 font-normal text-gray-700 y">Here are the biggest enterprise technology acquisitions
-                            of 2021 so far, in reverse chronological order.</p>
-
-                    </div>
-                </a>
-
-                <a href="/"
-                    class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow-lg transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
-                    <img class="rounded-t-lg" src="{{ asset('imagens/logoCacauShow.png') }}" alt="" />
-                    <div class="p-5">
-
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Titulo da vaga de emprego
-                            disponível</h5>
-
-                        <p class="mb-3 font-normal text-gray-700 y">Here are the biggest enterprise technology acquisitions
-                            of 2021 so far, in reverse chronological order.</p>
-
-                    </div>
-                </a>
-            </div>
-
-            <div class="sm:flex sm:space-x-4">
-                <a href="/"
-                    class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow-lg transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
-                    <img class="rounded-t-lg" src="{{ asset('imagens/logoMagalu.png') }}" alt="" />
-                    <div class="p-5">
-
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Titulo da vaga de emprego
-                            disponível</h5>
-
-                        <p class="mb-3 font-normal text-gray-700 y">Here are the biggest enterprise technology acquisitions
-                            of 2021 so far, in reverse chronological order.</p>
-
-                    </div>
-                </a>
-
-                <a href="/"
-                    class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow-lg transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
-                    <img class="rounded-t-lg" src="{{ asset('imagens/logoRenner.png') }}" alt="" />
-                    <div class="p-5">
-
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Titulo da vaga de emprego
-                            disponível</h5>
-
-                        <p class="mb-3 font-normal text-gray-700 y">Here are the biggest enterprise technology acquisitions
-                            of 2021 so far, in reverse chronological order.</p>
-
-                    </div>
-                </a>
-
-                <a href="/"
-                    class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow-lg transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
-                    <img class="rounded-t-lg" src="{{ asset('imagens/logoIfood.png') }}" alt="" />
-                    <div class="p-5">
-
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Titulo da vaga de emprego
-                            disponível</h5>
-
-                        <p class="mb-3 font-normal text-gray-700 y">Here are the biggest enterprise technology acquisitions
-                            of 2021 so far, in reverse chronological order.</p>
-
-                    </div>
-                </a>
-
-                <a href="/"
-                    class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow-lg transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
-                    <img class="rounded-t-lg" src="{{ asset('imagens/logoAzul.png') }}" alt="" />
-                    <div class="p-5">
-
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Titulo da vaga de emprego
-                            disponível</h5>
-
-                        <p class="mb-3 font-normal text-gray-700 y">Here are the biggest enterprise technology acquisitions
-                            of 2021 so far, in reverse chronological order.</p>
-
-                    </div>
-                </a>
-
-                <a href="/"
-                    class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow-lg transform transition-all mb-4 w-full sm:w-1/3 sm:my-8 ">
-                    <img class="rounded-t-lg" src="{{ asset('imagens/logoCacauShow.png') }}" alt="" />
-                    <div class="p-5">
-
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Titulo da vaga de emprego
-                            disponível</h5>
-
-                        <p class="mb-3 font-normal text-gray-700 y">Here are the biggest enterprise technology acquisitions
-                            of 2021 so far, in reverse chronological order.</p>
-
-                    </div>
-                </a>
-            </div>
+            
+            
 
             <nav aria-label="Page navigation example" class="mx-auto">
                 <ul class="inline-flex -space-x-px text-base h-10">

@@ -22,8 +22,20 @@
           <form class="flex flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl
               relative z-10" action="{{ route('login') }}" method="post">
               @csrf
+            
+            
             <p class="w-full text-4xl font-extrabold text-center leading-snug ">Entrar no site</p>
             <div class="w-full mt-6 mr-0 mb-0 ml-0 relative space-y-8">
+              <div class="grid grid-cols-2 gap-2">
+                <a class="w-full flex gap-2 items-center justify-center pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-indigo-800 bg-gray-200 rounded transition duration-200 hover:bg-gray-50 hover:border hover:border-gray-300 ease" href="{{ route('social.login') }}">
+                  <img class="w-6 h-6" src="{{ asset('imagens/iconGoogle.svg') }}" alt="">
+                    Google
+                </a>
+                <a class="w-full flex gap-2 items-center justify-center pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-indigo-800 bg-gray-200 rounded transition duration-200 hover:bg-gray-50 hover:border hover:border-gray-300 ease" href="{{ route('social.login') }}">
+                  <img class="w-6 h-6" src="{{ asset('imagens/iconLinkedin.svg') }}" alt="">
+                  Linkedin
+                </a>
+              </div>
               <div class="relative">
                 <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">Email</p>
                 <input placeholder="123@ex.com" type="text" class="border placeholder-gray-400 focus:outline-none
@@ -49,12 +61,9 @@
                 <button class="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-800
                     rounded-full transition duration-200 hover:bg-indigo-600 ease">Entrar</button>
               </div>
-              <div class="relative">
-                <a class="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-800
-                    rounded-full transition duration-200 hover:bg-indigo-600 ease" href="{{ route('social.login') }}">Register with Google</a>
-              </div>
+             
               <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
-                {{ __('New here ?') }}
+                {{ __('Crie uma nova conta aqui') }}
             </a>
 
             </div>
