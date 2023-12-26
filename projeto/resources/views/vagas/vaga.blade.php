@@ -73,7 +73,7 @@
     <div class="inset-x-0 w-full lg:h-4/5 z-0 py-1 h-auto sm:px-16 sm:h-4/5 lg:px-40">
         <div class="flex inset-x-0 flex-col justify-between p-3 mt-4 xl:flex-row lg:content-center">
             <div class="grid content-center">
-                <h1 class="text-4xl text-indigo-800">{{ $vaga->empresa->user->name }}</h1>
+                <h1 class="text-4xl text-indigo-800"><a href="{{ route('empresa.perfil', $vaga->empresa->id) }}">{{ $vaga->empresa->user->name }}</a></h1>
             </div>
         </div>
 

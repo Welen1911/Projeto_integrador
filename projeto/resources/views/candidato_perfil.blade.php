@@ -4,11 +4,14 @@
 
 @section('content')
 
-    @if (auth()->user()->candidato && $candidato->id == auth()->user()->candidato->id)
+    @can('isCandidato')
         @include('components.app.asideCandidato')
-    @endif
+    @endcan
+    @can('isEmpresa')
+        @include('components.app.asideEmpresa')
+    @endcan
 
-    <div class="p-4 xl:ml-64">
+    <div class="p-4 xl:ml-80">
         <div class="mt-12">
             <div class="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-1">
                 <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">

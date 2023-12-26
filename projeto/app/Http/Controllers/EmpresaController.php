@@ -114,6 +114,7 @@ class EmpresaController extends Controller
 
     public function perfil(string $id) {
         $empresa = Empresa::find($id);
-        return view('empresa_perfil', compact('empresa'));
+        $vagas = $empresa->vagas()->paginate(3);
+        return view('empresa_perfil', compact('empresa', 'vagas'));
     }
 }

@@ -4,11 +4,15 @@
 
 @section('content')
 
-    @if (auth()->user()->empresa && $empresa->id == auth()->user()->empresa->id)
+    @can('isCandidato')
+        @include('components.app.asideCandidato')
+    @endcan
+    @can('isEmpresa')
         @include('components.app.asideEmpresa')
-    @endif
+    @endcan
 
-    <div class="p-4 xl:ml-64">
+
+    <div class="p-4 xl:ml-80">
         <div class="mt-12">
             <div class="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-1">
                 <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
@@ -73,5 +77,33 @@
                     @endif
                 </div>
             </div>
+            @if (!auth()->user()->empresa || $empresa->id != auth()->user()->empresa->id)
+                <div class="mb-12 grid gap-y-10 gap-x-4 md:grid-cols-2 xl:grid-cols-3">
+                    @foreach ($vagas as $vaga)
+                        <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+                            <div class="p-4 text-left">
+
+                                <h4
+                                    class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">
+                                    Vaga: {{ $vaga->titulo }}</h4>
+                                <h4
+                                    class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">
+                                    Area: {{ $vaga->area->nome }}</h4>
+
+
+                            </div>
+
+                            <div class="border-t border-blue-gray-50 p-4">
+                                <a href="{{ route('vaga.show', $vaga->id) }}"
+                                    class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
+                                    <strong class="text-green-500">Ver mais</strong>&nbsp;
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                {{ $vagas->links() }}
+            @endif
+
         </div>
     @endsection
