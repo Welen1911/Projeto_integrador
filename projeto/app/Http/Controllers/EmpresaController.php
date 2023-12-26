@@ -111,4 +111,9 @@ class EmpresaController extends Controller
             return back();
         }
     }
+
+    public function perfil(string $id) {
+        $empresa = Empresa::find($id)->first();
+        return view('empresa_perfil', compact('empresa'));
+    }
 }
