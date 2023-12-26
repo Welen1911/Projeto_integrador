@@ -6,4 +6,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('candidato', CandidatoController::class)->middleware('auth');
 
+Route::get('/perfil', [CandidatoController::class, 'meuPerfil'])->name('candidato.meuPerfil')->middleware('auth');
+
+Route::get('/perfil/{id}', [CandidatoController::class, 'perfil'])->name('candidato.perfil')->middleware('auth');
+
 Route::resource('candidatura', CandidaturaController::class)->middleware('auth');
