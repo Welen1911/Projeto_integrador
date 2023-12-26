@@ -226,7 +226,7 @@ class CandidatoController extends Controller
 
     public function perfil(string $id)
     {
-        $candidato = Candidato::find($id)->first();
+        $candidato = Candidato::find($id);
         return view('candidato_perfil', compact('candidato'));
     }
 }

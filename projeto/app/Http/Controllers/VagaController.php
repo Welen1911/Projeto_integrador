@@ -22,8 +22,9 @@ class VagaController extends Controller
     public function index()
     {
         $vagas = Vaga::all();
+        $areas = Area::orderBy('nome', 'asc')->get();
 
-        return view('vagas.listVagas', compact('vagas'));
+        return view('vagas.listVagas', compact('vagas', 'areas'));
     }
 
     /**
@@ -96,7 +97,8 @@ class VagaController extends Controller
      */
     public function show(Vaga $vaga)
     {
-        return view('vagas.vaga', compact('vaga'));
+        $candidaturas = $vaga->candidaturas()->paginate(3);
+        return view('vagas.vaga', compact('vaga', 'candidaturas'));
     }
 
     /**

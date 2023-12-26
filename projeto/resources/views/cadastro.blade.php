@@ -75,7 +75,7 @@
               </div>
               <div class="relative">
                 <button class="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-800
-                    rounded-lg transition duration-200 hover:bg-indigo-600 ease" type="button" id="cadastrar">Cadastre-se</button>
+                    rounded-lg transition duration-200 hover:bg-indigo-600 ease" type="submit" id="cadastrar">Cadastre-se</button>
               </div>
               <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                 {{ __('Ja possui conta no site? Faça login aqui!') }}
