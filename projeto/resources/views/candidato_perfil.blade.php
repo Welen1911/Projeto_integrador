@@ -4,10 +4,11 @@
 
 @section('content')
 
-    @include('components.app.asideCandidato')
+    @if (auth()->user()->candidato && $candidato->id == auth()->user()->candidato->id)
+        @include('components.app.asideCandidato')
+    @endif
 
     <div class="p-4 xl:ml-64">
-
         <div class="mt-12">
             <div class="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-1">
                 <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
@@ -38,7 +39,7 @@
                             {{ $candidato->user->endereco->cidade->nome }} -
                             {{ $candidato->user->endereco->cidade->estado->nome }}</h4>
                     </div>
-                    @if ($candidato->id == auth()->user()->candidato->id)
+                    @if (auth()->user()->candidato && $candidato->id == auth()->user()->candidato->id)
                         <div class="border-t border-blue-gray-50 p-4">
                             <a href="{{ route('user.edit', auth()->user()->id) }}"
                                 class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
@@ -87,13 +88,13 @@
                             </h4>
                         @endif
                     </div>
-                    @if ($candidato->id == auth()->user()->candidato->id)
-                    <div class="border-t border-blue-gray-50 p-4">
-                        <a href="{{ route('candidato.edit', $candidato->id) }}"
-                            class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
-                            <strong class="text-green-500">Editar Perfil</strong>&nbsp;
-                        </a>
-                    </div>
+                    @if (auth()->user()->candidato && $candidato->id == auth()->user()->candidato->id)
+                        <div class="border-t border-blue-gray-50 p-4">
+                            <a href="{{ route('candidato.edit', $candidato->id) }}"
+                                class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
+                                <strong class="text-green-500">Editar Perfil</strong>&nbsp;
+                            </a>
+                        </div>
                     @endif
                 </div>
             </div>

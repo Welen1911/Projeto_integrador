@@ -224,20 +224,9 @@ class CandidatoController extends Controller
         }
     }
 
-    public function meuPerfil()
-    {
-        if (Gate::allows('isCandidato') && Gate::allows('candidato_create')) {
-            $candidato = auth()->user()->candidato;
-            return view('candidato_perfil', compact('candidato'));
-        } else {
-            return back();
-        }
-    }
-
     public function perfil(string $id)
     {
         $candidato = Candidato::find($id)->first();
-        dd($candidato);
         return view('candidato_perfil', compact('candidato'));
     }
 }
