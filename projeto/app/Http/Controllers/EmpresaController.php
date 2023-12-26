@@ -113,7 +113,7 @@ class EmpresaController extends Controller
     }
 
     public function perfil(string $id) {
-        $empresa = Empresa::find($id)->first();
+        $empresa = Empresa::find($id);
         return view('empresa_perfil', compact('empresa'));
     }
 }

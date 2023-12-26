@@ -161,33 +161,38 @@
         @if (count($candidaturas) > 0)
             <div>
                 <br><br><br>
-                <h1>Candidaturas</h1>
-                <br><br><br>
-
-                <div class="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4">
-                    @foreach ($candidaturas as $candidatura)
-                        <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
-
-                            <img class="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-blue-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center"
-                                src="{{ $candidatura->candidato->user->profile_photo_path }}" alt="">
-
-                            <div class="p-4 text-right">
-                                <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">
-                                    Candidato:</p>
-                                <h4
-                                    class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">
-                                    {{ $candidatura->candidato->user->name }}</h4>
-                            </div>
-                            <div class="border-t border-blue-gray-50 p-4">
-                                <p class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
-                                    <a href="{{ route('candidato.perfil', $candidatura->candidato->id) }}"><strong
-                                            class="text-green-500">Ver perfil</strong></a>
-                                </p>
-                            </div>
-                        </div>
-                    @endforeach
+                <div class="flex items-center justify-center">
+                    <h1>Candidaturas</h1>
                 </div>
-                {{ $candidaturas->links() }}
+                <br><br><br>
+                <div class="flex items-center justify-center">
+                    <div class="mb-12 grid gap-y-10 gap-x-12 md:grid-cols-2 xl:grid-cols-{{ count($candidaturas) < 4 ? count($candidaturas) : 4 }}">
+                        @foreach ($candidaturas as $candidatura)
+                            <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+
+                                <img class="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-blue-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center"
+                                    src="{{ $candidatura->candidato->user->profile_photo_path }}" alt="">
+
+                                <div class="p-10 text-right">
+                                    <p
+                                        class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">
+                                        Candidato:</p>
+                                    <h4
+                                        class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">
+                                        {{ $candidatura->candidato->user->name }}</h4>
+                                </div>
+                                <div class="border-t border-blue-gray-50 p-4">
+                                    <p
+                                        class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
+                                        <a href="{{ route('candidato.perfil', $candidatura->candidato->id) }}"><strong
+                                                class="text-green-500">Ver perfil</strong></a>
+                                    </p>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="flex items-center justify-center m-8">{{ $candidaturas->links() }}</div>
             </div>
         @endif
     @endcan

@@ -97,7 +97,7 @@ class VagaController extends Controller
      */
     public function show(Vaga $vaga)
     {
-        $candidaturas = $vaga->candidaturas()->paginate(3);
+        $candidaturas = $vaga->candidaturas()->paginate(4);
         return view('vagas.vaga', compact('vaga', 'candidaturas'));
     }
 
