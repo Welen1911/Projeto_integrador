@@ -4,6 +4,8 @@ var contFormacao = 0
 var contExperiancia = 0
 
 
+
+
 $(function () {
   $('#cep').mask('00000-000');
   $('#cnpj').mask('00.000.000/0000-00');
@@ -31,6 +33,7 @@ $(function () {
   });
 });
 
+// erro button preenchimento fo
 $(document).ready(function() {
   $('#cadastrar').click(function() {
       var todosPreenchidos = true;
@@ -39,7 +42,6 @@ $(document).ready(function() {
       $('#formCadastro input').each(function() {
           if ($(this).val().trim() === '') {
               todosPreenchidos = false;
-              console.log(todosPreenchidos)
               $(this).removeClass("border-gray-300").addClass("border-red-500"); // Destaque o campo vazio
           } else {
               $(this).removeClass("border-red-500").addClass("border-gray-300"); // Remova o destaque quando preenchido
@@ -48,10 +50,38 @@ $(document).ready(function() {
 
       // Verifica se todos os campos estão preenchidos
       if (todosPreenchidos) {
-        $("#alert-2").hide();
+        $("#alert-2").removeClass("hidden").addClass("flex").hide();
+        
           // Aqui você pode submeter o formulário ou realizar outra ação
       } else {
-        $("#alert-2").show();
+        $("#alert-2").removeClass("hidden").addClass("flex").show();
+        
+      }
+  });
+});
+
+// Preenchimento erro form
+$(document).ready(function() {
+  $('#formCadastro input').blur(function() {
+      var todosPreenchidos = true;
+
+      // Percorre os campos de entrada do formulário
+        if ($(this).val().trim() === '') {
+            todosPreenchidos = false;
+            $(this).removeClass("border-gray-300").addClass("border-red-500"); // Destaque o campo vazio
+        } else {
+            $(this).removeClass("border-red-500").addClass("border-gray-300"); // Remova o destaque quando preenchido
+        }
+     
+
+      // Verifica se todos os campos estão preenchidos
+      if (todosPreenchidos) {
+        $("#alert-2").removeClass("hidden").addClass("flex").hide();
+        
+          // Aqui você pode submeter o formulário ou realizar outra ação
+      } else {
+        $("#alert-2").removeClass("hidden").addClass("flex").show();
+        
       }
   });
 });
