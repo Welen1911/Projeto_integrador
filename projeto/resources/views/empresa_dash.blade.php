@@ -4,7 +4,7 @@
 
 @section('content')
 
-
+    @include('layouts.messages')
     @include('components.app.asideEmpresa')
 
     <div class="p-4 xl:ml-80">

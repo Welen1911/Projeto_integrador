@@ -126,7 +126,7 @@ class UserController extends Controller
                     ),
             ]);
         }
-        return redirect('/dashboard');
+        return redirect('/dashboard')->with('message', 'Informações atualizadas!');
     }
 
     /**
