@@ -123,8 +123,8 @@ class CandidatoController extends Controller
     public function update(CandidatoEditRequest $request, Candidato $candidato)
     {
         if (Gate::allows('isCandidato') && Gate::allows('candidato_create')) {
-
-            if ($request->curriculo) {
+            
+            if ($request->curriculo && $request->curriculo != '') {
                 if ($candidato->curriculo) {
                     unlink("storage/{$candidato->curriculo}");
                 }
@@ -136,10 +136,11 @@ class CandidatoController extends Controller
             } else {
                 $curriculo = null;
             }
+
             $candidato->update([
                 'sobre' => $request->sobre,
                 'area_id' => $request->area,
-                'curriculo' => $curriculo,
+                'curriculo' => $curriculo ?? $candidato->curriculo,
             ]);
 
             if ($request->formacaoExists) {
