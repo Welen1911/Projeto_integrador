@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 </head>
 <body>
     <!-- component -->
@@ -20,10 +23,21 @@
         </div>
         <div class="w-full mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-2xl lg:mt-0 lg:w-5/12">
           <form class="flex flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl
-              relative z-10" action="{{ route('register') }}" method="post">
+              relative z-10" action="{{ route('register') }}" id="formCadastro" method="post">
               @csrf
             <p class="w-full text-4xl font-extrabold text-center leading-snug ">Cadastre-se no site</p>
+            
             <div class="w-full mt-6 mr-0 mb-0 ml-0 relative space-y-8">
+              <div class="grid grid-cols-2 gap-2">
+                <a class="w-full flex gap-2 items-center justify-center pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-indigo-800 bg-gray-200 rounded transition duration-200 hover:bg-gray-50 hover:border hover:border-gray-300 ease" href="{{ route('social.login') }}">
+                  <img class="w-6 h-6" src="{{ asset('imagens/iconGoogle.svg') }}" alt="">
+                    Google
+                </a>
+                <a class="w-full flex gap-2 items-center justify-center pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-indigo-800 bg-gray-200 rounded transition duration-200 hover:bg-gray-50 hover:border hover:border-gray-300 ease" href="{{ route('social.login') }}">
+                  <img class="w-6 h-6" src="{{ asset('imagens/iconLinkedin.svg') }}" alt="">
+                  Linkedin
+                </a>
+              </div>
               <div class="relative">
                 <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
                     absolute">Nome</p>
@@ -52,15 +66,19 @@
                     border-gray-300 rounded-md" name="password_confirmation"/>
               </div>
               <div class="relative">
-                <button class="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-800
-                    rounded-lg transition duration-200 hover:bg-indigo-600 ease">Cadastre-se</button>
+                <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
+                    absolute">
+                    {!! NoCaptcha::renderJs() !!}
+                    {!! NoCaptcha::display() !!}
+                  </p>
+                
               </div>
               <div class="relative">
-                <a class="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-800
-                    rounded-lg transition duration-200 hover:bg-indigo-600 ease" href="{{ route('social.login') }}">Register with Google</a>
+                <button class="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-800
+                    rounded-lg transition duration-200 hover:bg-indigo-600 ease" type="button" id="cadastrar">Cadastre-se</button>
               </div>
               <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
+                {{ __('Ja possui conta no site? Faça login aqui!') }}
             </a>
 
             </div>
@@ -128,6 +146,27 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div id="alert-2" class="fixed  hidden z-50 bottom-10 right-10 items-center p-4 text-red-800 rounded-lg bg-red-100" role="alert">
+    <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+    </svg>
+    <span class="sr-only">Info</span>
+    <div class="ms-3 text-sm font-medium">
+      Complete todos os campos para o finalizar o cadastro!
+    </div>
+  </div>
+
+  <div id="alert-3" class="fixed  hidden z-50 bottom-10 right-10 items-center p-4 mb-4 text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+    <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+    </svg>
+    <span class="sr-only">Info</span>
+    <div class="ms-3 text-sm font-medium">
+      Já pode finalizar cadastro!
+    </div>
+    
   </div>
 </body>
 </html>

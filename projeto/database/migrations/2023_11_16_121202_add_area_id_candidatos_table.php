@@ -14,7 +14,7 @@ class AddAreaIdCandidatosTable extends Migration
     public function up()
     {
         Schema::table('candidatos', function (Blueprint $table) {
-            $table->foreignId('area_id');
+            $table->foreignId('area_id')->nullable();
             $table->foreign('area_id')
             ->references('id')->on('areas')
             ->cascadeOnDelete()->cascadeOnUpdate();

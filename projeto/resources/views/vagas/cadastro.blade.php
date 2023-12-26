@@ -27,6 +27,7 @@
             @include('components.app.formCadastroVagas')
         </form>
 
+        
     </div>
 
 </body>

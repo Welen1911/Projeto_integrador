@@ -51,6 +51,13 @@
 
     <h2 class="text-xl mb-6">Formações</h1>
         <div class="rounded border-2 flex py-5 px-5 flex-col-reverse mb-6" id="formacao">
+
+            {{-- Formação do Candidato --}}
+            <div class="-mx-3 md:flex">
+              <div class="md:w-full px-3" id="">
+                  <p class="hover:cursor-pointer text-indigo-800 text-sm" id="btnFormacao">Adiciona formação +</p>
+              </div>
+          </div>
             @if (isset($candidato->formacaos) && count($candidato->formacaos) > 0)
             @foreach ($candidato->formacaos as $formacao)
           
@@ -114,16 +121,17 @@
             @endforeach
             @endif
             
-            {{-- Formação do Candidato --}}
-            <div class="-mx-3 md:flex">
-                <div class="md:w-full px-3" id="">
-                    <p class="hover:cursor-pointer text-indigo-800 text-sm" id="btnFormacao">Adiciona formação +</p>
-                </div>
-            </div>
         </div>
 
         <h2 class="text-xl mb-6">Experiencias Profissionais</h1>
             <div class="rounded border-2 flex py-5 px-5 flex-col-reverse mb-6" id="experiencia">
+              {{-- Formação do Candidato --}}
+              <div class="-mx-3 md:flex">
+                <div class="md:w-full px-3" id="">
+                    <p class="hover:cursor-pointer text-indigo-800 text-sm" id="btnExperiencia">Adiciona
+                        experiencias +</p>
+                </div>
+            </div>
                 @if (isset($candidato->experiencias) && count($candidato->experiencias) > 0)
               @foreach ($candidato->experiencias as $experiencia)
               <div class="-mx-3 md:flex mb-6">
@@ -160,13 +168,7 @@
               @endforeach
 
                 @endif
-                {{-- Formação do Candidato --}}
-                <div class="-mx-3 md:flex">
-                    <div class="md:w-full px-3" id="">
-                        <p class="hover:cursor-pointer text-indigo-800 text-sm" id="btnExperiencia">Adiciona
-                            experiencias +</p>
-                    </div>
-                </div>
+                
             </div>
 
 

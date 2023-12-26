@@ -122,8 +122,5 @@
 
 </div>
 
-<input
-    class="w-40 inline-block pt-4 pr-5 pb-4 pl-5 text-xl hidden font-medium text-center text-white bg-indigo-800
-rounded-lg transition duration-200 hover:bg-indigo-600 ease"
-    id="sub" type="submit" value="Enviar">
+<input class="w-40 inline-block pt-4 pr-5 pb-4 pl-5 text-xl hidden font-medium text-center text-white bg-indigo-800 rounded-lg transition duration-200 hover:bg-indigo-600 ease"id="sub" type="submit" value="Enviar">
 </div>
