@@ -7,7 +7,7 @@
         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
           Titulo da Vaga 
         </label>
-        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Vagabundo Senior" name="titulo" value="{{ $vaga->titulo ?? old('titulo') }}">
+        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Senior" name="titulo" value="{{ $vaga->titulo ?? old('titulo') }}">
         <p class="text-red text-xs italic"></p>
       </div>
 
@@ -63,7 +63,7 @@
               <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 " for="grid-password">
                 Atributo
               </label>
-              <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-password" type="text" placeholder="Rua longe pra caralho" name="atributoExists[{{ $atributo->id }}][]" value="{{ $atributo->titulo }}">
+              <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-password" type="text" placeholder="Atributo" name="atributoExists[{{ $atributo->id }}][]" value="{{ $atributo->titulo }}">
               <p class="text-grey-dark text-xs italic">Make it as long and as crazy as you'd like</p>
             </div>
           </div>
@@ -87,7 +87,7 @@
                   <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
                     Requisito
                   </label>
-                  <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-password" id="" type="text" placeholder="Analise e Desenvolvimento de Sistemas" name="requisitoExists[{{ $requisito->id }}][]" value="{{ $requisito->titulo }}">
+                  <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3" id="grid-password" id="" type="text" placeholder="Requisito" name="requisitoExists[{{ $requisito->id }}][]" value="{{ $requisito->titulo }}">
                 </div>
                 </div>
               @endforeach
