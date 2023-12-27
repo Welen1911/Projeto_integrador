@@ -21,7 +21,8 @@
         "laravel/sail": "^1.25",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^5.10",
-        "phpunit/phpunit": "^9.5.10"
+        "phpunit/phpunit": "^9.5.10",
+        "supliu/laravel-query-monitor": "^1.0@dev"
     },
     "autoload": {
         "psr-4": {
