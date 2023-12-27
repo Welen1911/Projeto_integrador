@@ -9,4 +9,3 @@ Route::get('/1', function () {
 
 Route::resource('/vaga', VagaController::class);
 
-Route::resource('/vaga', 'VagaController@index');

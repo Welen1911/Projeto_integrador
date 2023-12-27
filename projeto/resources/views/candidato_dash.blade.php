@@ -86,7 +86,7 @@
                 @endforeach
                 
                 @endif
-
+                {{ $vagas->links() }}
                
               </tbody>
             </table>

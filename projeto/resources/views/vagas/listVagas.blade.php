@@ -111,57 +111,27 @@
         <!--Card de Pesquisa Recentes-->
         <div class="flex inset-x-0 flex-col w-full justify-between  mt-1 " id="listVagas">
             
-            <div class="grid gap-5 items-center justify-items-center grid-cols-4">
+            <div class="grid gap-5  items-center justify-items-center grid-cols-4" id="#items-container">
                 @foreach ($vagas as $vaga)
                     <a href="{{ route('vaga.show', $vaga->id) }}"
-                    class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow-lg transform transition-all mb-4 w-full">
+                    class="inline-block  align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow-lg transform transition-all mb-4 w-full">
                     <img class="rounded-t-lg" src="{{ asset('imagens/logoMagalu.png') }}" alt="" />
-                    <div class="p-5">
+                    <div class="p-5 h-40">
 
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $vaga->titulo }}</h5>
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $vaga->titulo }}</h5>
 
-                        <p class="mb-3 font-normal text-gray-700 y">{{ $vaga->descricao }}</p>
+                    <p class="mb-3 font-normal  text-gray-700 y">{{ $vaga->descricao }}</p>
 
                     </div>
                     </a>
                 @endforeach
             </div>
             
-            
+             <div class="mt-4">
+                {{ $vagas->links() }} 
+             </div>
 
-            <nav aria-label="Page navigation example" class="mx-auto">
-                <ul class="inline-flex -space-x-px text-base h-10">
-                    {{-- <li>
-                        <a href="#"
-                            class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-gray-100 border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 ">
-                            <</a>
-                    </li> --}}
-                    <li>
-                        <a href="#"
-                            class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-gray-100 border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ">1</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-gray-100 border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ">2</a>
-                    </li>
-                    <li>
-                        <a href="#" aria-current="page"
-                            class="flex items-center justify-center px-4 h-10 text-blue-600 border border-gray-300 bg-blue-100 hover:bg-blue-100 hover:text-blue-700 ">3</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-gray-100 border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ">4</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-gray-100 border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ">5</a>
-                    </li>
-                    {{-- <li>
-                        <a href="#"
-                            class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-gray-100 border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 ">></a>
-                    </li> --}}
-                </ul>
-            </nav>
+            
         </div>
     </div>
 @endsection

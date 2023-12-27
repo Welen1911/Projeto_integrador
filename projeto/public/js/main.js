@@ -256,3 +256,20 @@ $(document).ready(() => {
     contExperiancia++
   })
 })
+
+$(document).ready(function() {
+  loadItems();
+
+  function loadItems() {
+      $.ajax({
+          url: '/vagas/vaga',
+          type: 'GET',
+          success: function(response) {
+              $('#items-container').html(response);
+          },
+          error: function(xhr) {
+              console.log(xhr.responseText);
+          }
+      });
+  }
+});
