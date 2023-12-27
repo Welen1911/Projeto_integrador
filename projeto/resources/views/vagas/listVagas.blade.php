@@ -131,11 +131,11 @@
 
             <nav aria-label="Page navigation example" class="mx-auto">
                 <ul class="inline-flex -space-x-px text-base h-10">
-                    <li>
+                    {{-- <li>
                         <a href="#"
                             class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-gray-100 border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 ">
                             <</a>
-                    </li>
+                    </li> --}}
                     <li>
                         <a href="#"
                             class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-gray-100 border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ">1</a>
@@ -156,10 +156,10 @@
                         <a href="#"
                             class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-gray-100 border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ">5</a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="#"
                             class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-gray-100 border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 ">></a>
-                    </li>
+                    </li> --}}
                 </ul>
             </nav>
         </div>
