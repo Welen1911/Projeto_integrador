@@ -73,49 +73,31 @@
     <div class="inset-x-0 w-full lg:h-4/5 z-0 py-1 h-auto sm:px-16 sm:h-4/5 lg:px-40">
         <div class="flex inset-x-0 flex-col justify-between p-3 mt-4 xl:flex-row lg:content-center">
             <div class="grid content-center">
-                <h1 class="text-4xl text-indigo-800"><a href="{{ route('empresa.perfil', $vaga->empresa->id) }}">{{ $vaga->empresa->user->name }}</a></h1>
+                <h1 class="text-4xl text-indigo-800">Empresa</h1>
             </div>
         </div>
 
         <div class="flex inset-x-0 justify-center p-3 mt-4 xl:flex-row lg:content-center w-full">
             <div class=" flex border items-center justify-center flex-row rounded-md w-full border-gray-400">
                 <div class="rounded-l-md w-full flex justify-center">
-                    <img class=" h-40 rounded-l-sm" src="{{ asset('imagens/logoAmericanas.png') }}" alt="">
+                    <img class=" h-40 rounded-l-sm" src="{{ url($vaga->empresa->user->profile_photo_path) }}"
+                        alt="">
                 </div>
-                <div class="flex w-full flex-wrap justify-center  flex-grow mt-10  text-center md:pl-20  md:text-left">
-                    <div class="w-full px-4 lg:w-1/4 md:w-1/2">
+                <div class="flex w-full flex-wrap flex-grow mt-10  text-center md:pl-1  md:text-left">
+                    <div class="w-full px-4 ">
                         <nav class="mb-10 list-none">
                             <li class="mt-3">
-                                <a class="text-gray-500 cursor-pointer hover:text-gray-900">Sobre nós</a>
+                                <a href="{{ route('empresa.perfil', $vaga->empresa->id) }}"
+                                    class="text-gray-500 cursor-pointer hover:text-gray-900">{{ $vaga->empresa->user->name }}</a>
                             </li>
                             <li class="mt-3">
-                                <a class="text-gray-500 cursor-pointer hover:text-gray-900">Política de Privacidade</a>
-                            </li>
-                            <li class="mt-3">
-                                <a class="text-gray-500 cursor-pointer hover:text-gray-900">Central de Ajuda</a>
-                            </li>
-                            <li class="mt-3">
-                                <a class="text-gray-500 cursor-pointer hover:text-gray-900">Parceiros</a>
+                                <a href="{{ route('empresa.perfil', $vaga->empresa->id) }}"
+                                    class="text-gray-500 cursor-pointer hover:text-gray-900">{{ $vaga->empresa->descricao }}</a>
                             </li>
                         </nav>
                     </div>
 
-                    <div class="w-full px-4 lg:w-1/4 md:w-1/2">
-                        <nav class="mb-10 list-none">
-                            <li class="mt-3">
-                                <a class="text-gray-500 cursor-pointer hover:text-gray-900">Ajuda</a>
-                            </li>
-                            <li class="mt-3">
-                                <a class="text-gray-500 cursor-pointer hover:text-gray-900">Blog</a>
-                            </li>
-                            <li class="mt-3">
-                                <a class="text-gray-500 cursor-pointer hover:text-gray-900">Anunciar Vagas</a>
-                            </li>
-                            <li class="mt-3">
-                                <a class="text-gray-500 cursor-pointer hover:text-gray-900">Buscar Candidatos</a>
-                            </li>
-                        </nav>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -157,6 +139,16 @@
             </form>
         @endcan
     @endcan
+    @guest
+        <form action="{{ route('candidatura.store') }}" method="post">
+            @csrf
+            <input type="text" value="{{ $vaga->id }}" name="vaga_id" hidden>
+            <button
+                class=" text-base text-center text-black hover:bg-gray-50 transition-all hover:scale-105 hover:ease-in md:mt-20 p-6 py-3 border w-72 border-black rounded-full mx-auto">
+                Candidatar-se!
+            </button>
+        </form>
+    @endguest
     @can('isEmpresa')
         @if (count($candidaturas) > 0)
             <div>
@@ -166,7 +158,8 @@
                 </div>
                 <br><br><br>
                 <div class="flex items-center justify-center">
-                    <div class="mb-12 grid gap-y-10 gap-x-12 md:grid-cols-2 xl:grid-cols-{{ count($candidaturas) < 4 ? count($candidaturas) : 4 }}">
+                    <div
+                        class="mb-12 grid gap-y-10 gap-x-12 md:grid-cols-2 xl:grid-cols-{{ count($candidaturas) < 4 ? count($candidaturas) : 4 }}">
                         @foreach ($candidaturas as $candidatura)
                             <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
 

@@ -47,50 +47,8 @@
                             </div>
                             <input type="search" name="barPesquisarLocal" id="default-search"
                                 class=" w-80 sm:w-full lg:w-full p-4 ps-10 text-sm rounded-lg text-gray-900 dark:placeholder-gray-400 border border-blue-500"
-                                placeholder="Local da vaga" required>
+                                placeholder="Area da vaga" required>
                         </div>
-                    </div>
-
-                    <div class="flex flex-nowrap w-full sm:flex sm:space-x-4">
-                        <select id="pricingType" name="pricingType"
-                            class="w-full h-10 border-2 border-gray-500 bg-gray-300 text-sm rounded-lg px-2 md:px-3 py-0 md:py-1 tracking-wider">
-                            <option value="All" selected="">All</option>
-                            <option value="Freemium">Freemium</option>
-                            <option value="Free">Free</option>
-                            <option value="Paid">Paid</option>
-                        </select>
-
-                        <select id="pricingType" name="pricingType"
-                            class="w-full h-10 border-2 border-gray-500 bg-gray-300 text-sm rounded-lg px-2 md:px-3 py-0 md:py-1 tracking-wider">
-                            <option value="All" selected="">All</option>
-                            <option value="Freemium">Freemium</option>
-                            <option value="Free">Free</option>
-                            <option value="Paid">Paid</option>
-                        </select>
-
-                        <select id="pricingType" name="pricingType"
-                            class="w-full h-10 border-2 border-gray-500 bg-gray-300 text-sm rounded-lg px-2 md:px-3 py-0 md:py-1 tracking-wider">
-                            <option value="All" selected="">All</option>
-                            <option value="Freemium">Freemium</option>
-                            <option value="Free">Free</option>
-                            <option value="Paid">Paid</option>
-                        </select>
-
-                        <select id="pricingType" name="pricingType"
-                            class="w-full h-10 border-2 border-gray-500 bg-gray-300 text-sm rounded-lg px-2 md:px-3 py-0 md:py-1 tracking-wider">
-                            <option value="All" selected="">All</option>
-                            <option value="Freemium">Freemium</option>
-                            <option value="Free">Free</option>
-                            <option value="Paid">Paid</option>
-                        </select>
-
-                        <select id="pricingType" name="pricingType"
-                            class="w-full h-10 border-2 border-gray-500 bg-gray-300 text-sm rounded-lg px-2 md:px-3 py-0 md:py-1 tracking-wider">
-                            <option value="All" selected="">All</option>
-                            <option value="Freemium">Freemium</option>
-                            <option value="Free">Free</option>
-                            <option value="Paid">Paid</option>
-                        </select>
                     </div>
                 </form>
             </div>
@@ -103,7 +61,7 @@
         <div class="flex inset-x-0 flex-col justify-between p-3 mt-4  xl:flex-row lg:content-center">
             <div class="grid  content-center">
                 <h2 class="text-3xl font-extrabold text-indigo-800">
-                    Nossas últimas vagas
+                    Vagas Disponíveis
                 </h2>
             </div>
         </div>

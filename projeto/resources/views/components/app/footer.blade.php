@@ -9,7 +9,7 @@
                         fill-rule="nonzero" />
                 </svg>
             </a>
-            <p class="mt-2 text-sm text-gray-500">Welenzinho, Pedrinho e Lucas</p>
+            <p class="mt-2 text-sm text-gray-500">Welen, Pedro e Lucas</p>
             <div class="mt-4">
                 <span class="inline-flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start">
                     <a class="text-gray-500 cursor-pointer hover:text-gray-700">
@@ -111,7 +111,7 @@
     </div>
     <div class="bg-gray-300">
         <div class="container px-5 py-4 mx-auto">
-            <p class="text-sm text-gray-700 capitalize xl:text-center">© 2023 PEDRO GOSTOSO</p>
+            <p class="text-sm text-gray-700 capitalize xl:text-center">© 2023 i-Trampo</p>
         </div>
     </div>
 </footer>
