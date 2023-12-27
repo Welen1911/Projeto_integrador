@@ -59,7 +59,7 @@
                                 </label>
                                 <input
                                     class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3"
-                                    id="grid-password" type="file" placeholder="Rua longe pra caralho" name="perfil"/>
+                                    id="grid-password" type="file" name="perfil"/>
                             </div>
                         </div>
                     @endif

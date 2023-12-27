@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/', function () {
-    return view('welcome');
+   return redirect()->route('vaga.index');
 });
 
 Route::get('/auth/redirect', function () {

@@ -8,7 +8,7 @@
         </label>
         <input
             class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4 mb-3"
-            id="grid-password" type="text" placeholder="Rua longe pra caralho" name="rua" value="{{
+            id="grid-password" type="text" placeholder="Rua volta dos que não foram" name="rua" value="{{
                 $user->endereco->rua ?? old('rua')
             }}">
         <p class="text-grey-dark text-xs italic">Make it as long and as crazy as you'd like</p>
@@ -76,7 +76,7 @@
         <input
             class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-gray-500 rounded py-3 px-4"
             id="grid-city" type="text" name="cidade" value="{{
-                $user->endereco->cidade->nome ?? old('nome')
+                $user->endereco->cidade->nome ?? old('cidade')
             }}">
     </div>
 

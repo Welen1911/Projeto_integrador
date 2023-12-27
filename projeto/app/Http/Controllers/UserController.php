@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\InforRequest;
 use App\Models\Cidade;
 use App\Models\Estado;
 use App\Models\User;
@@ -72,7 +73,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(InforRequest $request, $id)
     {
         $user = User::find($id);
 
@@ -175,7 +176,7 @@ class UserController extends Controller
         return response()->json(["Sucesso" => $user], 200);
     }
 
-    public function informationStore(Request $request)
+    public function informationStore(InforRequest $request)
     {
 
         $user = User::find(auth()->user()->id);
