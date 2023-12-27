@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 </head>
 <body>
     <!-- component -->
@@ -20,7 +23,7 @@
         </div>
         <div class="w-full mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-2xl lg:mt-0 lg:w-5/12">
           <form class="flex flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl
-              relative z-10" action="{{ route('login') }}" method="post">
+              relative z-10" action="{{ route('login') }}" method="post" id="formCadastro">
               @csrf
             
             
@@ -59,7 +62,7 @@
               </div>
               <div class="relative">
                 <button class="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-800
-                    rounded-full transition duration-200 hover:bg-indigo-600 ease">Entrar</button>
+                    rounded-full transition duration-200 hover:bg-indigo-600 ease" type="button" onclick="enviar()">Entrar</button>
               </div>
              
               <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
