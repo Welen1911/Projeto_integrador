@@ -80,8 +80,13 @@
         <div class="flex inset-x-0 justify-center p-3 mt-4 xl:flex-row lg:content-center w-full">
             <div class=" flex border items-center justify-center flex-row rounded-md w-full border-gray-400">
                 <div class="rounded-l-md w-full flex justify-center">
-                    <img class=" h-40 rounded-l-sm" src="{{ url($vaga->empresa->user->profile_photo_path) }}"
-                        alt="">
+                    @if (strpos($vaga->empresa->user->profile_photo_path, 'perfis/') === false)
+                        <img class=" h-40 rounded-l-sm" src="{{ $vaga->empresa->user->profile_photo_path }}" alt="">
+                    @else
+                        <img class=" h-40 rounded-l-sm"
+                            src="{{ url('storage/' . $vaga->empresa->user->profile_photo_path) }}" alt="">
+                    @endif
+
                 </div>
                 <div class="flex w-full flex-wrap flex-grow mt-10  text-center md:pl-1  md:text-left">
                     <div class="w-full px-4 ">
@@ -162,9 +167,15 @@
                         class="mb-12 grid gap-y-10 gap-x-12 md:grid-cols-2 xl:grid-cols-{{ count($candidaturas) < 4 ? count($candidaturas) : 4 }}">
                         @foreach ($candidaturas as $candidatura)
                             <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+                                @if (strpos($candidatura->candidato->user->profile_photo_path, 'perfis/') === false)
+                                    <img class="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-blue-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center"
+                                        src="{{ $candidatura->candidato->user->profile_photo_path }}" alt="">
+                                @else
+                                    <img class="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-blue-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center"
+                                        src="{{ url('storage/' . $candidatura->candidato->user->profile_photo_path) }}"
+                                        alt="">
+                                @endif
 
-                                <img class="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-blue-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center"
-                                    src="{{ $candidatura->candidato->user->profile_photo_path }}" alt="">
 
                                 <div class="p-10 text-right">
                                     <p

@@ -221,6 +221,17 @@ class UserController extends Controller
             'fixo' => $request->fixo,
         ]);
 
+        if ($request->perfil) {
+            
+            $user->update([
+                'profile_photo_path' => $request->perfil
+                    ->storeAs(
+                        'perfis',
+                        now() . ".{$request->perfil->getClientOriginalExtension()}",
+                    ),
+            ]);
+        }
+
         return redirect('/dashboard')->with('message', 'Cadastro feito!');
     }
 }

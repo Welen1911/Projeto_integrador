@@ -11,25 +11,28 @@
         @include('components.app.asideEmpresa')
     @endcan
 
-
     <div class="p-4 xl:ml-80">
         <div class="mt-12">
             <div class="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-1">
                 <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+                    @if (strpos($empresa->user->profile_photo_path, 'perfis/') === false)
+                        <img class="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-blue-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center"
+                            src="{{ $empresa->user->profile_photo_path }}" alt="">
+                    @else
+                        <img class="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-blue-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center"
+                            src="{{ url('storage/' . $empresa->user->profile_photo_path) }}" alt="">
+                    @endif
 
-                    <img class="bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-blue-600 to-blue-400 text-white shadow-blue-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center"
-                        src="{{ $empresa->user->profile_photo_path }}" alt="">
                     <div class="p-4 text-right">
-                        <p class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">
+                        <p
+                            class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">
                             {{ $empresa->user->name }}</p>
                     </div>
                     <div class="p-4 text-left">
 
-                        <h4
-                            class="block antialiased tracking-normal font-sans text-2xl leading-snug text-blue-gray-900">
+                        <h4 class="block antialiased tracking-normal font-sans text-2xl leading-snug text-blue-gray-900">
                             Email: {{ $empresa->user->email }}</h4>
-                        <h4
-                            class="block antialiased tracking-normal font-sans text-2xl leading-snug text-blue-gray-900">
+                        <h4 class="block antialiased tracking-normal font-sans text-2xl leading-snug text-blue-gray-900">
                             <ul>
                                 @foreach ($empresa->user->telefones as $telefone)
                                     <li>Celular: {{ $telefone->celular }}</li>
@@ -37,8 +40,7 @@
                                 @endforeach
                             </ul>
                         </h4>
-                        <h4
-                            class="block antialiased tracking-normal font-sans text-2xl leading-snug text-blue-gray-900">
+                        <h4 class="block antialiased tracking-normal font-sans text-2xl leading-snug text-blue-gray-900">
                             Endereço: {{ $empresa->user->endereco->rua }}, {{ $empresa->user->endereco->numero }},
                             {{ $empresa->user->endereco->cidade->nome }} -
                             {{ $empresa->user->endereco->cidade->estado->nome }}</h4>
@@ -58,11 +60,9 @@
                 <div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
                     <div class="p-4 text-left">
 
-                        <h4
-                            class="block antialiased tracking-normal font-sans text-2xl leading-snug text-blue-gray-900">
+                        <h4 class="block antialiased tracking-normal font-sans text-2xl leading-snug text-blue-gray-900">
                             Descrição: {{ $empresa->descricao }}</h4>
-                        <h4
-                            class="block antialiased tracking-normal font-sans text-2xl leading-snug text-blue-gray-900">
+                        <h4 class="block antialiased tracking-normal font-sans text-2xl leading-snug text-blue-gray-900">
                             CNPJ: {{ $empresa->cnpj }}</h4>
 
 
