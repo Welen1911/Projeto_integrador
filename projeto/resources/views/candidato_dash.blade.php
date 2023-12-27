@@ -68,8 +68,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @if ($candidato->candidaturas && count($candidato->candidaturas) > 0)
-                                    @foreach ($candidato->candidaturas as $candidatura)
+                                @if ($candidaturas && count($candidaturas) > 0)
+                                    @foreach ($candidaturas as $candidatura)
                                         <tr>
                                             <td class="py-3 px-5 border-b border-blue-gray-50">
                                                 <div class="flex items-center gap-4">
@@ -109,7 +109,7 @@
                                             </td>
                                         </tr>
                                     @endforeach
-
+                                        
                                 @endif
 
 
@@ -117,6 +117,7 @@
                         </table>
                     </div>
                 </div>
+                {{ $candidaturas->links() }}
             </div>
     </div>
 @else

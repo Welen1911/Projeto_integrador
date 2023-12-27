@@ -21,7 +21,7 @@ class VagaController extends Controller
      */
     public function index()
     {
-        $vagas = Vaga::all();
+        $vagas = Vaga::paginate(4);
         $areas = Area::orderBy('nome', 'asc')->get();
 
         return view('vagas.listVagas', compact('vagas', 'areas'));

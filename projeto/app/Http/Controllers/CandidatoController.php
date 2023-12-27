@@ -21,7 +21,8 @@ class CandidatoController extends Controller
     public function index()
     {
         $candidato = auth()->user()->candidato;
-        return view('candidato_dash', compact('candidato'));
+        $candidaturas = $candidato->candidaturas()->paginate(3);
+        return view('candidato_dash', compact('candidato', 'candidaturas'));
     }
 
     /**
