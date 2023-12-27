@@ -21,7 +21,7 @@
                     A oportunidade está ao alcance. Seu futuro começa agora!
                 </p>
                 <!-- Barras de Pesquisa -->
-                <form class="mt-4 flex w-full flex-col flex-wrap gap-5 xl:flex-row" action="{{ route('vaga.index') }}" method="get">
+                <form class="mt-4 flex w-full flex-col flex-wrap gap-5 xl:flex-row">
                     <div class="flex flex-nowrap w-full sm:flex sm:space-x-4">
                         <div class="relative w-full">
                             <div class="absolute  inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -33,7 +33,7 @@
                             </div>
                             <input type="search" name="vagas" id="default-search"
                                 class=" w-80 sm:w-full lg:w-full p-4 ps-10 text-sm rounded-lg text-gray-900 dark:placeholder-gray-400 border border-blue-500"
-                                placeholder="Procure as vagas">
+                                placeholder="Procure as vagas"/>
                         </div>
                         <div class="relative w-full">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -47,7 +47,7 @@
                             </div>
                             <input type="search" name="areas" id="default-search"
                                 class=" w-80 sm:w-full lg:w-full p-4 ps-10 text-sm rounded-lg text-gray-900 dark:placeholder-gray-400 border border-blue-500"
-                                placeholder="Area da vaga">
+                                placeholder="Area da vaga"/>
                         </div>
                     </div>
                 </form>
