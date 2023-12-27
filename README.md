@@ -27,5 +27,10 @@ Na pasta do projeto, rode o comando:
 ```sh
 npm run dev
 ```
+
+```sh
+./vendor/bin/sail artisan migrate:refresh --seed
+```
+
 ### Segundo
 Veja se está funcionando no <a href="localhost">localhost</a>
