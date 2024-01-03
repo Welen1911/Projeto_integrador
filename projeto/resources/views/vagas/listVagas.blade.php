@@ -55,7 +55,6 @@
         </div>
     </div>
 
-    <!--Card de Pesquisa Recentes-->
     <div class="inset-x-0  w-full lg:h-4/5 z-0 px-8 py-1 h-auto  sm:px-16 sm:h-4/5 lg:px-40">
         <!-- Informação do lado Esquedo do Banner_-->
         <div class="flex inset-x-0 flex-col justify-between p-3 mt-4  xl:flex-row lg:content-center">
@@ -65,31 +64,32 @@
                 </h2>
             </div>
         </div>
-
+    
         <!--Card de Pesquisa Recentes-->
-        <div class="flex inset-x-0 flex-col w-full justify-between  mt-1 " id="listVagas">
-
-            <div class="grid gap-5 items-center justify-items-center grid-cols-4">
+        <div class="flex inset-x-0 flex-col w-full justify-between  mt-1 " id="data">
+    
+            <div class="grid gap-5 items-center justify-items-center grid-cols-4" >
                 @foreach ($vagas as $vaga)
                     <a href="{{ route('vaga.show', $vaga->id) }}"
                         class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow-lg transform transition-all mb-4 w-full">
                         <img class="rounded-t-lg" src="{{ asset('imagens/logoMagalu.png') }}" alt="" />
                         <div class="p-5">
-
+    
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $vaga->titulo }}</h5>
-
+    
                             <p class="mb-3 font-normal  text-gray-700 y">{{ $vaga->area->nome }}</p>
-
+    
                         </div>
                     </a>
                 @endforeach
             </div>
-
-
-
-            <nav aria-label="Page navigation example" class="mx-auto">
-                {{ $vagas->links() }}
-            </nav>
+    
+    
+    
+            <div class="mx-auto paginacao">
+                
+                 {{ $vagas->render() }} 
+            </div>
         </div>
     </div>
 @endsection
@@ -97,3 +97,4 @@
 @section('footer')
     @include('components.app.footer')
 @endsection
+

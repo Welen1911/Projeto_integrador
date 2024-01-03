@@ -28,12 +28,12 @@ class InforRequest extends FormRequest
             'rua' => ['required', 'string'],
             'numero' => ['required', 'string'],
             'bairro' => ['required', 'string'],
-            'complemento' => ['string'],
+            'complemento' => ['nullable', 'string'],
             'cep' => ['required', 'string'],
             'cidade' => ['required', 'string'],
             'estado' => ['required', 'string'],
             'celular' => ['required', 'string'],
-            'fixo' => ['required', 'string'],
+            'fixo' => ['nullable', 'string'],
         ];
     }
 }

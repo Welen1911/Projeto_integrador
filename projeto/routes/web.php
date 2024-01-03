@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\VagaController;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
@@ -38,3 +39,6 @@ Route::prefix('/candidato')->group(base_path('routes/candidato.php'));
 Route::prefix('/empresa')->group(base_path('routes/empresa.php'));
 
 Route::prefix('/vagas')->group(base_path('routes/vaga.php'));
+
+
+ 

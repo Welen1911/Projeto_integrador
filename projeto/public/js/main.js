@@ -256,3 +256,32 @@ $(document).ready(() => {
     contExperiancia++
   })
 })
+
+//Paginação AJAX
+$(document).ready(() => {
+  
+  $(document).on('click','.paginacao a', function(e){
+      
+    e.preventDefault();
+    var page = $(this).attr('href').split('page=')[1];
+    loadData(page);
+      
+  });
+
+  function loadData(page) {
+    
+    $.ajax({
+        
+        url: '/vagas/vaga?page=' + page, // Inclui o número da página na requisição
+        type: 'get',
+        
+        success: function(response) {
+            $('#data').html($(response).find('#data').html()); // Atualiza a div 'data' com a partial view
+        },
+    });
+}
+});
+
+
+
+
