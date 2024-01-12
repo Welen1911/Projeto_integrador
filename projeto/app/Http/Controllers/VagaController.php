@@ -19,13 +19,20 @@ class VagaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        // if ($request->vagas) {
-        //     $vagas = Vaga::where('titulo', 'like', '%' . $request->vagas . '%')->get()->paginate(4);
-        // }
+        if ($request->vagas != null && $request->vagas != "") {
+             $vagas = Vaga::where('titulo', 'like', '%' . $request->vagas . '%')->paginate(6);
+             $areas = Area::orderBy('nome', 'asc')->get();
+             return view('vagas.listVagas', compact('vagas', 'areas'));
+        }
+        if ($request->area != null && $request->area != "") {
+            $vagas = Vaga::where('area_id', $request->area)->paginate(6);
+            $areas = Area::orderBy('nome', 'asc')->get();
+            return view('vagas.listVagas', compact('vagas', 'areas'));
+        }
         
-        $vagas = Vaga::paginate(4);
+        $vagas = Vaga::paginate(6);
         $areas = Area::orderBy('nome', 'asc')->get();
         return view('vagas.listVagas', compact('vagas', 'areas'));
     }

@@ -21,7 +21,7 @@
                     A oportunidade está ao alcance. Seu futuro começa agora!
                 </p>
                 <!-- Barras de Pesquisa -->
-                <form class="mt-4 flex w-full flex-col flex-wrap gap-5 xl:flex-row">
+                <form class="mt-4 flex w-full flex-col flex-wrap gap-5 xl:flex-row" action="{{ route('vaga.index')}}">
                     <div class="flex flex-nowrap w-full sm:flex sm:space-x-4">
                         <div class="relative w-full">
                             <div class="absolute  inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -33,7 +33,7 @@
                             </div>
                             <input type="search" name="vagas" id="default-search"
                                 class=" w-80 sm:w-full lg:w-full p-4 ps-10 text-sm rounded-lg text-gray-900 dark:placeholder-gray-400 border border-blue-500"
-                                placeholder="Procure as vagas"/>
+                                placeholder="Procure as vagas" />
                         </div>
                         <div class="relative w-full">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -45,10 +45,21 @@
                                         d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                                 </svg>
                             </div>
-                            <input type="search" name="areas" id="default-search"
+                            <select name="area" id="default-search"
                                 class=" w-80 sm:w-full lg:w-full p-4 ps-10 text-sm rounded-lg text-gray-900 dark:placeholder-gray-400 border border-blue-500"
-                                placeholder="Area da vaga"/>
+                                placeholder="Area da vaga">
+
+                                <option value="">Escolha a area</option>
+                                @foreach ($areas as $area)
+                                    <option value="{{ $area->id }}">{{ $area->nome }}</option>
+                                @endforeach
+                            </select>
                         </div>
+                    </div>
+                    <div class="flex flex-nowrap w-full sm:flex sm:space-x-4">
+                        <button
+                            class="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-800
+                        rounded-lg transition duration-200 hover:bg-indigo-600 ease">Pesquisar</button>
                     </div>
                 </form>
             </div>
@@ -64,31 +75,35 @@
                 </h2>
             </div>
         </div>
-    
+
         <!--Card de Pesquisa Recentes-->
         <div class="flex inset-x-0 flex-col w-full justify-between  mt-1 " id="data">
-    
-            <div class="grid gap-5 items-center justify-items-center grid-cols-4" >
+
+            <div class="grid gap-5 items-center justify-items-center grid-cols-2">
                 @foreach ($vagas as $vaga)
                     <a href="{{ route('vaga.show', $vaga->id) }}"
                         class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow-lg transform transition-all mb-4 w-full">
-                        <img class="rounded-t-lg" src="{{ asset('imagens/logoMagalu.png') }}" alt="" />
+
                         <div class="p-5">
-    
+
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $vaga->titulo }}</h5>
-    
+
+                            <p class="mb-3 font-normal  text-gray-700 y">{{ $vaga->descricao }}</p>
+
+                        </div>
+                        <div class="p-5">
                             <p class="mb-3 font-normal  text-gray-700 y">{{ $vaga->area->nome }}</p>
-    
+
                         </div>
                     </a>
                 @endforeach
             </div>
-    
-    
-    
+
+
+
             <div class="mx-auto paginacao">
-                
-                 {{ $vagas->render() }} 
+
+                {{ $vagas->render() }}
             </div>
         </div>
     </div>
@@ -97,4 +112,3 @@
 @section('footer')
     @include('components.app.footer')
 @endsection
-
