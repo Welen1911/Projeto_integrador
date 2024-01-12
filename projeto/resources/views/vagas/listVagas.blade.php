@@ -21,7 +21,7 @@
                     A oportunidade está ao alcance. Seu futuro começa agora!
                 </p>
                 <!-- Barras de Pesquisa -->
-                <form class="mt-4 flex w-full flex-col flex-wrap gap-5 xl:flex-row" action="{{ route('vaga.index')}}">
+                <form class="mt-4 flex w-full flex-col flex-wrap gap-5 xl:flex-row" action="{{ route('vaga.index') }}">
                     <div class="flex flex-nowrap w-full sm:flex sm:space-x-4">
                         <div class="relative w-full">
                             <div class="absolute  inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -78,28 +78,29 @@
 
         <!--Card de Pesquisa Recentes-->
         <div class="flex inset-x-0 flex-col w-full justify-between  mt-1 " id="data">
+            @if (count($vagas) > 0)
+                <div class="grid gap-5 items-center justify-items-center grid-cols-2">
+                    @foreach ($vagas as $vaga)
+                        <a href="{{ route('vaga.show', $vaga->id) }}"
+                            class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow-lg transform transition-all mb-4 w-full">
 
-            <div class="grid gap-5 items-center justify-items-center grid-cols-2">
-                @foreach ($vagas as $vaga)
-                    <a href="{{ route('vaga.show', $vaga->id) }}"
-                        class="inline-block align-bottom hover:scale-105 hover:bg-gray-300 hover:ease-in bg-white rounded-lg text-left overflow-hidden shadow-lg transform transition-all mb-4 w-full">
+                            <div class="p-5">
 
-                        <div class="p-5">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $vaga->titulo }}</h5>
 
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $vaga->titulo }}</h5>
+                                <p class="mb-3 font-normal  text-gray-700 y">{{ $vaga->descricao }}</p>
 
-                            <p class="mb-3 font-normal  text-gray-700 y">{{ $vaga->descricao }}</p>
+                            </div>
+                            <div class="p-5">
+                                <p class="mb-3 font-normal  text-gray-700 y">{{ $vaga->area->nome }}</p>
 
-                        </div>
-                        <div class="p-5">
-                            <p class="mb-3 font-normal  text-gray-700 y">{{ $vaga->area->nome }}</p>
-
-                        </div>
-                    </a>
-                @endforeach
-            </div>
-
-
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
+            @else
+                <p>Não tem vagas disponíveis!</p>
+            @endif
 
             <div class="mx-auto paginacao">
 
